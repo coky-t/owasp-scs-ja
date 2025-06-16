@@ -2,6 +2,8 @@
 
 This is the unofficial Japanese translation of the [OWASP Smart Contract Security](https://github.com/OWASP/owasp-scs).
 
+- Document Repository - <https://github.com/coky-t/owasp-scs-ja>
+
 ### Originator
 
 - Project Site - <https://scs.owasp.org/>
@@ -80,3 +82,6 @@ This is the unofficial Japanese translation of the [OWASP Smart Contract Securit
 ## Translator (Japanese)
 
 [Koki Takeyama](https://github.com/coky-t)
+
+- Document Site - <https://coky-t.gitbook.io/owasp-docs-ja/>
+- Document Repository - <https://github.com/coky-t/owasp-docs-ja>
