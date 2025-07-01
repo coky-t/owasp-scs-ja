@@ -41,7 +41,7 @@ contract Solidity_Reentrancy {
 
 ### 対策:
 - 外部コントラクトを呼び出す前に、必ずすべての状態変更が発生するようにします。つまり、外部コードを呼び出す前に、内部で残高やコードを更新します。
-- Open Zepplin の Re-entrancy Guard など、再入可能性を防ぐ関数修飾子を使用します。
+- OpenZepplin の Re-entrancy Guard など、再入可能性を防ぐ関数修飾子を使用します。
 
 ### 事例 (修正バージョン):
 
