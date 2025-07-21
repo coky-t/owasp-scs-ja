@@ -40,7 +40,7 @@
     - [SCSVS-BRIDGE-1 S9.1 状態管理 (State Management)](Document/docs/SCSVS/controls/SCSVS-BRIDGE-1.md)
     - [SCSVS-BRIDGE-2 S9.2 データプライバシー (Data Privacy)](Document/docs/SCSVS/controls/SCSVS-BRIDGE-2.md)
     - [SCSVS-BRIDGE-3 S9.3 イベントログ記録 (Event Logging)](Document/docs/SCSVS/controls/SCSVS-BRIDGE-3.md)
-    - [SCSVS-BRIDGE-4 S9.3.B ログ解析 (Log Analysis)](Document/docs/SCSVS/controls/SCSVS-BRIDGE-4.md)
+    - [SCSVS-BRIDGE-4 S9.4 分散ストレージ (Decentralized Storage)](Document/docs/SCSVS/controls/SCSVS-BRIDGE-4.md)
   - [SCSVS-DEFI S10. ガスの使用量、効率、制限 (Gas Usage, Efficiency, and Limitations)](Document/docs/SCSVS/14-SCSVS-DEFI.md)
     - [SCSVS-DEFI-1 S10.1 ガス使用の最適化 (Optimizing Gas Usage)](Document/docs/SCSVS/controls/SCSVS-DEFI-1.md)
     - [SCSVS-DEFI-2 S10.2 効率的なコントラクト設計 (Efficient Contract Design)](Document/docs/SCSVS/controls/SCSVS-DEFI-2.md)
