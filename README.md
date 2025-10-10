@@ -17,6 +17,8 @@ This is the unofficial Japanese translation of the [OWASP Smart Contract Securit
 
 * [OWASP スマートコントラクト Top 10 2025 日本語版](sctop10.md)
 
+* [OWASP スマートコントラクトセキュリティテストガイド 日本語版](SCSTG.md)
+
 ## License
 
 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
