@@ -70,7 +70,7 @@
 
 - [OWASP スマートコントラクトセキュリティテストガイド 目次](SCSTG.md)
 
-- OWASP スマートコントラクトセキュリティテストガイド 日本語版
+- [OWASP スマートコントラクトセキュリティテストガイド 日本語版](Document/docs/SCSTG/index.md)
   - [SCSVS-ARCH  アーキテクチャ、設計、脅威モデリング (Architecture, Design, and Threat Modeling)](Document/docs/SCSTG/tests/SCSVS-ARCH/overview/index.md)
     - [SCSTG-TEST-0007 モジュール性とアップグレード可能性 (Modularity and Upgradability)](Document/docs/SCSTG/tests/SCSVS-ARCH/SCSTG-TEST-0007.md)
 
