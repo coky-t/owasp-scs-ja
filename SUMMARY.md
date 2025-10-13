@@ -68,7 +68,9 @@
   - [SC09:2025 - 安全でないランダム性 (Insecure Randomness)](Document/docs/sctop10/SC09-InsecureRandomness.md)
   - [SC10:2025 - サービス拒否 (Denial Of Service)](Document/docs/sctop10/SC10-DenailOfService.md)
 
-- [OWASP スマートコントラクトセキュリティテストガイド 日本語版](SCSTG.md)
+- [OWASP スマートコントラクトセキュリティテストガイド 目次](SCSTG.md)
+
+- OWASP スマートコントラクトセキュリティテストガイド 日本語版
   - [SCSVS-ARCH  アーキテクチャ、設計、脅威モデリング (Architecture, Design, and Threat Modeling)](Document/docs/SCSTG/tests/SCSVS-ARCH/overview/index.md)
     - [SCSTG-TEST-0007 モジュール性とアップグレード可能性 (Modularity and Upgradability)](Document/docs/SCSTG/tests/SCSVS-ARCH/SCSTG-TEST-0007.md)
 
