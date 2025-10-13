@@ -108,3 +108,124 @@
 
   - [SCSVS-COMP コンポーネント固有のセキュリティ (Component-Specific Security)](Document/docs/SCSTG/tests/SCSVS-COMP/overview/index.md)
     - [SCSTG-TEST-0012 トークン実装のテスト (ERC20, ERC721, ERC1155) (Test Token Implementations (ERC20, ERC721, ERC1155))](Document/docs/SCSTG/tests/SCSVS-COMP/SCSTG-TEST-0012.md)
+
+- [OWASP スマートコントラクト脆弱性タイプ一覧 目次](SCWE.md)
+
+- [OWASP スマートコントラクト脆弱性タイプ一覧 日本語版](Document/docs/SCWE/index.md)
+  - SCSVS-ARCH
+    - [SCWE-001 不適切なコントラクトアーキテクチャ (Improper Contract Architecture)](Document/docs/SCWE/SCSVS-ARCH/SCWE-001.md)
+    - [SCWE-002 過度なコントラクトの複雑さ (Excessive Contract Complexity)](Document/docs/SCWE/SCSVS-ARCH/SCWE-002.md)
+    - [SCWE-003 モジュール性の欠如 (Lack of Modularity)](Document/docs/SCWE/SCSVS-ARCH/SCWE-003.md)
+    - [SCWE-004 捕捉されない例外 (Uncaught Exceptions)](Document/docs/SCWE/SCSVS-ARCH/SCWE-004.md)
+    - [SCWE-005 安全でないアップグレード可能なプロキシ設計 (Insecure Upgradeable Proxy Design)](Document/docs/SCWE/SCSVS-ARCH/SCWE-005.md)
+    - [SCWE-006 一貫性のない継承階層 (Inconsistent Inheritance Hierarchy)](Document/docs/SCWE/SCSVS-ARCH/SCWE-006.md)
+    - [SCWE-051 コントラクトデプロイメントにおける CREATE2 の不適切な使用 (Improper Use of CREATE2 for Contract Deployment)](Document/docs/SCWE/SCSVS-ARCH/SCWE-051.md)
+    - [SCWE-052 トランザクション順序の依存性 (Transaction Order Dependence)](Document/docs/SCWE/SCSVS-ARCH/SCWE-052.md)
+    - [SCWE-064 不正な継承順位 (Incorrect Inheritance Order)](Document/docs/SCWE/SCSVS-ARCH/SCWE-064.md)
+    - [SCWE-070 不正なコンストラクタ名 (Incorrect Constructor Name)](Document/docs/SCWE/SCSVS-ARCH/SCWE-070.md)
+    - [SCWE-071 初期化されていないストレージポインタ (Uninitialized Storage Pointer)](Document/docs/SCWE/SCSVS-ARCH/SCWE-071.md)
+    - [SCWE-080 不正な型変換 (Incorrect Type Conversion)](Document/docs/SCWE/SCSVS-ARCH/SCWE-080.md)
+
+  - SCSVS-CODE
+    - [SCWE-007 未使用変数の存在 (Presence of Unused Variables)](Document/docs/SCWE/SCSVS-CODE/SCWE-007.md)
+    - [SCWE-008 ハードコードされた定数 (Hardcoded Constants)](Document/docs/SCWE/SCSVS-CODE/SCWE-008.md)
+    - [SCWE-009 非推奨の変数と関数の使用 (Deprecated Variable and Function Usage)](Document/docs/SCWE/SCSVS-CODE/SCWE-009.md)
+    - [SCWE-010 変数と関数のシャドウイング (Shadowing Variables and Functions)](Document/docs/SCWE/SCSVS-CODE/SCWE-010.md)
+    - [SCWE-011 安全でない ABI エンコーディングとデコーディング (Insecure ABI Encoding and Decoding)](Document/docs/SCWE/SCSVS-CODE/SCWE-011.md)
+    - [SCWE-013 不正なパラメータ変更 (Unauthorized Parameter Changes)](Document/docs/SCWE/SCSVS-CODE/SCWE-013.md)
+    - [SCWE-014 緊急停止メカニズムの欠如 (Lack of Emergency Stop Mechanism)](Document/docs/SCWE/SCSVS-CODE/SCWE-014.md)
+    - [SCWE-039 インラインアセンブリの安全でない使用 (Insecure Use of Inline Assembly)](Document/docs/SCWE/SCSVS-CODE/SCWE-039.md)
+    - [SCWE-040 不正なストレージパッキング (Incorrect Storage Packing)](Document/docs/SCWE/SCSVS-CODE/SCWE-040.md)
+    - [SCWE-041 安全でないダウンキャスト (Unsafe Downcasting)](Document/docs/SCWE/SCSVS-CODE/SCWE-041.md)
+    - [SCWE-046 再入攻撃 (Reentrancy Attacks)](Document/docs/SCWE/SCSVS-CODE/SCWE-046.md)
+    - [SCWE-047 整数オーバーフローとアンダーフロー (Integer Overflows and Underflows)](Document/docs/SCWE/SCSVS-CODE/SCWE-047.md)
+    - [SCWE-048 チェックされない関数戻り値 (Unchecked Call Return Value)](Document/docs/SCWE/SCSVS-CODE/SCWE-048.md)
+    - [SCWE-053 マッピングの不適切な削除 (Improper Deletion of Mappings)](Document/docs/SCWE/SCSVS-CODE/SCWE-053.md)
+    - [SCWE-060 フローティングプラグマ (Floating Pragma)](Document/docs/SCWE/SCSVS-CODE/SCWE-060.md)
+    - [SCWE-061 古いコンパイラバージョン (Outdated Compiler Version)](Document/docs/SCWE/SCSVS-CODE/SCWE-061.md)
+    - [SCWE-062 デッドコード (Dead Code)](Document/docs/SCWE/SCSVS-CODE/SCWE-062.md)
+    - [SCWE-066 ビット演算の誤った処理 (Incorrect Handling of Bitwise Operations)](Document/docs/SCWE/SCSVS-CODE/SCWE-066.md)
+    - [SCWE-067 アサートバイオレーション (Assert Violation)](Document/docs/SCWE/SCSVS-CODE/SCWE-067.md)
+    - [SCWE-068 状態変数のデフォルトの可視性 (State Variable Default Visibility)](Document/docs/SCWE/SCSVS-CODE/SCWE-068.md)
+    - [SCWE-069 状態変数のシャドウイング (Shadowing State Variables)](Document/docs/SCWE/SCSVS-CODE/SCWE-069.md)
+    - [SCWE-072 非推奨の Solidity 関数の使用 (Use of Deprecated Solidity Functions)](Document/docs/SCWE/SCSVS-CODE/SCWE-072.md)
+    - [SCWE-076 Right-To-Left-Override 制御文字 (U+202E) (Right-To-Left-Override Control Character (U+202E))](Document/docs/SCWE/SCSVS-CODE/SCWE-076.md)
+    - [SCWE-089 脆弱で古いライブラリ (Vulnerable & Outdated Libraries)](Document/docs/SCWE/SCSVS-CODE/SCWE-089.md)
+    - [SCWE-090 自動トークンスワップでのスリッページ保護の欠如 (Missing Slippage Protection in Automated Token Swaps)](Document/docs/SCWE/SCSVS-CODE/SCWE-090.md)
+    - [SCWE-091 トークン転送でのゼロ値チェックの欠如 (Lack of Zero Value Check in Token Transfers)](Document/docs/SCWE/SCSVS-CODE/SCWE-091.md)
+    - [SCWE-092 プロキシコントラクトのコンストラクタでの初期化子無効化の欠如 (Missing Disable Initializer in Constructor for Proxy Contracts)](Document/docs/SCWE/SCSVS-CODE/SCWE-092.md)
+    - [SCWE-093 名前のない関数パラメータ (Unnamed Function Parameters)](Document/docs/SCWE/SCSVS-CODE/SCWE-093.md)
+    - [SCWE-095 宛先アドレスのサイズチェックの欠如 (Missing Destination Address Size Check)](Document/docs/SCWE/SCSVS-CODE/SCWE-095.md)
+
+  - SCSVS-GOV
+    - [SCWE-012 マルチシグガバナンスの欠如 (Lack of Multisig Governance)](Document/docs/SCWE/SCSVS-GOV/SCWE-012.md)
+    - [SCWE-015 不十分なガバナンス文書 (Poor Governance Documentation)](Document/docs/SCWE/SCSVS-GOV/SCWE-015.md)
+    - [SCWE-037 フロントランニングに対する不十分な保護 (Insufficient Protection Against Front-Running)](Document/docs/SCWE/SCSVS-GOV/SCWE-037.md)
+    - [SCWE-043 フォールバック関数の安全でない使用 (Insecure Use of Fallback Functions)](Document/docs/SCWE/SCSVS-GOV/SCWE-043.md)
+    - [SCWE-044 ストレージの安全でない使用 (Insecure Use of Storage)](Document/docs/SCWE/SCSVS-GOV/SCWE-044.md)
+    - [SCWE-075 不正な Ether 残高追跡 (Incorrect Ether Balance Tracking)](Document/docs/SCWE/SCSVS-GOV/SCWE-075.md)
+    - [SCWE-078 Ether 送金の不適切な取り扱い (Improper Handling of Ether Transfers)](Document/docs/SCWE/SCSVS-GOV/SCWE-078.md)
+    - [SCWE-079 Transfer と Send の安全でない使用 (Insecure Use of Transfer and Send)](Document/docs/SCWE/SCSVS-GOV/SCWE-079.md)
+    - [SCWE-081 Nonce の不適切な取り扱い (Improper Handling of Nonce)](Document/docs/SCWE/SCSVS-GOV/SCWE-081.md)
+
+  - SCSVS-AUTH
+    - [SCWE-016 不十分な認可チェック (Insufficient Authorization Checks)](Document/docs/SCWE/SCSVS-AUTH/SCWE-016.md)
+    - [SCWE-017 特権ロールの管理ミス (Privileged Role Mismanagement)](Document/docs/SCWE/SCSVS-AUTH/SCWE-017.md)
+    - [SCWE-018 tx.origin を使用した認可 (Use of tx.origin for Authorization)](Document/docs/SCWE/SCSVS-AUTH/SCWE-018.md)
+    - [SCWE-019 安全でない署名検証 (Insecure Signature Verification)](Document/docs/SCWE/SCSVS-AUTH/SCWE-019.md)
+    - [SCWE-020 時間ロック機能の欠如 (Absence of Time-Locked Functions)](Document/docs/SCWE/SCSVS-AUTH/SCWE-020.md)
+    - [SCWE-038 Selfdestruct の安全でない使用 (Insecure Use of Selfdestruct)](Document/docs/SCWE/SCSVS-AUTH/SCWE-038.md)
+    - [SCWE-045 Modifier の安全でない使用 (Insecure Use of Modifiers)](Document/docs/SCWE/SCSVS-AUTH/SCWE-045.md)
+    - [SCWE-049 保護されていない Ether の引き落とし (Unprotected Ether Withdrawal)](Document/docs/SCWE/SCSVS-AUTH/SCWE-049.md)
+    - [SCWE-050 保護されていない SELFDESTRUCT 命令 (Unprotected SELFDESTRUCT Instruction)](Document/docs/SCWE/SCSVS-AUTH/SCWE-050.md)
+
+  - SCSVS-COMM
+    - [SCWE-021 安全でないデータ転送 (Unsecured Data Transmission)](Document/docs/SCWE/SCSVS-COMM/SCWE-021.md)
+    - [SCWE-022 メッセージリプレイの脆弱性 (Message Replay Vulnerabilities)](Document/docs/SCWE/SCSVS-COMM/SCWE-022.md)
+    - [SCWE-023 コミュニケーションの真正性の欠如 (Lack of Communication Authenticity)](Document/docs/SCWE/SCSVS-COMM/SCWE-023.md)
+    - [SCWE-035 安全でない Delegatecall の使用 (Insecure Delegatecall Usage)](Document/docs/SCWE/SCSVS-COMM/SCWE-035.md)
+    - [SCWE-042 外部呼び出しの安全でない使用 (Insecure Use of External Calls)](Document/docs/SCWE/SCSVS-COMM/SCWE-042.md)
+    - [SCWE-063 安全でないイベント発行 (Insecure Event Emission)](Document/docs/SCWE/SCSVS-COMM/SCWE-063.md)
+
+  - SCSVS-CRYPTO
+    - [SCWE-025 不適切な暗号鍵管理 (Improper Cryptographic Key Management)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-025.md)
+    - [SCWE-026 不十分なハッシュ検証 (Insufficient Hash Verification)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-026.md)
+    - [SCWE-027 脆弱な暗号アルゴリズム (Vulnerable Cryptographic Algorithms)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-027.md)
+    - [SCWE-054 署名変更可能性 (Signature Malleability)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-054.md)
+    - [SCWE-055 署名リプレイ攻撃に対する保護の欠如 (Missing Protection against Signature Replay Attacks)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-055.md)
+    - [SCWE-056 適切な署名検証の欠如 (Lack of Proper Signature Verification)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-056.md)
+    - [SCWE-074 複数の可変長引数によるハッシュ衝突 (Hash Collisions with Multiple Variable Length Arguments)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-074.md)
+    - [SCWE-084 blockhash の安全でない使用 (Insecure Use of blockhash)](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-084.md)
+
+  - SCSVS-ORACLE
+    - [SCWE-028 価格オラクル操作 (Price Oracle Manipulation)](Document/docs/SCWE/SCSVS-ORACLE/SCWE-028.md)
+    - [SCWE-029 分散型オラクルソースの欠如 (Lack of Decentralized Oracle Sources)](Document/docs/SCWE/SCSVS-ORACLE/SCWE-029.md)
+    - [SCWE-030 安全でないオラクルデータ更新 (Insecure Oracle Data Updates)](Document/docs/SCWE/SCSVS-ORACLE/SCWE-030.md)
+    - [SCWE-085 オラクルの最小/最大価格帯の検証なしでの誤用 (Misuse of Oracle Min/Max Price Band Without Validation)](Document/docs/SCWE/SCSVS-ORACLE/SCWE-085.md)
+    - [SCWE-086 オラクルレスポンスフィールドの検証の欠如 (古いデータまたは不完全なデータ) (Missing Validation of Oracle Response Fields (Stale or Incomplete Data))](Document/docs/SCWE/SCSVS-ORACLE/SCWE-086.md)
+    - [SCWE-088 価格ベースの計算における不適切な Decimal 正規化 (Improper Decimal Normalization in Price-Based Calculations)](Document/docs/SCWE/SCSVS-ORACLE/SCWE-088.md)
+
+  - SCSVS-BLOCK
+    - [SCWE-024 弱いランダム性ソース (Weak Randomness Sources)](Document/docs/SCWE/SCSVS-BLOCK/SCWE-024.md)
+    - [SCWE-031 ブロック変数の安全でない使用 (Insecure use of Block Variables)](Document/docs/SCWE/SCSVS-BLOCK/SCWE-031.md)
+    - [SCWE-065 時間を代理としたブロック値 (Block Values as a Proxy for Time)](Document/docs/SCWE/SCSVS-BLOCK/SCWE-065.md)
+    - [SCWE-073 ハードコードされたガス量でのメッセージ呼び出し (Message Call with Hardcoded Gas Amount)](Document/docs/SCWE/SCSVS-BLOCK/SCWE-073.md)
+
+  - SCSVS-BRIDGE
+    - [SCWE-032 ブロックガス制限への依存 (Dependency on Block Gas Limit)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-032.md)
+    - [SCWE-033 チェーン分割リスク (Chain Split Risks)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-033.md)
+    - [SCWE-034 安全でないクロスチェーンメッセージング (Insecure Cross-Chain Messaging)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-034.md)
+    - [SCWE-087 クロスチェーンメッセージングにおけるペイロードサイズ検証の欠如 (サービス拒否/資金の滞留) (Missing Payload Size Validation in Cross-Chain Messaging (Denial of Service/Stuck Funds))](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-087.md)
+    - [SCWE-094 LayerZero メッセージ送信における不十分なガス制限バリデーション (Insufficient Gas Limit Validation in LayerZero Message Sending)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-094.md)
+    - [SCWE-096 クロスチェーン NFT 引き落とし時のトークンバーンの欠如 (Missing Token Burn on During Cross-Chain NFT Withdrawal)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-096.md)
+
+  - SCSVS-DEFI
+    - [SCWE-036 不適切なガス制限処理 (Inadequate Gas Limit Handling)](Document/docs/SCWE/SCSVS-DEFI/SCWE-036.md)
+    - [SCWE-058 ブロックガス制限での DoS (DoS with Block Gas Limit)](Document/docs/SCWE/SCSVS-DEFI/SCWE-058.md)
+    - [SCWE-059 不十分なガスブリーフィング (Insufficient Gas Griefing)](Document/docs/SCWE/SCSVS-DEFI/SCWE-059.md)
+    - [SCWE-077 レート制限の欠如 (Lack of Rate Limiting)](Document/docs/SCWE/SCSVS-DEFI/SCWE-077.md)
+    - [SCWE-082 適切なガス管理の欠如 (Lack of Proper Gas Management)](Document/docs/SCWE/SCSVS-DEFI/SCWE-082.md)
+
+  - SCSVS-COMP
+    - [SCWE-057 任意のストレージ位置への書き込み (Write to Arbitrary Storage Location)](Document/docs/SCWE/SCSVS-COMP/SCWE-057.md)
+    - [SCWE-083 エッジケースの処理の失敗 (Failure to Handle Edge Cases)](Document/docs/SCWE/SCSVS-COMP/SCWE-083.md)
