@@ -1,40 +1,40 @@
 ---
 hide: toc
-title: Smart Contract Security Weakness Enumeration (SCWE)
+title: スマートコントラクト脆弱性タイプ一覧 (Smart Contract Security Weakness Enumeration (SCWE))
 ---
 
-<a href="https://github.com/OWASP/www-project-smart-contract-security-testing-guide/">:material-github: GitHub Repo</a>
+<a href="https://github.com/OWASP/www-project-smart-contract-security-testing-guide/"><!-- :material-github: -->GitHub リポジトリ (英語)</a>
 
-<a href="https://owasp.org/www-project-smart-contract-security-testing-guide">:material-web: OWASP Project Page</a>
+<a href="https://owasp.org/www-project-smart-contract-security-testing-guide"><!-- :material-web: -->OWASP プロジェクトページ (英語)</a>
 
-??? info "About the SCWE"
+??? 情報 "SCWE について"
 
-    The Smart Contract Security Weakness Enumeration (SCWE) is a list of common security and privacy weaknesses in smart contracts. It is intended to be used as a reference for developers, security researchers, and security professionals. It acts as the bridge between the [SCSVS](https://scs.owasp.org/SCSVS) and the [SCSTG](https://scs.owasp.org/SCSTG).
+    スマートコントラクト脆弱性タイプ一覧 (SCWE) はスマートコントラクトにおける一般的なセキュリティおよびプライバシーの脆弱性のリストです。開発者、セキュリティ研究者、セキュリティ専門家向けのリファレンスとして使用されることを目的としています。[SCSVS](../SCSVS) と [SCSTG](../SCSTG) の間の橋渡しとして機能します。
 
     <center>
     <img src="../assets/scwe-overview.png" style="width: 50%; border-radius: 5px; margin: 2em" />
     </center>
 
-    For its definition we draw inspiration from the [Common Weakness Enumeration (CWE)](https://cwe.mitre.org/), which is a community-developed list of common software security weaknesses. The SCWE is intended to be a **complementary list to the CWE**, focusing specifically on security weaknesses in smart contracts.
+    その定義については、コミュニティにより開発された一般的なソフトウェアセキュリティ脆弱性のリストである [共通脆弱性タイプ一覧 (Common Weakness Enumeration (CWE))](https://cwe.mitre.org/) から着想を得ています。SCWE は **CWE の補完リスト** となることを目指しており、特にスマートコントラクトのセキュリティ脆弱性に焦点を当てています。
 
-    A **weakness** is a security or privacy issue that can be introduced into a smart contracts. Weaknesses are categorized by the SCSVS categories and controls. For example, a weakness related to the use of insecure random number generators is categorized under the `SCSVS-CODE-1` control.
+    **脆弱性 (weakness)** とはスマートコントラクトに導かれた可能性のあるセキュリティまたはプライバシーの問題です。脆弱性は SCSVS のカテゴリとコントロールでカテゴライズされています。たとえば、安全でない乱数生成ジェネレータの使用に関連する脆弱性は `SCSVS-CODE-1` コントロールにカテゴライズされます。
 
-    Each weakness contains the following information:
+    各脆弱性には以下の情報を含みます。
 
-    - **Overview**: A brief description of the weakness.
-    - **Impact**: The potential impact of the weakness on the security or privacy of the application.
-    - **Modes of Introduction**: The ways in which the weakness can be introduced into an application.
-    - **Mitigations**: Recommendations for mitigating the weakness.
+    - **概要**: 脆弱性の簡単な説明。
+    - **影響**: 脆弱性がアプリケーションのセキュリティまたはプライバシーに及ぼす潜在的な影響。
+    - **導入モード**: 脆弱性がアプリケーションに導かれた可能性のある方法。
+    - **緩和策**: 脆弱性を緩和するための推奨事項。
 
-    > **"Weakness vs Vulnerability"**: It is important to note that **a weakness is not a vulnerability**, but it can lead to the introduction of vulnerabilities. According to the [CWE](https://cwe.mitre.org/documents/glossary/#Weakness), a weakness is a condition in a software, firmware, hardware, or service component that, under certain circumstances, could contribute to the introduction of vulnerabilities. Whereas a vulnerability is a flaw in a software, firmware, hardware, or service component resulting from a weakness that can be exploited, causing a negative impact to the confidentiality, integrity, or availability of an impacted component or components.
+    > **"Weakness と Vulnerability"**: **Weakness は Vulnerability ではない** ものの、Vulnerability の導入につながる可能性があります。[CWE](https://cwe.mitre.org/documents/glossary/#Weakness) によると、Weakness とは、ソフトウェア、ファームウェア、ハードウェア、サービスコンポーネントの状態であり、特定の状況下では Vulnerability の導入につながる可能性があります。一方 Vulnerability とは、ソフトウェア、ファームウェア、ハードウェア、サービスコンポーネントの欠陥であり、悪用される可能性のある Weakness によって生じ、影響を受ける単一または複数のコンポーネントの機密性、完全性、可用性に悪影響を引き起こします。
 
-??? info "Open Call for New SCWE Submissions"
+??? 情報 "新しい SCWE 投稿の募集"
 
-    **Want to contribute a new SCWE entry?**
+    **新しい SCWE エントリを投稿しませんか？**
     
-    - Open an issue in our [GitHub repository](https://github.com/OWASP/owasp-scs/issues) with your proposed SCWE-XXX identifier and a brief description.
-    - After approval and metadata assignment, submit a Pull Request with your new SCWE entry.
-    - See the full [contribution process here](https://pad.riseup.net/p/r.f55dffbdfba1847645dbda2f2f7f084c).
-    - See [this sample issue](https://github.com/OWASP/owasp-scs/issues/12) and [this sample PR](https://github.com/OWASP/owasp-scs/pull/14) for examples of a valid submission.
+    - [GitHub リポジトリ](https://github.com/OWASP/owasp-scs/issues) で、提案する SCWE-XXX 識別子と簡単な説明を添えて、issue を作成してください。
+    - 承認とメタデータの割り当て後、新しい SCWE エントリをプルリクエストとして送信してください。
+    - [こちらの投稿プロセス](https://pad.riseup.net/p/r.f55dffbdfba1847645dbda2f2f7f084c) 全文をご覧ください。
+    - 有効な投稿例としては [こちらのサンプル issue](https://github.com/OWASP/owasp-scs/issues/12) と [こちらのサンプル PR](https://github.com/OWASP/owasp-scs/pull/14) をご覧ください。
     
-    > Thank you for helping us improve the security of smart contracts!
+    > スマートコントラクトのセキュリティ向上にご協力いただきありがとうございます！
