@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/754.html](https://cwe.mitre.org/data/definitions/754.html)
 
 ## 説明
-Failure to account for edge cases can result in unexpected behaviors, security vulnerabilities, and unintended contract failures. Edge cases are unusual but possible inputs or states that developers often overlook, leading to incorrect logic, reverts, or even exploits.
+エッジケースを考慮しないと、予期しない動作、セキュリティ脆弱性、意図しないコントラクト障害をもたらす可能性があります。エッジケースは、開発者が見落としがちな、通常とは異なる可能性がある入力や状態であり、正しくないロジック、リバート、さらにエクスプロイトにつながります。
 
 ### 一般的なシナリオは以下のとおりです:
 
