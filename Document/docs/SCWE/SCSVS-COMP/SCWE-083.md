@@ -26,11 +26,11 @@ status: new
 - ガス関連の障害 (例: 無制限ループでの過剰なガス消費)。
 
 ## 対策
-Ensure that all edge cases are properly considered and handled during the development of the contract. Utilize `require` and `assert` to ensure proper validation of inputs, outputs, and states.
-- Implement explicit validation for all possible edge cases.
-- Use Solidity's built-in safety features (e.g., SafeMath, Solidity 0.8 overflow checks).
-- Use require/assert statements to enforce input constraints and expected states.
-- Test contracts thoroughly, including stress tests, fuzzing, and invariant testing.
+コントラクトの開発時にすべてのエッジケースが適切に考慮され、処理されていることを確保します。`require` と `assert` を利用して、入力、出力、状態の適切なバリデーションを確保します。
+- 考えられるすべてのエッジケースに対して明示的なバリデーションを実装します。
+- Solidity に組み込まれている安全機能 (SafeMath、Solidity 0.8 オーバーフローチェックなど) を使用します。
+- require/assert ステートメントを使用して、入力制約と想定される状態を強制します。
+- ストレステスト、ファジング、不変テストなど、コントラクトを徹底的にテストします。
 
 
 
