@@ -20,10 +20,10 @@ status: new
 
 ### 一般的なシナリオは以下のとおりです:
 
-- Arithmetic Issues (e.g., division by zero, integer overflow/underflow, precision loss).
-- Boundary Conditions (e.g., handling empty arrays, minimum/maximum values).
-- State-Dependent Bugs (e.g., failing to check for uninitialized variables, invalid state transitions).
-- Gas-Related Failures (e.g., unbounded loops consuming excessive gas).
+- 算術演算の問題 (例: ゼロ除算、整数オーバーフロー/アンダーフロー、精度の損失)。
+- 境界条件 (例: 空配列の処理、最小値/最大値)。
+- 状態依存のバグ (例: 未初期化変数のチェックの失敗、無効な状態遷移)。
+- ガス関連の障害 (例: 無制限ループでの過剰なガス消費)。
 
 ## 対策
 Ensure that all edge cases are properly considered and handled during the development of the contract. Utilize `require` and `assert` to ensure proper validation of inputs, outputs, and states.
