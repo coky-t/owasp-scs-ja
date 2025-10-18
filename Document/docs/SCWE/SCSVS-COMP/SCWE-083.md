@@ -43,7 +43,7 @@ contract Example {
 }
 ```
 ### 修正したコントラクトの例
-- Solution: Use `require` to check for division by zero.
+- 解決策: `require` を使用して、ゼロ除算をチェックします。
 ```solidity
 contract Example {
     function divide(uint256 _numerator, uint256 _denominator) public pure returns (uint256) {
@@ -54,7 +54,7 @@ contract Example {
 ```
 
 ### 空の配列の処理
-- Issue: A function assumes that the array is never empty, leading to an out-of-bounds error.
+- 問題: 関数は配列が空ではないことを想定しており、out-of-bounds エラーにつながります。
 
 ```solidity
 contract Example {
@@ -67,7 +67,7 @@ contract Example {
 ```
 
 ### 修正したコード:
--  Solution: Validate that the array is not empty before accessing elements.
+- 解決策: 要素にアクセスする前に、配列が空でないことを検証します。
 ```solidity
 contract Example {
     uint256[] public data;
