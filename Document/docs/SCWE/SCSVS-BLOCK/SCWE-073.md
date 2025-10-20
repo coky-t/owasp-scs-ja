@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-In Solidity, calling external contracts with a hardcoded gas value can lead to various issues, such as running out of gas or allowing a malicious contract to manipulate gas consumption. Hardcoding the gas amount is inflexible and may lead to resource exhaustion or cause the transaction to fail when the gas limit is insufficient for the operation.
+Solidity では、ガス値をハードコードした外部コントラクトを呼び出すと、ガス不足や悪意のあるコントラクトがガス消費量を不正操作するなど、さまざまな問題につながる可能性があります。ガス量をハードコードすることは柔軟性に欠け、リソース枯渇や、ガス制限が操作に不十分な場合にトランザクションが失敗する可能性があります。
 
 ## 対策
 Instead of hardcoding gas values, it is better to allow the gas to be automatically determined or adjust the gas dynamically depending on the needs of the transaction. This ensures that the transaction can complete successfully while avoiding unnecessary resource consumption.
