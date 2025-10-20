@@ -19,7 +19,7 @@ status: new
 Solidity では、ガス値をハードコードした外部コントラクトを呼び出すと、ガス不足や悪意のあるコントラクトがガス消費量を不正操作するなど、さまざまな問題につながる可能性があります。ガス量をハードコードすることは柔軟性に欠け、リソース枯渇や、ガス制限が操作に不十分な場合にトランザクションが失敗する可能性があります。
 
 ## 対策
-Instead of hardcoding gas values, it is better to allow the gas to be automatically determined or adjust the gas dynamically depending on the needs of the transaction. This ensures that the transaction can complete successfully while avoiding unnecessary resource consumption.
+ガス量をハードコードするのではなく、ガスを自動的に決定したり、トランザクションのニーズに応じてガスを動的に調整できるほうがより適切です。これは、不要なリソース消費を避けながら、トランザクションが正常に完了できるようにします。
 
 ### 脆弱なコントラクトの例
 ```solidity
