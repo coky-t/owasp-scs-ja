@@ -19,7 +19,7 @@ status: new
 Ethereum スマートコントラクトにおいて、ブロック値 (`block.timestamp`, `block.number`, `block.difficulty` など) を時間の代わりとして使用すると、問題となる可能性があります。ブロック値はマイナーによって決定され、一定の範囲で操作できるため、時間的制約のあるロジックには信頼できません。締め切りや有効期限などの重要な決定においてこれらの値に依存すると、マイナーによる操作や意図しないコントラクト状態など、予期しない動作をもたらす可能性があります。
 
 ## 対策
-To mitigate this vulnerability, avoid using block values as a direct proxy for time-based logic. Instead, consider using external oracles that provide reliable and tamper-proof time data or incorporate additional checks to prevent miner manipulation. Where necessary, combine block values with other data points to reduce the risk of exploitation.
+この脆弱性を緩和するには、ブロック値を時間ベースのロジックの直接的な代替として使用することを避けます。代わりに、信頼性があり改竄防止時間データを提供する、またはマイナーによる操作を防ぐ追加チェックを備えた、外部オラクルの使用を検討します。必要に応じて、ブロック値を他のデータポイントと組み合わせて、悪用のリスクを軽減します。
 
 ### 脆弱なコントラクトの例
 ```solidity
