@@ -13,10 +13,10 @@ status: new
 
 ## 関連
 - CWE-20: Improper Input Validation
-  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html)
+  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Using block values (such as `block.timestamp`, `block.number`, or `block.difficulty`) as a proxy for time in Ethereum smart contracts can be problematic. Block values are determined by miners and can be manipulated within certain limits, making them unreliable for time-sensitive logic. Relying on these values for critical decisions like deadlines or expiration dates can result in unexpected behaviors, such as manipulations by miners or unintended contract states.
+Ethereum スマートコントラクトにおいて、ブロック値 (`block.timestamp`, `block.number`, `block.difficulty` など) を時間の代わりとして使用すると、問題となる可能性があります。ブロック値はマイナーによって決定され、一定の範囲で操作できるため、時間的制約のあるロジックには信頼できません。締め切りや有効期限などの重要な決定においてこれらの値に依存すると、マイナーによる操作や意図しないコントラクト状態など、予期しない動作をもたらす可能性があります。
 
 ## 対策
 To mitigate this vulnerability, avoid using block values as a direct proxy for time-based logic. Instead, consider using external oracles that provide reliable and tamper-proof time data or incorporate additional checks to prevent miner manipulation. Where necessary, combine block values with other data points to reduce the risk of exploitation.
