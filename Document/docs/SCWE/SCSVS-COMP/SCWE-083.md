@@ -12,7 +12,7 @@ status: new
 ---
 
 ## 関連
-- CWE-754: Improper Check for Unusual or Exceptional Conditions
+- CWE-754: Improper Check for Unusual or Exceptional Conditions  
   [https://cwe.mitre.org/data/definitions/754.html](https://cwe.mitre.org/data/definitions/754.html)
 
 ## 説明
