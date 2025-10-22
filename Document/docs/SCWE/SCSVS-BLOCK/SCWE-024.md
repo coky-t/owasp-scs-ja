@@ -22,9 +22,9 @@ status: new
 - コントラクトのセキュリティに対する信頼の低下。
 
 ## 対策
-- **Use secure randomness:** Leverage secure randomness sources like Chainlink VRF.
-- **Avoid block variables:** Do not rely on block timestamps or hashes for randomness.
-- **Test thoroughly:** Conduct extensive testing to ensure randomness is secure.
+- **安全なランダム性を使用する:** Chainlink VRF などの安全なランダム性ソースを活用します。
+- **ブロック変数を避ける:** ランダム性にはブロックタイムスタンプやハッシュに依存してはいけません。
+- **徹底的にテストする:** 広範なテストを実施して、ランダム性が安全であることを確認します。
 
 ## 事例
 - **弱いランダム性**
