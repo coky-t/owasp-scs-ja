@@ -12,7 +12,7 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
