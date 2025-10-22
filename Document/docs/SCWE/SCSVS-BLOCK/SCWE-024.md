@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-336: Predictable Random Number Generator
-  [CWE-336 Link](https://cwe.mitre.org/data/definitions/336.html)
+- CWE-336: Predictable Random Number Generator  
+  [CWE-336 リンク](https://cwe.mitre.org/data/definitions/336.html)
 
 ## 説明
-Weak randomness sources refer to the use of predictable or insecure sources of randomness, such as block timestamps or block hashes. This can lead to:
-- Exploitation of the contract's logic.
-- Loss of funds or data.
-- Reduced trust in the contract's security.
+弱いランダム性ソースは、ブロックタイムスタンプやブロックハッシュなど、予測可能または安全でないランダム性ソースの使用を指します。これは以下につながる可能性があります。
+- コントラクトのロジックの悪用。
+- 資金やデータの損失。
+- コントラクトのセキュリティに対する信頼の低下。
 
 ## 対策
 - **Use secure randomness:** Leverage secure randomness sources like Chainlink VRF.
@@ -27,7 +27,7 @@ Weak randomness sources refer to the use of predictable or insecure sources of r
 - **Test thoroughly:** Conduct extensive testing to ensure randomness is secure.
 
 ## 事例
-- **Weak Randomness**
+- **弱いランダム性**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ Weak randomness sources refer to the use of predictable or insecure sources of r
     }
     ```
 
-- **Secure Randomness**
+- **安全なランダム性**
     ```solidity
     pragma solidity ^0.8.0;
 
