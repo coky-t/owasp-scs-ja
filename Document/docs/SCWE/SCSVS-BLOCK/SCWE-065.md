@@ -12,7 +12,7 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
+- CWE-20: Improper Input Validation  
   [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
