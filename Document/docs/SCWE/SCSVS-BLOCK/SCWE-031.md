@@ -27,8 +27,8 @@ Ethereum のようなブロックチェーンネットワークでは、ブロ�
 - 悪用可能なアクセス制御: パーミッションやアクションについてブロックのタイムスタンプに頼るコントラクトは、タイムスタンプが調整されると、バイパスされる可能性があります。
 
 ## 対策
-- **Avoid timestamp-based conditions**: Where possible, use block numbers instead of timestamps. Block numbers are more reliable and less subject to manipulation.
-- **Use Oracles**: For time-sensitive contracts, consider using trusted oracles to provide external time data.
+- **タイムスタンプベースの条件を避ける**: 可能な限り、タイムスタンプではなくブロック番号を使用します。ブロック番号は信頼性が高く、操作の対象にされにくくなります。
+- **オラクルを使用する**: 時間的制約のあるコントラクトでは、外部の時間データを提供する、信頼できるオラクルを使用することを検討します。
 
 ## 事例
 
