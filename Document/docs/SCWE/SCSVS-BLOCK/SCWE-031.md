@@ -54,7 +54,7 @@ contract TimestampExample {
 }
 ```
 
-In the above example, the `now` keyword retrieves the block's timestamp to compare with the deadline. This creates a potential vulnerability as miners can manipulate the block timestamp within a predefined window.
+上記の例では、`now` キーワードはブロックのタイムスタンプを取得し、期限と比較しています。これは、マイナーが事前に定義された枠内でブロックのタイムスタンプを操作できるため、潜在的な脆弱性が生じます。
 
 ### 修正したブロックタイムスタンプの使用
 ```solidity
