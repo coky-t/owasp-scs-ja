@@ -124,8 +124,8 @@ contract SecureLottery {
     }
 }
 ```
-Fixes:
-- Uses block.prevrandao (EIP-4399) as an unpredictable source of randomness.
-- Adds entropy from msg.sender and players.length to prevent miner manipulation
+修正:
+- ランダム性の予測不可能なソースとして block.prevrandao (EIP-4399) を使用します。
+- msg.sender と players.length からエントロピーを追加して、マイナー操作を防ぎます。
 
 ---
