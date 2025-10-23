@@ -100,9 +100,9 @@ contract InsecureLottery {
     }
 }
 ```
-Issue:
-- Predictability: Since `block.timestamp` is manipulable within a small range, miners can influence the winner selection.
-- Attack Vector: A miner could reorder transactions to ensure a specific outcome
+問題:
+- 予測可能性: `block.timestamp` は狭い範囲内で操作可能であるため、マイナーは勝者の選択に影響を及ぼす可能性があります。
+- 攻撃ベクトル: マイナーはトランザクションを並び替えて、特定の結果を確実にする可能性があります。
 
 ### 安全な代替手段
 
