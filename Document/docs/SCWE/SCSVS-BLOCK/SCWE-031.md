@@ -78,7 +78,7 @@ contract SafeTimestampExample {
     }
 }
 ```
-In this fixed version, the contract uses `block.number` instead of `now`. This makes the contract less susceptible to timestamp manipulation, as block numbers are more reliable and consistent.
+この修正版では、コントラクトは `now` ではなく `block.number` を使用します。これは、ブロック番号が信頼性が高く、一貫性があるため、コントラクトがタイムスタンプ操作の対象になりにくくなります。
 
 ### block.timestamp を使用した安全でない抽選
 
