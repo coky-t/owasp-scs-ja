@@ -12,19 +12,19 @@ status: new
 ---
 
 ## 関連
-- **CWE-682: Incorrect Calculation**
+- **CWE-682: Incorrect Calculation**  
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-In blockchain networks like Ethereum, block variables `(block.timestamp, block.number, block.difficulty, etc.)` provide information about the current state of the blockchain. However, these values are not fully deterministic and can be manipulated by miners, leading to vulnerabilities in smart contracts.
+Ethereum のようなブロックチェーンネットワークでは、ブロック変数 `(block.timestamp, block.number, block.difficulty など)` がブロックチェーンの現在の状態に関する情報を提供します。しかし、これらの値は完全に決定論的ではなく、マイナーによって操作される可能性があり、スマートコントラクトの脆弱性につながります。
 
-Block timestamps are not guaranteed to be accurate or consistent, and miners can influence them within a certain range. This can cause issues when contracts depend on precise timing for critical functionality, such as token distribution, access control, or other time-sensitive events.
+ブロックのタイムスタンプは正確性や一貫性があることを保証されておらず、マイナーは一定の範囲で影響を及ぼすことができます。トークン配布、アクセス制御、その他の時間的制約のあるイベントなど、重要な機能の正確なタイミングにコントラクトが依存している場合、これは問題を引き起こす可能性があります。
 
-Potential issues that arise from insecure timestamp usage include:
+安全でないタイムスタンプの使用から生じる潜在的な問題には以下があります。
 
-- Timestamp Manipulation: Miners can slightly alter `block.timestamp` to influence time-sensitive logic (e.g., auctions, token distributions, staking rewards).
-- Predictable Randomness: Using `block.number` or `block.difficulty` as a source of randomness allows attackers to predict and manipulate outcomes.
-- Exploitable Access Control: Contracts that rely on block timestamps for permissions or actions may be bypassed if timestamps are adjusted.
+- タイムスタンプ操作: マイナーは `block.timestamp` をわずかに改変して、時間的制約のあるロジック (オークション、トークン配布、ステーキング報酬など) に影響を及ぼす可能性があります。
+- 予測可能なランダム性: ランダム性のソースとして `block.number` や `block.difficulty` を使用すると、攻撃者は結果を予測し、操作できます。
+- 悪用可能なアクセス制御: パーミッションやアクションについてブロックのタイムスタンプに頼るコントラクトは、タイムスタンプが調整されると、バイパスされる可能性があります。
 
 ## 対策
 - **Avoid timestamp-based conditions**: Where possible, use block numbers instead of timestamps. Block numbers are more reliable and less subject to manipulation.
