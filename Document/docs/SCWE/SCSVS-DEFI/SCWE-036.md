@@ -30,7 +30,7 @@ status: new
 - **徹底的にテストする:** 広範なテストを実施し、操作がガス制限内に収まるようにします。
 
 ## 事例
-- **Inadequate Gas Handling**
+- **不適切なガス処理**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -45,13 +45,13 @@ status: new
     }
     ```
 
-**Issue:** Processes large arrays in a single transaction, which can fail due to out-of-gas errors.
+**問題点:** 単一のトランザクションで大きな配列を処理するため、out-of-gas エラーにより失敗する可能性があります。
 
-Why is this a problem?
-- If recipients.length is too large, the transaction fails.
-- Attackers can exploit this by submitting large recipient lists, causing a DoS attack.
+なぜこれが問題なのですか？
+- recipients.length が大きすぎる場合、トランザクションは失敗します。
+- 攻撃者はこれを悪用し、大きな受信者リストを送信して、DoS 攻撃を引き起こす可能性があります。
 
-- **Adequate Gas Handling**
+- **適切なガス処理**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -67,10 +67,10 @@ Why is this a problem?
         }
     }
     ```
-✔️ Fix: Uses gasleft() to gracefully exit before running out of gas, ensuring some transfers complete.
-Why is this better?
-✅ Prevents complete transaction failure by handling only as many iterations as gas allows.
-✅ Reduces DoS risk by allowing partial execution instead of reverting everything.
-✅ Enables retrying to complete all operations over multiple calls.
+✔️ 修正内容: gasleft() を使用して、ガスがなくなる前に適切に終了し、一部の転送が完了するようにしています。  
+なぜこれが適切なのですか？  
+✅ ガスが許容する回数分だけ反復処理することで、トランザクションの完全な失敗を防ぎます。  
+✅ すべてを元に戻すのではなく、部分的な実行を許容することで DoS リスクを軽減します。  
+✅ 複数の呼び出しにわたってすべての操作を完了するための再試行を可能にします。
 
 ---
