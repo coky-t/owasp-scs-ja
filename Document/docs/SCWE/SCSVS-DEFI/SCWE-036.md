@@ -25,9 +25,9 @@ status: new
 
 
 ## 対策
-- **Optimize gas usage:** Minimize gas consumption in contract operations.
-- **Avoid unbounded loops:** Ensure loops have a fixed upper limit.
-- **Test thoroughly:** Conduct extensive testing to ensure operations stay within gas limits.
+- **ガス使用を最適化する:** コントラクト操作でのガス消費を最小限に抑えます。
+- **境界のないループを避ける:** ループが固定の上限を持つようにします。
+- **徹底的にテストする:** 広範なテストを実施し、操作がガス制限内に収まるようにします。
 
 ## 事例
 - **Inadequate Gas Handling**
