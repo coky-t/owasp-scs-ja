@@ -54,7 +54,7 @@ contract Example {
 ```
 
 ### 空の配列の処理
-- 問題: 関数は配列が空ではないことを想定しており、out-of-bounds エラーにつながります。
+- 問題点: 関数は配列が空ではないことを想定しており、out-of-bounds エラーにつながります。
 
 ```solidity
 contract Example {
