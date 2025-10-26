@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [CWE-400 Link](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Inadequate gas limit handling occurs when a contract fails to manage gas constraints efficiently, leading to performance bottlenecks and denial-of-service (DoS) risks. Poor gas handling can result in:
-- Unoptimized execution: Unnecessary gas-heavy computations increasing costs.
-- DoS vulnerabilities: Transactions failing due to excessive gas usage, blocking operations.
-- Inefficient batch processing: Overloaded loops or storage updates causing out-of-gas (OOG) errors.
+不適切なガス制限処理は、コントラクトがガス制約を効率的に管理できない場合に発生し、パフォーマンスのボトルネックやサービス拒否 (DoS) のリスクにつながります。不十分なガス管理は以下につながる可能性があります。
+- 最適化されていない実行: 不要なガス不可の高い計算がコストを増加します。
+- DoS 脆弱性: 過剰なガス使用によりトランザクションが失敗し、操作をブロックします。
+- 非効率なバッチ処理: 過負荷のループやストレージ更新が out-of-gas (OOG) エラーを引き起こします。
 
-Unlike **SCWE-032**, which focuses on the protocol-level block gas limit, this issue arises due to poor gas management at the smart contract level.
+プロトコルレベルのブロックガス制限に焦点を当てた **SCWE-032** とは異なり、この問題はスマートコントラクトレベルでの不十分なガス管理により発生します。
 
 
 ## 対策
