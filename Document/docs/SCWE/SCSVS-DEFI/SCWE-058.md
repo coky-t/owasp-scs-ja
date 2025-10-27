@@ -19,7 +19,7 @@ status: new
 ブロックガス制限でのサービス拒否 (DoS) は、コントラクトの実行が大量のガスに依存するように設計されており、ブロックガス制限を超える可能性がある場合に発生します。これは、トランザクションが失敗し、コントラクトが利用不可能または使用不可能になる可能性があります。攻撃者は、過剰なガスを消費するトランザクションを作成することでこの脆弱性を悪用し、実質的にコントラクトをロックしたり、正常な操作を妨害する可能性があります。
 
 ## 対策
-To mitigate this vulnerability, ensure that operations that depend on gas consumption are efficient and that gas limits are taken into account when designing contract logic. Avoid functions that require large amounts of gas to complete, and consider implementing features like batching or chunking operations to spread the gas usage across multiple transactions.
+この脆弱性を緩和するには、ガス消費に依存する操作が効率的であり、コントラクトロジックの設計時にガス制限が考慮されているようにします。完了に大量のガスを必要とする関数を避け、バッチ処理やチャンク処理などの機能を実装して、ガス使用を複数のトランザクションに分散することを検討します。
 
 ### 脆弱なコントラクトの例
 ```solidity
