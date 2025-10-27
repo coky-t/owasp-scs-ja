@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Denial of Service (DoS) with block gas limit occurs when a contract is designed in such a way that its execution depends on a large amount of gas, potentially exceeding the block gas limit. This can result in the transaction failing, causing the contract to become unavailable or unusable. Attackers can exploit this vulnerability by creating transactions that consume excessive gas, effectively locking the contract or preventing normal operation.
+ブロックガス制限でのサービス拒否 (DoS) は、コントラクトの実行が大量のガスに依存するように設計されており、ブロックガス制限を超える可能性がある場合に発生します。これは、トランザクションが失敗し、コントラクトが利用不可能または使用不可能になる可能性があります。攻撃者は、過剰なガスを消費するトランザクションを作成することでこの脆弱性を悪用し、実質的にコントラクトをロックしたり、正常な操作を妨害する可能性があります。
 
 ## 対策
 To mitigate this vulnerability, ensure that operations that depend on gas consumption are efficient and that gas limits are taken into account when designing contract logic. Avoid functions that require large amounts of gas to complete, and consider implementing features like batching or chunking operations to spread the gas usage across multiple transactions.
