@@ -20,7 +20,7 @@ status: new
 不十分なガスグリーフィングは、攻撃者が意図的に不十分なガスでトランザクションを送信し、コントラクトを失敗するように強制することで発生します。これはリソース消費の問題や、コントラクトや他のユーザーに対する潜在的なサービス拒否につながる可能性があります。コントラクトが外部呼び出しに依存していたり、他のコントラクトとやり取りしていてガス推定を適切に処理していない場合、そのような攻撃に対して脆弱になる可能性があります。
 
 ## 対策
-To mitigate this vulnerability, ensure that gas estimation and proper gas limits are handled when performing contract calls, especially when interacting with other contracts. Additionally, use mechanisms to handle failures gracefully, such as revert messages and checks for sufficient gas before initiating important operations.
+この脆弱性を緩和するには、コントラクト呼び出し時、特に他のコントラクトとやり取りする際に、ガス推定と適切なガス制限が処理されるようにします。さらに、重要な操作を開始する前にメッセージを元に戻したり、十分なガスがあることをチェックするなど、障害を適切に処理するメカニズムを使用します。
 
 ### 脆弱なコントラクトの例
 ```solidity
