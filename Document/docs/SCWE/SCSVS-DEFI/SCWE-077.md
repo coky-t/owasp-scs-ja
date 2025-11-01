@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- **CWE-770: Allocation of Resources Without Limits or Throttling**
+- **CWE-770: Allocation of Resources Without Limits or Throttling**  
   [https://cwe.mitre.org/data/definitions/770.html](https://cwe.mitre.org/data/definitions/770.html)
 
 ## 説明
-Lack of rate limiting in a smart contract can lead to **Denial of Service (DoS)** attacks, excessive gas consumption, or contract state bloating. Without a mechanism to restrict the frequency of function calls, an attacker can flood the contract with transactions, causing delays, increased gas fees, or complete unavailability of critical functions.  
+スマートコントラクトのレート制限の欠如は **サービス拒否 (DoS)** 攻撃、過剰なガス消費、コントラクト状態の肥大化につながる可能性があります。関数呼び出しの頻度を制限するメカニズムなしでは、攻撃者はコントラクトをトランザクションであふれさせ、遅延、ガス料金の増加、重要な機能の完全な利用不可を引き起こす可能性があります。
 
-This vulnerability is particularly dangerous in **DeFi protocols**, where unlimited function calls could drain funds, abuse governance mechanisms, or overload on-chain processing.  
+この脆弱性は特に **DeFi プロトコル** において危険であり、制限のない関数呼び出しは、資金を流出したり、ガバナンスメカニズムを悪用したり、オンチェーン処理を過負荷にする可能性があります。
 
 ## 対策
 - Implement **rate-limiting mechanisms** such as **time-based constraints** (e.g., requiring a cooldown period between calls).  
