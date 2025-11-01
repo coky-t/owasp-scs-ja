@@ -70,9 +70,9 @@ contract SecureExample {
     }
 }
 ```
-**Why is this safe?**
-- Tracks request timestamps, resetting counts after a fixed period.
-- Restricts excessive calls, preventing abuse and DoS attacks.
-- Efficient state management, reducing unnecessary storage costs.
+**なぜこれが安全なのか？**
+- リクエストのタイムスタンプを追跡して、一定期間後にカウントをリセットします。
+- 過剰な呼び出しを制限して、悪用や DoS 攻撃を防止します。
+- 効率的な状態管理で、不要なストレージコストを削減します。
 
-**By enforcing rate limits, contracts can prevent spam attacks and ensure fair access to on-chain resources.**
+**レート制限を適用することで、コントラクトはスパム攻撃を防ぎ、オンチェーンリソースへの公平なアクセスを確保できます。**
