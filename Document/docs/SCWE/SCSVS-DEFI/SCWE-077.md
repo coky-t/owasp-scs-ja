@@ -38,10 +38,10 @@ contract Example {
 }
 ```
 
-**Why is this vulnerable?**
-- No restrictions on how frequently a user can call `request()`.
-- An attacker can spam transactions, leading to high gas costs and DoS.
-- Storage bloat from excessive `userRequests` mappings.
+**なぜこれが脆弱なのか？**
+- ユーザーが `request()` を呼び出すことができる頻度に制限がありません。
+- 攻撃者はトランザクションをスパムして、ガスコストの上昇や DoS につながる可能性があります。
+- 過剰な `userRequests` マッピングによりストレージが肥大化します。
 
 ### 修正したコントラクトの例
 
