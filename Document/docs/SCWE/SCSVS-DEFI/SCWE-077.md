@@ -21,9 +21,9 @@ status: new
 この脆弱性は特に **DeFi プロトコル** において危険であり、制限のない関数呼び出しは、資金を流出したり、ガバナンスメカニズムを悪用したり、オンチェーン処理を過負荷にする可能性があります。
 
 ## 対策
-- Implement **rate-limiting mechanisms** such as **time-based constraints** (e.g., requiring a cooldown period between calls).  
-- Use **counters with expiration timestamps** to track and restrict repetitive actions.  
-- Introduce **gas fees or staking requirements** to deter spam transactions.  
+- **時間ベースの制約** (呼び出しの間にクールダウン期間を要求するなど) などの **レート制限メカニズム** を実装します。
+- **有効期限タイムスタンプ付きカウンタ** を使用して、反復的なアクションを追跡および制限します。
+- **ガス料金またはステーキング要件** を導入して、スパムトランザクションを阻止します。
 
 ### 脆弱なコントラクトの例
 ```solidity
