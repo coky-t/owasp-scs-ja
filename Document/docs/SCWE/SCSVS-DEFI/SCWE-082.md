@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Gas management is crucial in smart contracts to ensure that they do not run out of gas or cause excessive consumption. If gas consumption is not properly controlled, a contract can fail to execute or can be exploited by attackers to cause denial of service (DoS).
+ガス管理は、スマートコントラクトにおいて、ガス不足や過剰消費にならないようにするために極めて重要です。ガス消費が適切に管理されていない場合、コントラクトは実行に失敗したり、攻撃者に悪用されてサービス拒否 (DoS) を引き起こす可能性があります。
 
 ## 対策
 Properly estimate the gas required for functions and set appropriate gas limits. Use `require` or other mechanisms to handle gas consumption failures and ensure that gas usage remains within acceptable bounds.
