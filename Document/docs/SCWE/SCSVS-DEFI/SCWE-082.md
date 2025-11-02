@@ -19,7 +19,7 @@ status: new
 ガス管理は、スマートコントラクトにおいて、ガス不足や過剰消費にならないようにするために極めて重要です。ガス消費が適切に管理されていない場合、コントラクトは実行に失敗したり、攻撃者に悪用されてサービス拒否 (DoS) を引き起こす可能性があります。
 
 ## 対策
-Properly estimate the gas required for functions and set appropriate gas limits. Use `require` or other mechanisms to handle gas consumption failures and ensure that gas usage remains within acceptable bounds.
+関数に必要なガスを適切に推定して、適切なガス制限を設定します。`require` などのメカニズムを使用して、ガス消費の失敗に対処し、ガス使用が許容範囲内に収まるようにします。
 
 ### 脆弱なコントラクトの例
 ```solidity
