@@ -22,9 +22,9 @@ status: new
 - 資金やデータの喪失。
 
 ## 対策
-- **Use encryption:** Encrypt sensitive data before transmission.
-- **Leverage secure protocols:** Use HTTPS or other secure communication protocols.
-- **Avoid transmitting sensitive data:** Minimize the transmission of sensitive data whenever possible.
+- **暗号化を使用する:** 転送前に機密データを暗号化します。
+- **安全なプロトコルを活用する:** HTTPS またはその他の安全な通信プロトコルを使用します。
+- **機密データの転送を避ける:** 可能な限り、機密データの転送を最小限に抑えます。
 
 ## 事例
 - **Unsecured Data Transmission**
