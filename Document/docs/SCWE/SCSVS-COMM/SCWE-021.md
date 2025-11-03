@@ -27,7 +27,7 @@ status: new
 - **機密データの転送を避ける:** 可能な限り、機密データの転送を最小限に抑えます。
 
 ## 事例
-- **Unsecured Data Transmission**
+- **安全でないデータ転送**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Secured Data Transmission**
+- **安全なデータ転送**
     ```solidity
     pragma solidity ^0.8.0;
 
