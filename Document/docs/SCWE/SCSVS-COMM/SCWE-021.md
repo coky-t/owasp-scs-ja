@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-319: Cleartext Transmission of Sensitive Information
+- CWE-319: Cleartext Transmission of Sensitive Information  
   [CWE-319 Link](https://cwe.mitre.org/data/definitions/319.html)
 
 ## 説明
-Unsecured data transmission refers to the transmission of sensitive information, such as private keys or user data, without encryption. This can lead to:
-- Interception of sensitive data by malicious actors.
-- Exploitation of vulnerabilities in the contract.
-- Loss of funds or data.
+安全でないデータ転送は、秘密鍵やユーザーデータなどの機密情報を暗号化なしで転送することを指します。これは以下につながる可能性があります。
+- 悪意のある人物による機密データの傍受。
+- コントラクトの脆弱性の悪用。
+- 資金やデータの喪失。
 
 ## 対策
 - **Use encryption:** Encrypt sensitive data before transmission.
