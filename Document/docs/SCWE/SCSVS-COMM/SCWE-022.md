@@ -22,12 +22,12 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Use nonces:** Include a unique nonce in each message to prevent reuse.
-- **Validate timestamps:** Ensure messages are only valid for a limited time.
-- **Implement replay protection:** Use established libraries or mechanisms to prevent replay attacks.
+- **ノンスを使用する:** 再使用を防ぐために、各メッセージに一意のノンスを含めます。
+- **タイムスタンプを検証する:** メッセージが限られた時間のみ有効であることを確認します。
+- **リプレイ保護を実装する:** リプレイ攻撃を防ぐために、確立されたライブラリまたはメカニズムを使用します。
 
 ## 事例
-- **Vulnerable to Replay Attacks**
+- **リプレイ攻撃に脆弱**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Protected Against Replay Attacks**
+- **リプレイ攻撃に対して保護済み**
     ```solidity
     pragma solidity ^0.8.0;
 
