@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-294: Authentication Bypass by Capture-replay
+- CWE-294: Authentication Bypass by Capture-replay  
   [CWE-294 Link](https://cwe.mitre.org/data/definitions/294.html)
 
 ## 説明
-Message replay vulnerabilities occur when an attacker can reuse a valid message or transaction to perform unauthorized actions. This can lead to:
-- Unauthorized access to sensitive functions.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+メッセージリプレイの脆弱性は、攻撃者が有効なメッセージやトランザクションを再使用して不正なアクションを実行できる場合に発生します。これは以下につながる可能性があります。
+- 機密機能への不正アクセス。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Use nonces:** Include a unique nonce in each message to prevent reuse.
