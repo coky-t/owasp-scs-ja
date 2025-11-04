@@ -22,12 +22,12 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Use signatures:** Require signed messages for critical actions.
-- **Validate inputs:** Ensure all messages are properly validated before processing.
-- **Implement secure communication:** Use secure protocols and libraries for communication.
+- **署名を使用する:** 重要なアクションには署名付きメッセージを要求します。
+- **入力を検証する:** 処理前にすべてのメッセージが適切に検証されていることを確認します。
+- **安全な通信を実装する:** 通信委は安全なプロトコルとライブラリを使用します。
 
 ## 事例
-- **Lack of Authenticity**
+- **真正性の欠如**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Authentic Communication**
+- **真正の通信**
     ```solidity
     pragma solidity ^0.8.0;
 
