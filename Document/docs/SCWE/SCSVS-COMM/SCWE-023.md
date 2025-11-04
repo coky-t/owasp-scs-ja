@@ -1,5 +1,5 @@
 ---
-title: コミュニケーションの真正性の欠如 (Lack of Communication Authenticity)
+title: 通信の真正性の欠如 (Lack of Communication Authenticity)
 id: SCWE-023
 alias: lack-of-communication-authenticity
 platform: []
@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Lack of communication authenticity refers to the failure to verify the authenticity of messages or transactions. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+通信の真正性の欠如は、メッセージやトランザクションの真正性を検証できないことを指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Use signatures:** Require signed messages for critical actions.
