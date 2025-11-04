@@ -182,7 +182,7 @@
   - SCSVS-COMM
     - [SCWE-021 安全でないデータ転送 (Unsecured Data Transmission)](Document/docs/SCWE/SCSVS-COMM/SCWE-021.md)
     - [SCWE-022 メッセージリプレイの脆弱性 (Message Replay Vulnerabilities)](Document/docs/SCWE/SCSVS-COMM/SCWE-022.md)
-    - [SCWE-023 コミュニケーションの真正性の欠如 (Lack of Communication Authenticity)](Document/docs/SCWE/SCSVS-COMM/SCWE-023.md)
+    - [SCWE-023 通信の真正性の欠如 (Lack of Communication Authenticity)](Document/docs/SCWE/SCSVS-COMM/SCWE-023.md)
     - [SCWE-035 安全でない Delegatecall の使用 (Insecure Delegatecall Usage)](Document/docs/SCWE/SCSVS-COMM/SCWE-035.md)
     - [SCWE-042 外部呼び出しの安全でない使用 (Insecure Use of External Calls)](Document/docs/SCWE/SCSVS-COMM/SCWE-042.md)
     - [SCWE-063 安全でないイベント発行 (Insecure Event Emission)](Document/docs/SCWE/SCSVS-COMM/SCWE-063.md)
