@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-250: Execution with Unnecessary Privileges
+- CWE-250: Execution with Unnecessary Privileges  
   [CWE-250 Link](https://cwe.mitre.org/data/definitions/250.html)
 
 ## 説明
-Insecure delegatecall usage refers to vulnerabilities that arise when using `delegatecall` to execute code from another contract. This can lead to:
-- Unauthorized access to sensitive functions.
-- Exploitation of vulnerabilities in the called contract.
-- Loss of funds or data.
+安全でない delegatecall の使用は、`delegatecall` を使用して別のコントラクトからコードを実行する際に生じる脆弱性を指します。これは以下につながる可能性があります。
+- 機密性の高い関数への不正アクセス。
+- 呼び出されたコントラクトの脆弱性の悪用。
+- 資金やデータの喪失。
 
 ## 対策
 - **Validate targets:** Ensure the target contract is trusted and secure.
