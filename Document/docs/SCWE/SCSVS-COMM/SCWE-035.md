@@ -27,7 +27,7 @@ status: new
 - **徹底的にテストする:** 広範なテストを実施して、`delegatecall` が安全に使用されることを確認します。
 
 ## 事例
-- **Insecure Delegatecall Usage**
+- **安全でない Delegatecall の使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,10 +38,10 @@ status: new
         }
     }
     ```
-- Anyone can call `executeDelegatecall()` with a malicious contract, which will execute arbitrary code within the caller’s context.
-- Can lead to theft of funds, privilege escalation, or state corruption.
+- 誰でも悪意のあるコントラクトで `executeDelegatecall()` を呼び出すことができ、呼び出し元のコンテキスト内で任意のコードを実行します。
+- 資金の窃取、権限昇格、状態破損につながる可能性があります。
 
-- **Secure Delegatecall Usage**
+- **安全な Delegatecall の使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -77,7 +77,7 @@ status: new
     }
     ```
 
-Fixes:
-- Only the contract owner can update trustedTarget.
-- Validation of trusted target before executing delegatecall.
-- Prevents arbitrary execution by restricting calls to trustedTarget.
+修正:
+- コントラクト所有者のみが trustedTarget を更新できます。
+- delegatecall を実行する前に trustedTarget を検証します。
+- 呼び出しを trustedTarget に制限することで、任意の実行を防止します。
