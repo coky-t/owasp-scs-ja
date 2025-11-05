@@ -22,9 +22,9 @@ status: new
 - 資金やデータの喪失。
 
 ## 対策
-- **Validate targets:** Ensure the target contract is trusted and secure.
-- **Restrict permissions:** Restrict `delegatecall` usage to trusted addresses.
-- **Test thoroughly:** Conduct extensive testing to ensure `delegatecall` is used securely.
+- **ターゲットを検証する:** ターゲットコントラクトが信頼でき、安全であることを確認します。
+- **パーミッションを制限する:** `delegatecall` の使用を信頼できるアドレスに制限します。
+- **徹底的にテストする:** 広範なテストを実施して、`delegatecall` が安全に使用されることを確認します。
 
 ## 事例
 - **Insecure Delegatecall Usage**
