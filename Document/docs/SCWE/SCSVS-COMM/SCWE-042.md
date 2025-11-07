@@ -22,9 +22,9 @@ status: new
 - 呼び出されたコントラクトの脆弱性の悪用。
 
 ## 対策
-- **Validate targets:** Ensure the target contract is trusted and secure.
-- **Use secure libraries:** Leverage well-audited libraries for external calls.
-- **Test thoroughly:** Conduct extensive testing to ensure external calls are secure.
+- **ターゲットを検証する:** ターゲットコントラクトが信頼でき、安全であることを確認します。
+- **安全なライブラリを使用する:** 外部呼び出しには十分に監査されたライブラリを活用します。
+- **徹底的にテストする:** 広範なテストを実施して、外部呼び出しが安全であることを確認します。
 
 ## 事例
 - **Insecure External Call**
