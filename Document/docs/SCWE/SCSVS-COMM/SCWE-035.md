@@ -77,7 +77,7 @@ status: new
     }
     ```
 
-修正:
+修正内容:
 - コントラクト所有者のみが trustedTarget を更新できます。
 - delegatecall を実行する前に trustedTarget を検証します。
 - 呼び出しを trustedTarget に制限することで、任意の実行を防止します。
