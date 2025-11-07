@@ -27,7 +27,7 @@ status: new
 - **徹底的にテストする:** 広範なテストを実施して、外部呼び出しが安全であることを確認します。
 
 ## 事例
-- **Insecure External Call**
+- **安全でない外部呼び出し**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -39,7 +39,7 @@ status: new
     }
     ```
 
-- **Secure External Call**
+- **安全な外部呼び出し**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -66,10 +66,10 @@ status: new
         }
     }
     ```
-Why is this secure?
-- No arbitrary data input—Only predefined `function executeAction(uint256)` can be called.
-- Access control added—Only the owner can execute external calls.
-- Interface-based call—Avoids raw `.call()`, reducing attack vectors.
-- Immutable trusted address—Prevents runtime modifications to the target contract.
+なぜこれが安全なのですか？
+- 任意のデータ入力なし - 事前定義済みの `function executeAction(uint256)` のみを呼び出せます。
+- アクセス制御の追加 - 所有者のみが外部呼び出しを実行できます。
+- インタフェースベースの呼び出し - 生の `.call()` を避けて、攻撃ベクトルを軽減します。
+- 不変の信頼できるアドレス — ターゲットコントラクトへの実行時改変を防ぎます。
 
 ---
