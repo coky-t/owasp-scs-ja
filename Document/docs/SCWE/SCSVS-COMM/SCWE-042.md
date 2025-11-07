@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-829: Inclusion of Functionality from Untrusted Control Sphere
+- CWE-829: Inclusion of Functionality from Untrusted Control Sphere  
   [CWE-829 Link](https://cwe.mitre.org/data/definitions/829.html)
 
 ## 説明
-Insecure use of external calls refers to vulnerabilities that arise when calling external contracts without proper validation or safeguards. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in the called contract.
+外部呼び出しの安全でない使用は、適切なバリデーションやセーフガードなしで外部コントラクトを呼び出す際に生じる脆弱性を指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- 呼び出されたコントラクトの脆弱性の悪用。
 
 ## 対策
 - **Validate targets:** Ensure the target contract is trusted and secure.
