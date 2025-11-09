@@ -26,7 +26,7 @@ Solidity のイベントは、コントラクトのアクティビティのロ�
 
 ## 対策
 - トークンの転送、所有者の変更、コントラクトのアップグレードなど、すべての重要な状態変化に対してイベントを発行します。
-- イベントにログ記録されたデータが実際のコントラクト状態を正確に表していることを確認します。
+- イベントにログ記録されたデータが実際のコントラクト状態を正確に表していることを確保します。
 - 秘密鍵、認証に使用されるハッシュ、機密性の高いビジネスロジックなどの機密情報をログ記録することは避けます。
 
 ### 脆弱なコントラクトの例
@@ -51,8 +51,8 @@ contract Example {
 ```
 
 ### 脆弱なコードの問題点
-- The Withdraw event logs `_amount`, which is the requested `withdrawal` amount, but if the transfer fails (due to gas limits, reentrancy, or an external issue), the event still logs it as if the withdrawal happened.
-- If an attacker exploits a discrepancy between event logs and actual state changes, they could mislead users, external indexers, or off-chain services.
+- Withdraw イベントは、要求された `withdrawal` 金額である `_amount` をログ記録しますが、転送が失敗する場合 (ガス制限、再入可能性、または外部の問題により)、イベントは依然として引き落としが発生したかのようにログ記録します。
+- 攻撃者がイベントログと実際の状態変化の間の不一致を悪用すると、ユーザー、外部インデクサー、オフチェーンサービスを誤解される可能性があります。
 
 ### 修正したコントラクトの例
 
@@ -82,7 +82,7 @@ contract Example {
     }
 }
 ```
-### 安全なコードの修正点
-- Uses `call{value: _amount}("")` to send funds safely and ensures success before updating the balance.
-- Calculates the actual withdrawn amount `(beforeBalance - afterBalance)` to ensure accurate logging.
-- Prevents false event emissions by only logging an event if the transaction succeeds.
+### 安全なコードの修正内容
+- `call{value: _amount}("")` を使用して資金を安全に送金し、残高を更新する前に送金が成功したことを確認します。
+- 実際の引き落とし金額を `(beforeBalance - afterBalance)` で計算し、正確なログ記録を確保します。
+- トランザクションが成功した場合にのみイベントをログ記録することで、間違ったイベント発行を防ぎます。
