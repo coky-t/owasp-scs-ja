@@ -25,9 +25,9 @@ Solidity のイベントは、コントラクトのアクティビティのロ�
 イベントを適切に処理できないと、コントラクトの監査、デバッグ、外部監査ツールに影響を及ぼし、異常検出やコントラクト状態の正確な追跡が困難になります。
 
 ## 対策
-- Emit events for all critical state changes, such as token transfers, ownership changes, or contract upgrades.  
-- Ensure that the data logged in events accurately represents the actual contract state.  
-- Avoid logging sensitive information such as private keys, hashes used for authentication, or confidential business logic.  
+- トークンの転送、所有者の変更、コントラクトのアップグレードなど、すべての重要な状態変化に対してイベントを発行します。
+- イベントにログ記録されたデータが実際のコントラクト状態を正確に表していることを確認します。
+- 秘密鍵、認証に使用されるハッシュ、機密性の高いビジネスロジックなどの機密情報をログ記録することは避けます。
 
 ### 脆弱なコントラクトの例
 ```solidity
