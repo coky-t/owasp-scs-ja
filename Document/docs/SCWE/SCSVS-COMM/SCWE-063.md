@@ -12,17 +12,17 @@ status: new
 ---
 
 ## 関連
-- CWE-778: Insufficient Logging
+- CWE-778: Insufficient Logging  
   [https://cwe.mitre.org/data/definitions/778.html](https://cwe.mitre.org/data/definitions/778.html)
 
 ## 説明
-Events in Solidity play a critical role in logging contract activity and ensuring transparency. Improper event handling can lead to security risks such as:  
+Solidity のイベントは、コントラクトのアクティビティのログ記録と透明性の確保において重要な役割を果たします。不適切なイベント処理は以下のようなセキュリティリスクにつながる可能性があります。
 
-1. **Missing critical event emissions** – Making external monitoring difficult.  
-2. **Emitting misleading or incorrect data** – Resulting in users or external systems making incorrect assumptions.  
-3. **Logging sensitive information** – Leaking private or security-sensitive data.  
+1. **重要なイベント発行の欠如** – 外部監視が困難になります。
+2. **誤解を招くデータや不正確なデータの発行** – ユーザーまたは外部システムが不正確な想定を行うことにつながります。
+3. **機密情報のログ記録** – プライベートデータやセキュリティ上重要なデータが漏洩します。
 
-Failure to handle events properly can affect contract auditing, debugging, and external monitoring tools, making it difficult to detect anomalies or track contract states correctly.  
+イベントを適切に処理できないと、コントラクトの監査、デバッグ、外部監査ツールに影響を及ぼし、異常検出やコントラクト状態の正確な追跡が困難になります。
 
 ## 対策
 - Emit events for all critical state changes, such as token transfers, ownership changes, or contract upgrades.  
