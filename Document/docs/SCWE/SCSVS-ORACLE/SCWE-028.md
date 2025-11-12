@@ -27,9 +27,9 @@ status: new
 - **サーキットブレーカーを実装する:** 疑わしいアクティビティの場合に操作を停止するメカニズムを追加します。
 
 ## 事例
-- **Vulnerable to Oracle Manipulation**- Exploiting Weak Price Feeds
+- **オラクル操作の脆弱性**- 脆弱な価格フィードの悪用
 
-- Flash Loan-Based Price Manipulation
+- フラッシュローンベースの価格操作
 
     ```solidity
     pragma solidity ^0.8.0;
@@ -58,12 +58,12 @@ status: new
     }
     ```
 
-Why is this vulnerable?
+なぜこれが脆弱なのか？
 
-- Flash loan attack: The attacker can manipulate the price before calling withdraw(), draining funds.
-- No validation mechanism to reject manipulated prices.
+- フラッシュローン攻撃: 攻撃者は withdraw() を呼び出す前に価格を操作し、資金を流出する可能性があります。
+- 操作された価格を拒否するバリデーションメカニズムがありません。
 
-- **Protected Against Oracle Manipulation**- Fixed Code: Using TWAP & Price Guards
+- **オラクル操作に対する保護**- 修正されたコード: TWAP と 価格ガードの使用
 
     ```solidity
     pragma solidity ^0.8.0;
@@ -100,7 +100,7 @@ Why is this vulnerable?
     }
     ```
 
-Fixes:
-- Uses TWAP (Time-Weighted Average Price) instead of relying on instantaneous price updates.
-- Implements price guards to prevent extreme price fluctuations.
+修正内容:
+- 即時の価格更新に依存するのではなく、TWAP (時間加重平均価格) を使用します。
+- 価格ガードを実装して、極端な価格変動を防ぎます。
 ---
