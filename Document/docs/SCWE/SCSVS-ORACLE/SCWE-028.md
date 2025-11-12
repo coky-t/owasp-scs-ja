@@ -22,9 +22,9 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Use decentralized oracles:** Leverage multiple decentralized oracles for price data.
-- **Validate inputs:** Ensure all oracle data is properly validated before use.
-- **Implement circuit breakers:** Add mechanisms to halt operations in case of suspicious activity.
+- **分散型オラクルを使用する:** 価格データに複数の分散型オラクルを活用します。
+- **入力を検証する:** 使用前にすべてのオラクルデータが適切に検証されていることを確保します。
+- **サーキットブレーカーを実装する:** 疑わしいアクティビティの場合に操作を停止するメカニズムを追加します。
 
 ## 事例
 - **Vulnerable to Oracle Manipulation**- Exploiting Weak Price Feeds
