@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Price Oracle manipulation refers to the exploitation of vulnerabilities in price oracles to manipulate contract logic. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+価格オラクル操作は価格オラクルの脆弱性を悪用してコントラクトロジックを操作することを指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Use decentralized oracles:** Leverage multiple decentralized oracles for price data.
