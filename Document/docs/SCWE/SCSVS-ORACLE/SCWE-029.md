@@ -27,7 +27,7 @@ status: new
 - **フォールバックメカニズムを実装する:** 障害発生時にはフォールバックオラクルを使用します。
 
 ## 事例
-- **Single Oracle Source/ Single Point of Failure**
+- **単一のオラクルソース/ 単一障害点**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -48,11 +48,11 @@ status: new
     }
     ```
 
-Why is this vulnerable?
-- If the oracle fails, is compromised, or is manipulated, the contract has no fallback.
-- Attackers could hijack the single oracle and return malicious data.
+なぜこれが脆弱なのか？
+- オラクルに障害が発生したり、侵害されたり、操作された場合、そのコントラクトにはフォールバックがありません。
+- 攻撃者は単一のオラクルを乗っ取り、悪意のあるデータを返す可能性があります。
 
-- **Decentralized Oracle Sources- Using Multiple Oracles & Fallbacks**
+- **分散型オラクルソース - 複数のオラクルとフォールバックの使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -78,8 +78,8 @@ Why is this vulnerable?
         }
     }
     ```
-Fixes:
-- Uses multiple oracles and computes an average to prevent manipulation.
-- If one oracle fails or gets compromised, the contract still functions correctly.
+修正内容:
+- 複数のオラクルを使用し、平均値を計算して、不正操作を防ぎます。
+- 一つのオラクルが障害発生したり、侵害された場合、そのコントラクトは依然として正常に機能します。
 
---
+---
