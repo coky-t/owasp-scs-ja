@@ -22,9 +22,9 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Use multiple oracles:** Leverage multiple decentralized oracles for critical data.
-- **Validate inputs:** Ensure all oracle data is properly validated before use.
-- **Implement fallback mechanisms:** Use fallback oracles in case of failure.
+- **複数のオラクルを使用する:** 重要なデータには複数の分散型オラクルを活用します。
+- **入力を検証する:** すべてのオラクルデータが使用前に適切に検証されていることを確保します。
+- **フォールバックメカニズムを実装する:** 障害発生時にはフォールバックオラクルを使用します。
 
 ## 事例
 - **Single Oracle Source/ Single Point of Failure**
