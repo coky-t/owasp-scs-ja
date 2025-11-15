@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Lack of decentralized oracle sources refers to the reliance on a single oracle for critical data, which can be manipulated or compromised. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+分散型オラクルソースの欠如は、重要なデータを単一のオラクルに依存することを指し、操作や侵害される恐れがあります。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Use multiple oracles:** Leverage multiple decentralized oracles for critical data.
@@ -82,4 +82,4 @@ Fixes:
 - Uses multiple oracles and computes an average to prevent manipulation.
 - If one oracle fails or gets compromised, the contract still functions correctly.
 
----
+--
