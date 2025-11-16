@@ -22,12 +22,12 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Validate updates:** Ensure all oracle data updates are properly validated.
-- **Restrict access:** Restrict update permissions to trusted addresses.
-- **Implement timelocks:** Add delays to oracle updates to allow for review.
+- **更新を検証する:** すべてのオラクルデータ更新が適切に検証されていることを確保します。
+- **アクセスを制限する:** 更新パーミッションを信頼できるアドレスに制限します。
+- **タイムロックを実装する:** オラクル更新に遅延を追加してレビューできるようにします。
 
 ## 事例
-- **Insecure Oracle Updates**
+- **安全でないオラクル更新**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Secure Oracle Updates**
+- **安全なオラクル更新**
     ```solidity
     pragma solidity ^0.8.0;
 
