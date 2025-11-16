@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Insecure oracle data updates refer to the failure to properly validate or secure updates to oracle data. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+安全でないオラクルデータ更新は、オラクルデータの更新を適切に検証または保護していないことを指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Validate updates:** Ensure all oracle data updates are properly validated.
