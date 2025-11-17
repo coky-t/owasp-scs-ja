@@ -14,22 +14,22 @@ status: new
 ## 関連
 
 - **CWE-345**: [Insufficient Verification of Data Authenticity](https://cwe.mitre.org/data/definitions/345.html)
-- **CWE-20**:  [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)
+- **CWE-20**:  [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ---
 
 ## 説明
 
-This weakness occurs when smart contracts consume price oracle data (e.g., from Chainlink) without verifying whether the returned price falls within an expected or trusted range (e.g., `minPrice`/`maxPrice`). Oracles may return fallback floor or ceiling values when actual prices exceed internal limits or when the feed encounters data instability.
+この弱点は、スマートコントラクトが価格オラクルデータ (例: Chainlink から) を、返された価格が想定範囲または信頼できる範囲 (例: `minPrice`/`maxPrice`) 内に収まっているかどうかを検証せずに使用する場合に発生します。オラクルは、実際の価格が内部制限を超えた場合、またはフィードがデータの不安定性に遭遇した場合に、フォールバックの下限値または上限値を返すことがあります。
 
-Failing to detect and reject such edge-case values can result in incorrect or exploitable logic paths in smart contracts. This weakness may allow attackers to:
+このようなエッジケース値を検出して拒否できないと、スマートコントラクトに不正確または悪用可能なロジックパスをもたらす可能性があります。この弱点は攻撃者に以下を許す可能性があります。
 
-- Trigger mispriced swaps or asset conversions.
-- Exploit collateralization thresholds.
-- Manipulate auction pricing or tiered reward structures.
-- Influence governance systems based on price weightings.
+- 不適切な価格のスワップや資産変換をトリガーする。
+- 担保閾値を悪用する。
+- オークション価格や段階的報酬体系を操作する。
+- 価格加重に基づくガバナンスシステムに影響を与える。
 
-These issues are especially dangerous during periods of high volatility or partial oracle outages, where fallback values may be automatically returned.
+これらの問題はボラティリティが高い時期や部分的なオラクル停止の時期には特に危険であり、フォールバック値が自動的に返される可能性があります。
 
 ---
 
