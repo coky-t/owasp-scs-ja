@@ -35,11 +35,11 @@ status: new
 
 ## 対策
 
-To mitigate this risk:
+このリスクを緩和するには:
 
-- Always verify that the oracle-provided price lies within an expected range.
-- Check whether the returned value is a fallback boundary by comparing it against known `minPrice`/`maxPrice` values.
-- Monitor and log unusual oracle values for off-chain alerts and incident response.
+- オラクルが提供する価格が想定範囲内であることを常に検証します。
+- 返される値を既知の `minPrice`/`maxPrice` 値と比較し、フォールバック境界にあるかどうかをチェックします。
+- オフチェーンアラートやインシデント対応のために、異常なオラクル値を監視してログ記録します。
 
 ---
 
