@@ -45,7 +45,7 @@ status: new
 
 ## 事例
 
-- Vulnerable contract 
+- 脆弱なコントラクト
 
 ```solidity
 (int256 price,,,) = AggregatorV3Interface(oracle).latestRoundData();
@@ -53,7 +53,7 @@ status: new
 // Uses price directly without checking for boundary values
 uint256 tokenAmount = uint256(price) * userInput;
 ```
-- Fixed Contract 
+- 修正したコントラクト
 
 ```solidity
 (int256 price,,,) = AggregatorV3Interface(oracle).latestRoundData();
@@ -63,7 +63,7 @@ require(price > minPrice && price < maxPrice, "Price out of expected bounds");
 
 uint256 tokenAmount = uint256(price) * userInput;
 ```
-This ensures that the contract rejects unexpected oracle values that might be returned during errors or manipulation attempts.
+これは、エラーや操作の試行時に返される可能性のある予期しないオラクル値をコントラクトが拒否するようになります。
 
 ## 参考情報
 - **Chainlink Docs**: [Chainlink Price Feeds Documentation](https://docs.chain.link/data-feeds)
