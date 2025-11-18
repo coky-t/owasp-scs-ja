@@ -25,23 +25,23 @@ status: new
 これは、正確で最新のデータフィードに依存する DeFi プロトコルやスマートコントラクトのセキュリティに深刻な影響を及ぼす可能性があります。
 
 ## 対策
-- **Validate `answer` field:** Ensure the value returned is greater than zero and not malformed.
-- **Check `answeredInRound >= roundId`:** Confirms that the data is not from a stale round.
-- **Verify `timestamp != 0`:** Ensures that the oracle actually returned a complete result.
+- **`answer` フィールドを検証する:** 返された値がゼロより大きく、不正な形式でないことを確認します。
+- **`answeredInRound >= roundId` をチェックする:** データが古いラウンドのものではないことを確認します。
+- **`timestamp != 0` を検証する:** オラクルが実際に完全な結果を返したことを確認します。
 
-Additional best practices include:
-- Using fallback mechanisms or thresholds for deviation checks.
-- Halting sensitive functions if oracle data is suspect or missing.
+その他のベストプラクティスは以下のとおりです。
+- フォールバックメカニズムまたは逸脱チェックの閾値を使用する。
+- オラクルデータが疑わしい場合、または欠落している場合は、機密性の高い機能を停止する。
 
 ## 事例
 
-- **❌ Vulnerable Code (No Response Validation)**  
+- **❌ 脆弱なコード (レスポンスバリデーションなし)**  
     ```solidity
     (, int256 answer,,,) = AggregatorV3Interface(oracle).latestRoundData();
     require(uint256(answer) > 0, "Zero price"); // Minimal check only
     ```
 
-- **✅ Secure Code (With Full Oracle Validation)**  
+- **✅ 安全なコード (フルオラクルバリデーションあり)**  
     ```solidity
     (uint80 roundID, int256 answer,, uint256 timestamp, uint80 answeredInRound) = 
         AggregatorV3Interface(oracle).latestRoundData();
