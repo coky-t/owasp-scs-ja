@@ -13,16 +13,16 @@ status: new
 
 ## 関連
 - **CWE-345**: [Insufficient Verification of Data Authenticity](https://cwe.mitre.org/data/definitions/345.html)
-- **CWE-20**:  [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)
+- **CWE-20**:  [Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-This weakness occurs when smart contracts consume data from oracles (e.g., Chainlink) without validating critical fields in the response such as `answeredInRound`, `timestamp`, or even the `answer` itself. Failing to validate these fields can lead to:
+この弱点は、スマートコントラクトがオラクル (Chainlink など) からのデータを使用する際に、`answeredInRound`、`timestamp`、あるいは `answer` 自体などのレスポンス内の重要なフィールドを検証しない場合に発生します。これらのフィールドを検証しないと、以下につながる可能性があります。
 
-- Use of stale price data from old oracle rounds.
-- Acceptance of incomplete oracle responses (e.g., `timestamp == 0`).
-- Execution based on invalid or zero-priced data.
+- 古いオラクルラウンドからの古い価格データの使用。
+- 不完全なオラクルレスポンス (`timestamp == 0` など) の受け入れ。
+- 無効または価格ゼロのデータに基づく実行。
 
-This can severely affect the security of DeFi protocols or any smart contract relying on accurate, fresh data feeds.
+これは、正確で最新のデータフィードに依存する DeFi プロトコルやスマートコントラクトのセキュリティに深刻な影響を及ぼす可能性があります。
 
 ## 対策
 - **Validate `answer` field:** Ensure the value returned is greater than zero and not malformed.
