@@ -20,15 +20,15 @@ status: new
 この問題は、スマートコントラクトがトークン値と価格フィードを含む演算を、異なるソース間 (例: 小数点以下の桁数が変化する ERC-20 トークンと、小数点以下の 8 桁で固定された価格を持つ Chainlink オラクル) で小数点以下の桁を適切に揃えずに実行する場合に発生します。計算前に小数点以下の桁数を正規化しないと、結果が大幅に膨張したり収縮することにつながり、ユーザーに過剰な請求、過小な支払い、あるいは経済的搾取を引き起こす可能性があります。
 
 ## 影響
-Smart contracts often rely on cross-asset conversions, such as paying fees in tokens or using collateralization logic involving price feeds. Improper decimal handling in these calculations may:
-- Lead to gross overcharging or underpayment.
-- Introduce systemic financial imbalances in vaults or accounting logic.
-- Enable economic exploits by arbitraging rounding errors or precision gaps.
-- Remain undetected during tests if decimals coincidentally align.
-This issue is especially critical when:
-- ERC-20 tokens with non-18 decimals (e.g., USDC = 6) are involved.
-- Chainlink oracles return 8-decimal fixed-point prices.
-- Arithmetic mixes native ETH values (in 18 decimals) with token values or prices.
+スマートコントラクトは、トークンでの手数料支払いや、価格フィードを含む担保ロジックの使用など、資産間の変換にしばしば依存しています。これらの計算のおける不適切な小数点桁数の処理は以下の可能性があります。
+- 過剰請求や過少支払いにつながる。
+- ヴォールトまたは会計ロジックにシステム的な金融不均衡をもたらす。
+- 丸め誤差や精度のギャップを裁定取引することで経済的搾取を可能にする。
+- 小数点以下が偶然一致してもテスト時に検出されない。
+この問題は特に以下の場合に深刻です。
+- 18 桁以外の小数点を持つ ERC-20 トークン (例: USDC = 6) が関係している。
+- Chainlink オラクルは 8 桁の固定小数点価格を返す。
+- 演算はネイティブ ETH 値 (18桁) とトークン値または価格が混在している。
 ---
 ## 対策
 - Always normalize decimals across all involved assets and feeds.
