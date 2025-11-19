@@ -31,10 +31,10 @@ status: new
 - 演算はネイティブ ETH 値 (18桁) とトークン値または価格が混在している。
 ---
 ## 対策
-- Always normalize decimals across all involved assets and feeds.
-- Use centralized utility functions for all price/token conversions.
-- Add sanity checks to detect outlier results (e.g., revert if output is >1000x expected range).
-- When possible, emit intermediate calculation steps for auditing.
+- 関連するすべてのアセットとフィード間で、常に小数点桁数を正規化します。
+- すべての価格/トークン変換に一元的なユーティリティ関数を使用します。
+- 外れ値を検出するためのサニティチェックを追加します (例: 出力が予想範囲の 1000 倍を超える場合は元に戻す)。
+- 可能であれば、監査のために中間計算ステップを出力します。
 
 ## 事例
 
