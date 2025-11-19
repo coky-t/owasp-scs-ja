@@ -38,14 +38,14 @@ status: new
 
 ## 事例
 
-- **❌ Vulnerable Code (Missing Decimal Normalization)**
+- **❌ 脆弱なコード (小数点桁数正規化の欠落)**
 ```solidity
 // Assume ETH/USD = 3000e8 (8 decimals), Token/USD = 1e8, and token has 6 decimals
 uint256 tokenAmount = (ethAmountInWei * ethPriceInUsd) / tokenPriceInUsd;
 // Result is in 18-decimal scale, not adjusted for the 6-decimal USDC token
 ```
 
-- **✅ Safe Code (With Proper Decimal Alignment)**
+- **✅ 安全なコード (適切な小数点揃えあり)**
 ```solidity
 uint8 tokenDecimals = IERC20(token).decimals();
 
@@ -56,7 +56,7 @@ uint256 adjustedAmount = rawAmount / (10 ** (18 - tokenDecimals));
 
 
 ## 現実的なエクスプロイトの例
-Assumptions:
+仮説:
 
 ```solidity
 Registrar fee = 0.01 ETH = 1e16 wei
