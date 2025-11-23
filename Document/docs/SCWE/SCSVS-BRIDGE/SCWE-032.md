@@ -22,9 +22,9 @@ status: new
 - 資産やデータの喪失。
 
 ## 対策
-- **Optimize gas usage:** Minimize gas consumption in contract operations.
-- **Avoid unbounded loops:** Ensure loops have a fixed upper limit.
-- **Test thoroughly:** Conduct extensive testing to ensure operations stay within gas limits.
+- **ガス使用を最適化する:** コントラクト操作におけるガス消費を最小限に抑えます。
+- **無制限のループを回避する:** ループに固定の上限があることを確保します。
+- **徹底的にテストする:** 広範なテストを実施して、操作がガス制限内に収まるように確保します。
 
 ## 事例
 - **Gas-Intensive Operation- Storing Large Dynamic Data**
