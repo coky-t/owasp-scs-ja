@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [CWE-400 Link](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Dependency on block gas limit refers to the reliance on the Ethereum block gas limit for contract operations, which can lead to:
-- Failed transactions if gas limits are exceeded.
-- Exploitation of vulnerabilities in gas-intensive operations.
-- Loss of funds or data.
+ブロックガス制限への依存はコントラクト操作において Ethereum ブロックガス制限に依存することを指し、以下につながる可能性があります。
+- ガス制限を超えた場合のトランザクションの失敗。
+- ガスを大量消費する操作における脆弱性の悪用。
+- 資産やデータの喪失。
 
 ## 対策
 - **Optimize gas usage:** Minimize gas consumption in contract operations.
