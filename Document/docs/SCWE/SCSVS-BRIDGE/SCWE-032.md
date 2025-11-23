@@ -27,7 +27,7 @@ status: new
 - **徹底的にテストする:** 広範なテストを実施して、操作がガス制限内に収まるように確保します。
 
 ## 事例
-- **Gas-Intensive Operation- Storing Large Dynamic Data**
+- **ガスを大量消費する操作 - 大規模な動的データの保存**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -41,10 +41,10 @@ status: new
         }
     }
     ```
-- This contract appends large arrays in a single transaction, which fails when the block gas limit is exceeded.
-- Attackers could exploit this by forcing high gas consumption and causing DoS attacks (e.g., filling storage inefficiently).
+- このコントラクトは単一のトランザクションで大きな配列を追加しますが、ブロックガス制限を超えると失敗します。
+- 攻撃者はこれを悪用し、大量のガス消費を強制して、DoS 攻撃 (ストレージを非効率に満たすなど) を引き起こす可能性があります。
 
-- **Optimized Gas Usage- Chunk Processing & Gas Efficiency**
+- **最適化したガス使用 - チャンク処理とガス効率**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -60,7 +60,7 @@ status: new
     }
     ```
 
-Why is this better?
-- The start and end parameters allow batch processing instead of handling everything in a single call.
-- Prevents hitting the block gas limit by splitting work across multiple transactions.
+なぜこれがベターなのか？
+- start と end パラメータは、単一呼び出しですべてを処理するのではなく、バッチ処理を可能にします。
+- 複数のトランザクションに作業を分割することで、ブロックガス制限に到達することを防ぎます。
 ---
