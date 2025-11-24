@@ -22,12 +22,12 @@ status: new
 - クロスチェーン操作での脆弱性の悪用。
 
 ## 対策
-- **Handle chain splits:** Implement logic to handle potential chain splits.
-- **Use chain identifiers:** Include chain identifiers in cross-chain communications.
-- **Test thoroughly:** Conduct extensive testing to ensure contract logic is robust.
+- **チェーン分割を対処する:** 潜在的なチェーン分割を対処するロジックを実装します。
+- **チェーン識別子を使用する:** チェーン間通信にチェーン識別子を含めます。
+- **徹底的にテストする:** 広範なテストを実施して、コントラクトロジックが堅牢であることを確保します。
 
 ## 事例
-- **Vulnerable to Chain Splits**
+- **チェーン分割に脆弱**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Protected Against Chain Splits**
+- **チェーン分割に対して保護済み**
     ```solidity
     pragma solidity ^0.8.0;
 
