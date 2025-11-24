@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Chain split risks refer to vulnerabilities that arise when a blockchain splits into multiple chains, such as during a hard fork. This can lead to:
-- Confusion or inconsistencies in contract logic.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in cross-chain operations.
+チェーン分割リスクは、ハードフォークなどにより、ブロックチェーンが複数のチェーンに分割される際に発生する脆弱性を指します。これは以下につながる可能性があります。
+- コントラクトロジックの混乱や不整合。
+- 資産やデータの喪失。
+- クロスチェーン操作での脆弱性の悪用。
 
 ## 対策
 - **Handle chain splits:** Implement logic to handle potential chain splits.
