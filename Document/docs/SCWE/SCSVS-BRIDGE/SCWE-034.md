@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Insecure cross-chain messaging refers to vulnerabilities that arise when communicating between different blockchains. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in cross-chain logic.
+安全でないクロスチェーンメッセージングは異なるブロックチェーン間の通信時に発生する脆弱性を指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資産やデータの喪失。
+- クロスチェーンロジックでの脆弱性の悪用。
 
-- Economic inconsistencies due to unvalidated msg.value in message handlers.
+- メッセージハンドラでの未検証の msg.value による経済的な不整合。
 
 ## 対策
 - **Validate messages:** Ensure all cross-chain messages are properly validated.
