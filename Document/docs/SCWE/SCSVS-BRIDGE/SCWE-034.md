@@ -24,11 +24,11 @@ status: new
 - メッセージハンドラでの未検証の msg.value による経済的な不整合。
 
 ## 対策
-- **Validate messages:** Ensure all cross-chain messages are properly validated.
-- **Use secure protocols:** Leverage secure cross-chain communication protocols.
-- **Test thoroughly:** Conduct extensive testing to ensure cross-chain logic is secure.
+- **メッセージを検証する:** すべてのクロスチェーンメッセージが適切に検証されていることを確保します。
+- **安全なプロトコルを使用する:** 安全なクロスチェーン通信プロトコルを活用します。
+- **徹底的にテストする:** 広範なテストを実施して、クロスチェーンロジックが安全であることを確保します。
 
-- **Validate msg.value:** Decode expected value from the message payload or protocol parameters and require that `msg.value` matches (or meets) this expectation; revert on mismatch.
+- **msg.value を検証する:** メッセージペイロードやプロトコルパラメータから期待値をデコードし、`msg.value` がこの期待値と一致する (または満たす) ことを要求します。不一致の場合は元に戻します。
 
 ## 事例
 - **Insecure Cross-Chain Messaging**
