@@ -31,7 +31,7 @@ status: new
 - **msg.value を検証する:** メッセージペイロードやプロトコルパラメータから期待値をデコードし、`msg.value` がこの期待値と一致する (または満たす) ことを要求します。不一致の場合は元に戻します。
 
 ## 事例
-- **Insecure Cross-Chain Messaging**
+- **安全でないクロスチェーンメッセージング**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -47,21 +47,21 @@ status: new
         }
     }
     ```
-🔴 Issue: The function accepts messages without validation, allowing unauthorized transactions.
+🔴 問題点: この関数はバリデーションなしでメッセージを受け入れ、不正なトランザクションを許可します。
 
-Unauthorized Relayers (Anyone Can Call!)
-- Issue: The function allows any msg.sender to call processMessage(), meaning an attacker can send arbitrary messages.
-- Impact: Attackers can forge transactions, trigger unintended actions, or drain funds if the function is connected to cross-chain asset transfers.
+不正な中継者 (誰でも呼び出し可能！)
+- 問題点: この関数は msg.sender が processMessage() を呼び出すことを許可しており、攻撃者が任意のメッセージを送信できることを意味します。
+- 影響: この関数がクロスチェーン資産移転に接続されている場合、攻撃者はトランザクションを偽造したり、意図しないアクションをトリガーしたり、資産を流出できます。
 
-No Signature Verification (Fake Messages)
-- Issue: The contract doesn’t verify the authenticity of the message.
-- Impact: Attackers can inject fake messages and trick the contract into executing unauthorized actions.
+署名検証なし (偽のメッセージ)
+- 問題点: このコントラクトはメッセージの真正性を検証しません。
+- 影響: 攻撃者は偽のメッセージを注入し、コントラクトを騙して不正なアクションを実行します。
 
-Replay Attacks
-- Issue: The contract doesn’t track processed messages.
-- Impact: The same message can be replayed multiple times, leading to repeated execution of sensitive operations.
+リプレイ攻撃
+- 問題点: このコントラクトは処理されたメッセージを追跡しません。
+- 影響: 同じメッセージが複数回再生され、機密性の高い操作の繰り返し実行につながる可能性があります。
 
-- **Secure Cross-Chain Messaging**
+- **安全でないクロスチェーンメッセージング**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -111,16 +111,16 @@ Replay Attacks
     }
     ```
 
-Fix: Implements signature verification, relayer validation, and replay protection.
-Why is this better?
-✅ Verifies Signatures Properly: Uses ecrecover() with Ethereum Signed Message hashing.
-✅ Admin Can Manage Relayers: Allows dynamic relayer updates via setRelayer().
-✅ Prevents Replay Attacks: Tracks processed messages in processedMessages mapping.
-✅ Ensures Message Authenticity: Only validly signed messages are accepted.
+修正内容: 署名検証、リレイヤーバリデーション、リプレイ保護を実装します。
+なぜこれが適切なのか？  
+✅ 署名を適切に検証する: Ethereum 署名メッセージのハッシュ化で ecrecover() を使用します。
+✅ 管理者がリレイヤーを管理できる: setRelayer() を介して動的にリレイヤーを更新できます。
+✅ リプレイ攻撃を防止する: 処理されたメッセージを processedMessages マッピングで追跡します。
+✅ メッセージの真正性を確保する: 有効に署名されたメッセージのみが受け入れられます。
 
 ---
 
-- **Unvalidated msg.value in Cross-Chain Message Handling**
+- **クロスチェーンメッセージ処理で未検証の msg.value**
     ```solidity
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
@@ -171,9 +171,9 @@ Why is this better?
         }
     }
     ```
-    🔴 Issue: The handler accepts arbitrary `msg.value`, enabling front-running or unintended value-carrying calls that desync protocol accounting.
+    🔴 問題点: ハンドラが任意の `msg.value` を受け入れ、プロトコルアカウンティングを同期ズレするフロントランニング呼び出しや意図しない値渡し呼び出しを可能にします。
 
-- **Validated msg.value in Cross-Chain Message Handling**
+- **クロスチェーンメッセージ処理で検証された msg.value**
     ```solidity
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
@@ -226,4 +226,4 @@ Why is this better?
         }
     }
     ```
-    ✅ Fix: Decode expected value from the payload and enforce that `msg.value` meets it before executing downstream calls.
+    ✅ 修正内容: ペイロードから期待値をデコードし、ダウンストリーム呼び出しを事項する前に `msg.value` がそれを満たすことを強制します。
