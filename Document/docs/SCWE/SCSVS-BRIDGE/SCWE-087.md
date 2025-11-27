@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-1284: Improper Validation of Specified Quantity in Input
+- CWE-1284: Improper Validation of Specified Quantity in Input  
   [CWE-1284 Link](https://cwe.mitre.org/data/definitions/1284.html)
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-This weakness arises when smart contracts performing cross-chain messaging fail to validate the size of payloads before emitting or sending them. In protocols using relayer-based messaging (e.g., LayerZero, Wormhole), data is typically encoded and emitted as a payload on the source chain, then relayed and decoded on the destination chain. If the encoded payload exceeds the maximum allowed size (often 10,000 bytes or similar, depending on the bridge/messaging protocol), the message transmission or decoding can revert—often because the large payload causes out-of-gas consumption during processing or fails explicit size checks. In lock-mint architectures, this can lead to permanent loss of user funds due to inability to unlock or mint assets on the destination chain.
+この弱点は、クロスチェーンメッセージングを実行するスマートコントラクトがペイロードを送出や送信する前にそのサイズを検証できない場合に発生します。リレイヤーベースのメッセージングを使用するプロトコル (LayerZero, Wormhole など) では、データは一般的にソースチェーン上でペイロードとしてエンコードおよび送出され、その後、宛先チェーン上でリレーおよびデコードされます。エンコードされたペイロードが最大許容サイズ (ブリッジ/メッセージングプロトコルによって異なりますが、通常は 10,000 バイト程度) を超えると、メッセージの送信やデコードが元に戻る可能性があります。これは、大きなペイロードが処理中に out-of-gas 消費を引き起こしたり、明示的なサイズチェックに失敗することがよくあるためです。lock-mint アーキテクチャでは、宛先チェーンで資産をアンロックやミントできないため、ユーザー資金の永久的な喪失につながる可能性があります。
 ## 影響
 - **Denial of Service:** Oversized payloads will revert during cross-chain transmission, preventing legitimate state updates or token minting/unlocking on the destination chain.
 - **Stuck or Lost Funds:** In bridges using lock-and-mint or burn-and-mint designs, users’ assets may be locked on the source chain with no way to release or claim them on the destination due to repeated transaction failure.
