@@ -20,9 +20,9 @@ status: new
 ## 説明
 この弱点は、クロスチェーンメッセージングを実行するスマートコントラクトがペイロードを送出や送信する前にそのサイズを検証できない場合に発生します。リレイヤーベースのメッセージングを使用するプロトコル (LayerZero, Wormhole など) では、データは一般的にソースチェーン上でペイロードとしてエンコードおよび送出され、その後、宛先チェーン上でリレーおよびデコードされます。エンコードされたペイロードが最大許容サイズ (ブリッジ/メッセージングプロトコルによって異なりますが、通常は 10,000 バイト程度) を超えると、メッセージの送信やデコードが元に戻る可能性があります。これは、大きなペイロードが処理中に out-of-gas 消費を引き起こしたり、明示的なサイズチェックに失敗することがよくあるためです。lock-mint アーキテクチャでは、宛先チェーンで資産をアンロックやミントできないため、ユーザー資金の永久的な喪失につながる可能性があります。
 ## 影響
-- **Denial of Service:** Oversized payloads will revert during cross-chain transmission, preventing legitimate state updates or token minting/unlocking on the destination chain.
-- **Stuck or Lost Funds:** In bridges using lock-and-mint or burn-and-mint designs, users’ assets may be locked on the source chain with no way to release or claim them on the destination due to repeated transaction failure.
-- **Operational Risk:** Malicious or unintentional submission of oversized payloads can be used to disrupt bridge operations, preventing protocol liveness or causing critical business logic to be inaccessible.
+- **サービス拒否:** 大きすぎるペイロードはクロスチェーン転送時に元に戻り、宛先チェーンの正当な状態更新やトークンのミント/アンロックを妨げます。
+- **資金のスタックや喪失:** lock-and-mint または burn-and-mint 設計を使用するブリッジでは、トランザクションの失敗を繰り返すと、宛先でリリースまたはクレームする方法なしで、ユーザーの資産がソースチェーンでロックされる可能性があります。
+- **運用リスク:** 悪意のある、または意図しない、サイズの大きすぎるペイロードの送出が使用されると、ブリッジの運用を妨害し、プロトコルの生存性を阻害し、重要なビジネスロジックにアクセスできなくなる可能性があります。
 ## 対策
 - Enforce maximum payload size validation on both source and destination chains.
 - Perform defensive coding around payload encoding and decoding to catch out-of-gas or out-of-bound errors.
