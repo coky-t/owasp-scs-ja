@@ -24,13 +24,13 @@ status: new
 - **資金のスタックや喪失:** lock-and-mint または burn-and-mint 設計を使用するブリッジでは、トランザクションの失敗を繰り返すと、宛先でリリースまたはクレームする方法なしで、ユーザーの資産がソースチェーンでロックされる可能性があります。
 - **運用リスク:** 悪意のある、または意図しない、サイズの大きすぎるペイロードの送出が使用されると、ブリッジの運用を妨害し、プロトコルの生存性を阻害し、重要なビジネスロジックにアクセスできなくなる可能性があります。
 ## 対策
-- Enforce maximum payload size validation on both source and destination chains.
-- Perform defensive coding around payload encoding and decoding to catch out-of-gas or out-of-bound errors.
-- Consider fallback or reversion handling strategies to safely refund or unlock funds when such failures occur.
+- ソースチェーンと宛先チェーンの両方で最大ペイロードサイズバリデーションを強制します。
+- ペイロードのエンコーディングとデコーディングに関する防御コーディングを実行し、out-of-gas や out-of-bound エラーを捕捉します。
+- このような障害が発生した際に、資金を安全に返金またはアンロックするためのフォールバックまたはリバース処理戦略を検討します。
 ## 事例
-🧪  **Example: User-Supplied Merkle Proof in `lockTokens()`**
+🧪  **例: `lockTokens()` でのユーザー提供の Merkle 証明**
 
-❌ **Vulnerable Code (No Payload Size Validation)**
+❌ **脆弱なコード (ペイロードサイズバリデーションなし)**
 ```solidity
 // SourceChain.sol
 event Locked(address indexed user, uint256 amount, bytes payload);
@@ -44,7 +44,7 @@ function lockTokens(uint256 amount, bytes calldata merkleProof) external {
     emit Locked(msg.sender, amount, payload);
 }
 ```
-Destination Chain: Decode and Mint
+宛先チェーン: デコードとミント
 ```solidity
 // DestinationChain.sol
 function mintFromPayload(bytes calldata payload) external {
@@ -55,7 +55,7 @@ function mintFromPayload(bytes calldata payload) external {
     _mint(user, amount);
 }
 ```
-✅  Safe Code (With Payload Size Validation)
+✅  安全なコード (ペイロードサイズバリデーションあり)
 ```solidity
 // SourceChain.sol
 event Locked(address indexed user, uint256 amount, bytes payload);
@@ -70,7 +70,7 @@ function lockTokens(uint256 amount, bytes calldata merkleProof) external {
     emit Locked(msg.sender, amount, payload);
 }
 ```
-Destination Chain: Decode and Mint (Optional Double Check)
+宛先チェーン: デコードとミント (オプションで二重チェック)
 ```solidity
 // DestinationChain.sol
 function mintFromPayload(bytes calldata payload) external {
