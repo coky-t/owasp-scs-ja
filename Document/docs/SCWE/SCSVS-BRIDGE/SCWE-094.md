@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-This weakness arises when a smart contract using LayerZero for cross-chain communication fails to validate the minimum gas limit in the adapter parameters. Attackers (or misconfigured clients) can specify an adapter params gas value that is too low for the destination chain execution. As a result, message processing reverts before reaching business logic or error-handling, and the message is recorded as a failed payload on the destination chain. Accumulating failed payloads can disrupt protocol liveness by blocking the cross-chain communication pathway until manual intervention is performed.
+この弱点は、クロスチェーン通信に LayerZero を使用するスマートコントラクトがアダプタパラメータの最小ガス制限の検証に失敗した場合に発生します。攻撃者 (または設定ミスのあるクライアント) は、宛先チェーンの実行に対して低すぎるアダプタパラメータのガス値を指定できます。結果として、メッセージ処理はビジネスロジックやエラー処理に到達する前に元に戻り、メッセージは宛先チェーン上で失敗したペイロードとして記録されます。失敗したペイロードが蓄積すると、手動による介入が行われるまでクロスチェーン通信経路をブロックして、プロトコルの生存性を損なう可能性があります。
 
 ## 影響
 - **Denial of Service:** Destination chain message execution reverts due to insufficient gas, preventing critical state changes or callbacks.
