@@ -24,15 +24,15 @@ status: new
 - **運用リスク:** 稼働状態を回復するには、手動での再試行、クリア、またはレスキューフローを必要とします。長時間の停止はユーザー操作 (ブリッジ、同期、DeFi アクションなど) に影響を及ぼす可能性があります。
 
 ## 対策
-- **Validate minimum gas limit:** Decode LayerZero adapter parameters and enforce a protocol-defined minimum gas limit per message type.
-- **Use safe defaults:** Provide default adapter params with adequate gas and reject user-supplied values below the threshold.
-- **Granular minima:** If different message types have varying complexity, define per-endpoint or per-function minimum gas values.
-- **Robust failure handling:** Implement operational procedures and tooling to safely retry or clear failed payloads without compromising security.
+- **最小ガス制限を検証する:** LayerZero アダプタパラメータをデコードし、メッセージタイプごとにプロトコル定義の最小ガス制限を適用します。
+- **安全なデフォルトを使用する:** デフォルトのアダプタパラメータに適切なガスを提供し、閾値を下回るユーザー指定の値を拒否します。
+- **粒度の最小値:** メッセージタイプごとに複雑さが異なる場合は、エンドポイントごとまたは関数ごとに最小ガス値を定義します。
+- **堅牢な障害処理:** セキュリティを損なうことなく、失敗したペイロードを安全に再試行またはクリアするための運用手順とツールを実装します。
 
 ## 事例
-🧪  Example
+🧪 例
 
-❌ Vulnerable Code (Lack of gas limit validation allows pathway blocking)
+❌ 脆弱なコード (ガス制限バリデーションの欠落は経路をブロックします)
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -48,7 +48,7 @@ contract VulnerableLzApp is NonblockingLzApp {
 }
 ```
 
-✅ Safe Code (Enforces minimum gas limit to prevent blocking)
+✅ 安全なコード (最小ガス制限を適用してブロックを防ぎます)
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
