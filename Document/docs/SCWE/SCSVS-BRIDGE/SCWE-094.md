@@ -19,9 +19,9 @@ status: new
 この弱点は、クロスチェーン通信に LayerZero を使用するスマートコントラクトがアダプタパラメータの最小ガス制限の検証に失敗した場合に発生します。攻撃者 (または設定ミスのあるクライアント) は、宛先チェーンの実行に対して低すぎるアダプタパラメータのガス値を指定できます。結果として、メッセージ処理はビジネスロジックやエラー処理に到達する前に元に戻り、メッセージは宛先チェーン上で失敗したペイロードとして記録されます。失敗したペイロードが蓄積すると、手動による介入が行われるまでクロスチェーン通信経路をブロックして、プロトコルの生存性を損なう可能性があります。
 
 ## 影響
-- **Denial of Service:** Destination chain message execution reverts due to insufficient gas, preventing critical state changes or callbacks.
-- **Message Backlog/Failed Payloads:** Messages accumulate in failed payload storage/queues, increasing operational burden.
-- **Operational Risk:** Requires manual retries, clearing, or rescue flows to restore liveness; prolonged outages can impact user operations (e.g., bridging, synchronization, DeFi actions).
+- **サービス拒否:** 宛先チェーンメッセージ実行は不十分なガスにより元に戻り、重要な状態変更やコールバックを妨げます。
+- **メッセージバックログ/失敗したペイロード:** メッセージが失敗したペイロードのストレージ/キューに蓄積し、運用上の負担を増します。
+- **運用リスク:** 稼働状態を回復するには、手動での再試行、クリア、またはレスキューフローを必要とします。長時間の停止はユーザー操作 (ブリッジ、同期、DeFi アクションなど) に影響を及ぼす可能性があります。
 
 ## 対策
 - **Validate minimum gas limit:** Decode LayerZero adapter parameters and enforce a protocol-defined minimum gas limit per message type.
