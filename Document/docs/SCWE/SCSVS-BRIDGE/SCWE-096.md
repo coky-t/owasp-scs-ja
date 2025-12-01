@@ -12,15 +12,15 @@ status: new
 ---
 
 ## 関連
-- CWE-345:  Insufficient Verification of Data Authenticity
+- CWE-345: Insufficient Verification of Data Authenticity  
   [CWE-345 Link](https://cwe.mitre.org/data/definitions/345.html)
-- CWE-664: Improper Control of a Resource Through Its Lifetime
+- CWE-664: Improper Control of a Resource Through Its Lifetime  
   [CWE-664 Link](https://cwe.mitre.org/data/definitions/664.html)
 
 ## 説明
-This weakness occurs when a cross-chain bridge allows withdrawals from Chain B to Chain A without properly burning or locking the corresponding token on the source chain (Chain B) before initiating the cross-chain transaction.
+この弱点は、クロスチェーントランザクションを開始する前にソースチェーン (チェーン B) 上の対応するトークンを適切にバーンまたはロックすることなく、クロスチェーンブリッジがチェーン B からチェーン A への出金を許可する場合に発生します。
 
-As a result, the same token can exist simultaneously on both chains, enabling a double-spend scenario where malicious actors can sell, transfer, or use the same token on multiple chains.
+結果として、同じトークンが両方のチェーンに同時に存在する可能性があり、悪意のある人物が同じトークンを複数のチェーンで売却、譲渡、または使用する二重支払いシナリオを可能にします。
 
 ## 対策
 
