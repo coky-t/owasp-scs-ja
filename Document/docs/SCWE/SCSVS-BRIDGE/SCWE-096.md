@@ -24,20 +24,20 @@ status: new
 
 ## 対策
 
-1. Burn the NFT  
-    - Call the `burn(tokenId)` function on the L2 NFT contract before sending the cross-chain withdrawal request.  
-    - This ensures that the NFT no longer exists on L2 and cannot be reused, transferred, or sold.  
+1. NFT をバーンする
+    - クロスチェーン出金リクエストを送信する前に、L2 NFT コントラクトの `burn(tokenId)` 関数を呼び出します。
+    - これは NFT が L2 上に存在しなくなり、再使用、譲渡、販売できなくなります。
 
-2. Alternatively, Lock the NFT (if burning isn’t possible)  
-    - If NFTs are not meant to be permanently destroyed, implement a lock mechanism to freeze the token on L2 until the cross-chain withdrawal is completed successfully.  
+2. あるいは、NFT をロックする (バーンができない場合)
+    - NFT を永久に破棄する予定がない場合、クロスチェーン出金が正常に完了するまで L2 上のトークンを凍結するロックメカニズムを実装します。
 
-3. Update Cross-Chain Workflow  
-    - Enforce the burn/lock operation as part of the withdrawal process.  
-    - Revert the entire transaction if the burn/lock fails.  
+3. クロスチェーンワークフローを更新する
+    - 出金プロセスの一部としてバーン/ロック操作を強制します。
+    - バーン/ロックが失敗した場合はトランザクション全体を元に戻します。
 
 
 ## 事例
-- **Vulnerable Code (Not Burning Token Before Sending Cross Chain Message)**  
+- **脆弱なコード (クロスチェーンメッセージを送信する前にトークンをバーンしない)**
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
@@ -54,7 +54,7 @@ contract SourceChainNFTGateway {
 }
 ```
 
-- **Safe Code (Burning Token Before Sending Cross Chain Message)**
+- **安全なコード (クロスチェーンメッセージを送信する前にトークンをバーンする)**
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
