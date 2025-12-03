@@ -22,12 +22,12 @@ status: new
 - 資金やデータの喪失。
 
 ## 対策
-- **Use secure key management:** Leverage secure key management systems or libraries.
-- **Avoid hardcoding keys:** Never hardcode cryptographic keys in the contract.
-- **Regularly rotate keys:** Periodically update cryptographic keys to reduce risks.
+- **安全な鍵管理を使用する:** 安全な鍵管理システムやライブラリを活用します。
+- **鍵のハードコード化を避ける:** コントラクトに暗号鍵をハードコードしてはいけません。
+- **定期的に鍵を入れ替える:** 定期的に暗号鍵を更新してリスクを軽減します。
 
 ## 事例
-- **Improper Key Management**
+- **不適切な鍵管理**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -36,7 +36,7 @@ status: new
     }
     ```
 
-- **Proper Key Management**
+- **適切な鍵管理**
     ```solidity
     pragma solidity ^0.8.0;
 
