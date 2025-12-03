@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-310: Cryptographic Issues
-  [CWE-310 Link](https://cwe.mitre.org/data/definitions/310.html)
+- CWE-310: Cryptographic Issues  
+  [CWE-310 Link](https://cwe.mitre.org/data/definitions/310.html) (参考: JVN iPedia [CWE-310 暗号の問題](https://jvndb.jvn.jp/ja/cwe/CWE-310.html))
 
 ## 説明
-Improper cryptographic key management refers to the failure to securely generate, store, or use cryptographic keys. This can lead to:
-- Unauthorized access to sensitive data.
-- Exploitation of the contract's logic.
-- Loss of funds or data.
+不適切な暗号鍵管理は暗号鍵を安全に生成、保管、または使用できないことを指します。これは以下につながる可能性があります。
+- 機密データへの不正アクセス。
+- コントラクトのロジックの悪用。
+- 資金やデータの喪失。
 
 ## 対策
 - **Use secure key management:** Leverage secure key management systems or libraries.
