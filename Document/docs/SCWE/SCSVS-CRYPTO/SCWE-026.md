@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-347: Improper Verification of Cryptographic Signature
+- CWE-347: Improper Verification of Cryptographic Signature  
   [CWE-347 Link](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-Insufficient hash verification refers to the failure to properly verify hashes, such as message hashes or transaction hashes. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract's logic.
+不十分なハッシュ検証は、メッセージハッシュやトランザクションハッシュなどのハッシュを適切に検証していないことを指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Validate hashes:** Ensure all hashes are properly verified before processing.
