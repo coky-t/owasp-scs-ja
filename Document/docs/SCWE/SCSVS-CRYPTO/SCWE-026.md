@@ -22,12 +22,12 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Validate hashes:** Ensure all hashes are properly verified before processing.
-- **Use secure libraries:** Leverage well-audited libraries for hash verification.
-- **Test thoroughly:** Conduct extensive testing to ensure hash verification works as intended.
+- **ハッシュを検証する:** 処理前にすべてのハッシュが適切に検証されていることを確保します。
+- **安全なライブラリを使用する:** ハッシュ検証には十分に監査されたライブラリを活用します。
+- **徹底的にテストする:** 広範なテストを実施して、ハッシュ検証が意図したとおりに機能することを確認します。
 
 ## 事例
-- **Insufficient Hash Verification**
+- **不十分なハッシュ検証**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Sufficient Hash Verification**
+- **十分なハッシュ検証**
     ```solidity
     pragma solidity ^0.8.0;
 
