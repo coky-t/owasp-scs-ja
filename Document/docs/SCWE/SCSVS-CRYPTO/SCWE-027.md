@@ -22,12 +22,12 @@ status: new
 - コントラクトのセキュリティでの信頼低下。
 
 ## 対策
-- **Use secure algorithms:** Leverage modern cryptographic algorithms like SHA-256 or Keccak-256.
-- **Avoid deprecated algorithms:** Do not use algorithms known to be insecure.
-- **Test thoroughly:** Conduct extensive testing to ensure cryptographic security.
+- **安全なアルゴリズムを使用する:** SHA-256 や Keccak-256 などの最新の暗号アルゴリズムを活用します。
+- **非推奨のアルゴリズムを避ける:** 安全でないことが知られているアルゴリズムを使用してはいけません。
+- **徹底的にテストする:** 広範なテストを実施して、暗号セキュリティを確保します。
 
 ## 事例
-- **Vulnerable Algorithm**
+- **脆弱なアルゴリズム**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ status: new
     }
     ```
 
-- **Secure Algorithm**
+- **安全なアルゴリズム**
     ```solidity
     pragma solidity ^0.8.0;
 
