@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- **CWE-327:** Use of a Broken or Risky Cryptographic Algorithm
+- **CWE-327:** Use of a Broken or Risky Cryptographic Algorithm  
   [CWE-327 Link](https://cwe.mitre.org/data/definitions/327.html)
 
 ## 説明
-Vulnerable cryptographic algorithms refer to the use of outdated or insecure cryptographic algorithms, such as MD5 or SHA-1. This can lead to:
-- Exploitation of the contract’s logic.
-- Loss of funds or data.
-- Reduced trust in the contract’s security.
+脆弱な暗号アルゴリズムは、MD5 や SHA-1 などの、古くなったまたは安全でない暗号アルゴリズムの使用を指します。これは以下につながる可能性があります。
+- コントラクトのロジックの悪用。
+- 資金やデータの喪失。
+- コントラクトのセキュリティでの信頼低下。
 
 ## 対策
 - **Use secure algorithms:** Leverage modern cryptographic algorithms like SHA-256 or Keccak-256.
