@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-345: Insufficient Verification of Data Authenticity
+- CWE-345: Insufficient Verification of Data Authenticity  
   [https://cwe.mitre.org/data/definitions/345.html](https://cwe.mitre.org/data/definitions/345.html)
 
 ## 説明
-Signature malleability refers to the ability to modify a valid signature without changing its validity. This can occur when signatures are not properly verified or when certain components of a signature (like the `v`, `r`, and `s` values) can be altered while still producing a valid signature.
+署名変更可能性は有効な署名の有効性を変えずに改変できる可能性を指します。これは、署名が適切に検証されていない場合、または署名の特定の構成要素 (`v`, `r`, `s` の値など) が改変されても有効な署名が生成される場合に発生します。
 
-Attackers can modify a signature’s `s` value or flip `v` between 27 and 28, generating different valid signatures for the same message. This can lead to:
+攻撃者は署名の `s` の値を変更したり、`v` を 27 と 28 の間でフリップすることで、同じメッセージに対して異なる有効な署名を生成できます。これは以下につながる可能性があります。
 
-- Replay attacks, where transactions can be re-executed with modified signatures.
-- Transaction hijacking, where a valid signature is altered to redirect funds or manipulate contract state.
+- リプレイ攻撃: トランザクションが改変された署名で再実行される可能性があります。
+- トランザクションハイジャック: 有効な署名が改変され、資金をリダイレクトしたりコントラクトの状態を操作する可能性があります。
 
 ## 対策
 To mitigate signature malleability, ensure that the signature verification process is robust. Use secure cryptographic libraries that properly handle signature validation, such as ECDSA or EdDSA with additional checks to prevent malleability. When verifying signatures, consider using a canonical format for signature components to avoid malleability.
