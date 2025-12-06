@@ -24,7 +24,7 @@ status: new
 - トランザクションハイジャック: 有効な署名が改変され、資金をリダイレクトしたりコントラクトの状態を操作する可能性があります。
 
 ## 対策
-署名の可鍛性を緩和するには、署名検証プロセスが堅牢であることを確保します。可鍛性を防ぐための追加チェックを備えた ECDSA や EdDSA など、署名検証を適切に処理する安全な暗号ライブラリを使用します。署名を検証する際は、署名の構成要素に正規表現を使用することを検討し、可鍛性を避けます。
+署名の変更可能性を緩和するには、署名検証プロセスが堅牢であることを確保します。変更可能性を防ぐための追加チェックを備えた ECDSA や EdDSA など、署名検証を適切に処理する安全な暗号ライブラリを使用します。署名を検証する際は、署名の構成要素に正規表現を使用することを検討し、変更可能性を避けます。
 
 ### 脆弱なコントラクトの例 - (署名変更可能性を許可する)
 ```solidity
@@ -35,8 +35,8 @@ contract MalleableSignatureExample {
     }
 }
 ```
-- This contract does not restrict `s` values, allowing malleable signatures.
-- Issue: The contract does not check if `s` is in the lower half of the `curve (s < secp256k1n/2)`, allowing multiple valid signatures for the same message.
+- このコントラクトは `s` 値を制限せず、変更可能性のある署名を可能にします。
+- 問題点: このコントラクトは `s` が `curve (s < secp256k1n/2)` の下半分にあるかどうかをチェックせず、同じメッセージに対して複数の有効な署名を可能にします。
 
 
 
@@ -55,5 +55,5 @@ contract MalleableSignatureExample {
   }
 ```
 
-- Fix: Uses `OpenZeppelin’s ECDSA library`, which ensures `s` is in the lower half and restricts `v` to 27 or 28.
-- Outcome: Prevents attackers from modifying valid signatures to create alternate, equally valid ones.
+- 修正内容: `OpenZeppelin の ECDSA ライブラリ` を使用します。これは `s` が下半分にあることを確保し、`v` を 27 または 28 に制限します。
+- 結果: 攻撃者が有効な署名を改変して、代わりの同等に有効なものを作成することを防ぎます。
