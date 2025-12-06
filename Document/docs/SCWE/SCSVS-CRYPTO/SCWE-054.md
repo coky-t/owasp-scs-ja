@@ -24,7 +24,7 @@ status: new
 - トランザクションハイジャック: 有効な署名が改変され、資金をリダイレクトしたりコントラクトの状態を操作する可能性があります。
 
 ## 対策
-To mitigate signature malleability, ensure that the signature verification process is robust. Use secure cryptographic libraries that properly handle signature validation, such as ECDSA or EdDSA with additional checks to prevent malleability. When verifying signatures, consider using a canonical format for signature components to avoid malleability.
+署名の可鍛性を緩和するには、署名検証プロセスが堅牢であることを確保します。可鍛性を防ぐための追加チェックを備えた ECDSA や EdDSA など、署名検証を適切に処理する安全な暗号ライブラリを使用します。署名を検証する際は、署名の構成要素に正規表現を使用することを検討し、可鍛性を避けます。
 
 ### 脆弱なコントラクトの例 - (署名変更可能性を許可する)
 ```solidity
