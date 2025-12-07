@@ -19,7 +19,7 @@ status: new
 署名リプレイ攻撃は、以前のトランザクションの有効な署名が、異なるトランザクションやコントラクト呼び出しなど、異なるコンテキストで再使用される場合に発生します。適切な保護なしでは、攻撃者は署名をキャプチャしてリプレイし、認証チェックをバイパスして不正なアクションやトランザクションを引き起こす可能性があります。
 
 ## 対策
-To prevent signature replay attacks, include additional checks that ensure the signature is valid for a specific transaction or context. This can be done by incorporating unique identifiers like a nonce, timestamp, or a unique transaction hash into the signature to bind it to a specific use. Always verify that the signature is only valid for the intended action.
+署名リプレイ攻撃を防ぐには、署名が特定のトランザクションまたはコンテキストに対して有効であることを確認するための追加のチェックを組み込みます。これは、署名にノンス、タイムスタンプ、または一意のトランザクションハッシュなどの一意の識別子を組み込み、特定の用途に結びつけることで実現できます。署名が意図したアクションに対してのみ有効であることを常に検証します。
 
 ### 脆弱なコントラクトの例
 ```solidity
@@ -53,9 +53,9 @@ contract ReplayAttackExample {
       }
   }
 ```
-**Fixes Implemented:**
--  Binds signature to a nonce (ensuring it's only usable once).
--  Includes `chainId` (prevents cross-chain replay attacks).
-- Uses OpenZeppelin’s ECDSA library (avoids signature malleability risks).
+**実装した修正内容:**
+- 署名をノンスにバインドします (一度しか使用できないようにします)。
+- `chainId` を組み込みます (クロスチェーンリプレイ攻撃を防ぎます)。
+- OpenZeppelin の ECDSA ライブラリを使用します (署名変更可能性のリスクを回避します)。
 
 ---
