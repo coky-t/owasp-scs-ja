@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-294: Authentication Bypass by Capture-replay
+- CWE-294: Authentication Bypass by Capture-replay  
   [https://cwe.mitre.org/data/definitions/294.html](https://cwe.mitre.org/data/definitions/294.html)
 
 ## 説明
-Signature replay attacks occur when a valid signature from a previous transaction is reused in a different context, such as a different transaction or contract call. Without proper protection, an attacker can capture and replay a signature, potentially bypassing authentication checks and causing unauthorized actions or transactions.
+署名リプレイ攻撃は、以前のトランザクションの有効な署名が、異なるトランザクションやコントラクト呼び出しなど、異なるコンテキストで再使用される場合に発生します。適切な保護なしでは、攻撃者は署名をキャプチャしてリプレイし、認証チェックをバイパスして不正なアクションやトランザクションを引き起こす可能性があります。
 
 ## 対策
 To prevent signature replay attacks, include additional checks that ensure the signature is valid for a specific transaction or context. This can be done by incorporating unique identifiers like a nonce, timestamp, or a unique transaction hash into the signature to bind it to a specific use. Always verify that the signature is only valid for the intended action.
