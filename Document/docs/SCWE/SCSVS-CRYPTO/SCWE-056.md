@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-345: Insufficient Verification of Data Authenticity
+- CWE-345: Insufficient Verification of Data Authenticity  
   [https://cwe.mitre.org/data/definitions/345.html](https://cwe.mitre.org/data/definitions/345.html)
 
 ## 説明
-This vulnerability occurs when a smart contract fails to properly verify whether a signature was produced by an authorized entity.
-In Ethereum, contracts often use `ecrecover` to check signatures, but failing to validate who signed the message allows:
+この脆弱性は、署名が認可されたエンティティによって生成されたかどうかを、スマートコントラクトが適切に検証できない場合に発生します。
+Ethereum では、コントラクトは署名のチェックに `ecrecover` を使用することがよくありますが、メッセージの署名者を検証できず、以下を可能にします。
 
-- Unauthorized transactions, where attackers submit signatures from any key.
-- Replay attacks, where valid signatures are reused to repeat actions.
-- Malicious contract state manipulation, where attackers gain unauthorized access.
+- 不正なトランザクション、攻撃者が任意のキーから署名を送信します。
+- リプレイ攻撃、有効な署名が再使用されアクションを繰り返します。
+- 悪意のあるコントラクト状態の操作、攻撃者が不正アクセスを取得します。
 
 ## 対策
 To mitigate this vulnerability, always implement proper signature verification using secure cryptographic methods. Use the `ecrecover` function to recover the signer’s address and ensure that the recovered address matches the expected address. Additionally, verify that the signature is valid for the intended message or transaction and that the signer is authorized to perform the action.
