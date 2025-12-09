@@ -24,7 +24,7 @@ Ethereum では、コントラクトは署名のチェックに `ecrecover` を�
 - 悪意のあるコントラクト状態の操作、攻撃者が不正アクセスを取得します。
 
 ## 対策
-To mitigate this vulnerability, always implement proper signature verification using secure cryptographic methods. Use the `ecrecover` function to recover the signer’s address and ensure that the recovered address matches the expected address. Additionally, verify that the signature is valid for the intended message or transaction and that the signer is authorized to perform the action.
+この脆弱性を緩和するには、常に安全な暗号手法を使用して適切な署名検証を実装します。`ecrecover` 関数を使用して署名者のアドレスを復元し、復元したアドレスが期待したアドレスと一致することを確認します。さらに、署名が意図したメッセージまたはトランザクションに対して有効であること、および署名者がアクションを実行するために認可されていることを検証します。
 
 ### 脆弱なコントラクトの例 - (署名者検証の欠如)
 ```solidity
