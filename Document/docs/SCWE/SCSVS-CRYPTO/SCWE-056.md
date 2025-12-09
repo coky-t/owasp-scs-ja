@@ -35,8 +35,8 @@ contract SignatureVerificationExample {
     }
 }
 ```
-- Issue: The contract does not check if the recovered address matches an authorized signer.
-- Exploit: Any valid ECDSA signature can be used, even from an attacker’s key.
+- 問題点: このコントラクトは復元したアドレスが認可された署名者と一致するかどうかをチェックしていません。
+- エクスプロイト: 有効な ECDSA 署名であれば、攻撃者の鍵からのものであっても、使用できます。
 
 
 ### 修正したコントラクトの例 - (適切な署名検証)
@@ -62,5 +62,5 @@ contract SignatureVerificationExample {
         }
     }
 ```
-- Fix: The contract now explicitly checks that the recovered address matches `authorizedSigner`.
-- Outcome: Prevents attackers from submitting arbitrary signatures and ensures only authorized signatures are accepted.
+- 修正内容: コントラクトは復元したアドレスが `authorizedSigner` と一致することを明示的にチェックするようにしました。
+- 結果: 攻撃者が任意の署名を送信することを防ぎ、認可された署名のみが受け入れられるようになります。
