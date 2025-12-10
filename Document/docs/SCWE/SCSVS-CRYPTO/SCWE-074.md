@@ -19,7 +19,7 @@ status: new
 複数の可変長引数をハッシュ化する場合、ハッシュ衝突の潜在的なリスクがあります。これは、二つの異なる入力セットが同じハッシュ出力を生成する場合に発生する可能性があります。この脆弱性は、ハッシュが識別子、署名、鍵として使用される状況で特に顕著であり、衝突は、署名の誤ったバリデーションや予期しないコントラクトロジックの実行など、不正な動作やセキュリティ侵害につながる可能性があります。
 
 ## 対策
-To prevent hash collisions, use a strong cryptographic hashing function like `keccak256` or `sha256`, and ensure that the inputs to the hash function are well-structured. Consider combining different sources of entropy (e.g., timestamps, nonces) and always verify the integrity of the data before trusting a hash.
+ハッシュ衝突を防ぐには、`keccak256` や `sha256` などの強力な暗号ハッシュ関数を使用し、ハッシュ関数への入力が適切に構造化されていることを確保します。エントロピーのさまざまなソース (タイムスタンプ、ノンスなど) を組み合わせることを検討し、ハッシュを信頼する前に常にデータの完全性を検証します。
 
 ### 脆弱なコントラクトの例
 ```solidity
