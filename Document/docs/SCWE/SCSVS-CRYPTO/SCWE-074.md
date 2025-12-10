@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-347: Improper Verification of Cryptographic Signature
+- CWE-347: Improper Verification of Cryptographic Signature  
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-When hashing multiple variable-length arguments, there is a potential risk of hash collisions, which can occur if two different sets of inputs produce the same hash output. This vulnerability is particularly relevant in situations where hashes are used as identifiers, signatures, or keys, and collisions may lead to incorrect behavior or security breaches, such as false validation of signatures or unexpected contract logic execution.
+複数の可変長引数をハッシュ化する場合、ハッシュ衝突の潜在的なリスクがあります。これは、二つの異なる入力セットが同じハッシュ出力を生成する場合に発生する可能性があります。この脆弱性は、ハッシュが識別子、署名、鍵として使用される状況で特に顕著であり、衝突は、署名の誤ったバリデーションや予期しないコントラクトロジックの実行など、不正な動作やセキュリティ侵害につながる可能性があります。
 
 ## 対策
 To prevent hash collisions, use a strong cryptographic hashing function like `keccak256` or `sha256`, and ensure that the inputs to the hash function are well-structured. Consider combining different sources of entropy (e.g., timestamps, nonces) and always verify the integrity of the data before trusting a hash.
