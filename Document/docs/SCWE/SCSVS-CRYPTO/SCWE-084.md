@@ -12,17 +12,17 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-The `blockhash` function is often misused to generate randomness in smart contracts. However, `blockhash` is publicly available and can be influenced by miners, making it an unreliable and insecure source of randomness.
+`blockhash` 関数はスマートコントラクトで乱数を生成するためにしばしば誤用されます。しかし、`blockhash` はパブリックに利用可能であり、マイナーによる影響を受ける可能性があり、信頼できず安全でない乱数源となります。
 
-Attackers can manipulate `blockhash` by controlling which transactions are included in a block, reordering transactions, or discarding unfavorable blocks. This can lead to predictable random outcomes, allowing malicious actors to exploit lotteries, gaming, and other randomness-dependent mechanisms.
+攻撃者は、ブロックに含まれるトランザクションを制御したり、トランザクションを並べ替えたり、不利なブロックを破棄して、`blockhash` を操作できます。これは予測可能なランダムの結果につながり、悪意のある人物がくじ、ゲーム、その他のランダム性に依存するメカニズムを悪用できるようになります。
 
-**Attack Scenarios**
-- Lottery Manipulation: A miner can withhold or reorder transactions to ensure a favorable `blockhash` that lets them win.
-- Game Exploitation: If a game outcome depends on `blockhash`, an attacker can predict future results and place bets accordingly.
+**攻撃シナリオ**
+- くじ操作: マイナーはトランザクションを保留または並べ替えて、勝利に有利な `blockhash` を確保できます。
+- ゲーム悪用: ゲームの結果が `blockhash` に依存する場合、攻撃者は将来の結果を予測し、それに応じて賭けを行うことができます。
 
 ## 対策
 Do not rely on `blockhash` for generating randomness. Use more secure and unpredictable sources of randomness, such as using Chainlink VRF or other trusted oracles.
