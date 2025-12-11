@@ -25,7 +25,7 @@ status: new
 - ゲーム悪用: ゲームの結果が `blockhash` に依存する場合、攻撃者は将来の結果を予測し、それに応じて賭けを行うことができます。
 
 ## 対策
-Do not rely on `blockhash` for generating randomness. Use more secure and unpredictable sources of randomness, such as using Chainlink VRF or other trusted oracles.
+乱数生成には `blockhash` に頼ってはいけません。Chainlink VRF やその他の信頼できるオラクルを使用するなど、より安全で、予測できない乱数源を使用します。
 
 ### 脆弱なコントラクトの例
 ```solidity
