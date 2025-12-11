@@ -38,9 +38,9 @@ contract InsecureRandomness {
     }
 }
 ```
-**Why is this insecure?**
-- Miners control block production - They can reorder or discard blocks to manipulate `blockhash`.
-- Predictability - Attackers can call this function for past block numbers, making randomness guessable.
+**なぜこれが安全でないのか？**
+- マイナーはブロック生成を制御します - ブロックを並べ替えたり破棄して `blockhash` を操作できます。
+- 予測可能性 - 攻撃者は過去のブロック番号に対してこの関数を呼び出し、乱数を推測できます。
 
 
 ### 修正したコントラクトの例 - Chainlink VRF を使用した安全な乱数生成
@@ -84,7 +84,7 @@ contract SecureLottery is VRFConsumerBase {
 }
 ```
 
-**Why is this secure?**
-- Uses `Chainlink VRF` (Verifiable Random Function), which provides unpredictable, tamper-proof randomness.
-- Miners cannot manipulate the randomness as it is derived from a verifiable external source.
-- Players cannot predict the outcome before participating.
+**なぜこれが安全なのか？**
+- `Chainlink VRF` (Verifiable Random Function) を使用しています。これは予測不可能で改竄防止のある乱数を提供します。
+- マイナーは乱数を操作できません。検証可能な外部ソースから導出されるためです。
+- プレイヤーは参加前に結果を予測できません。
