@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-862: Missing Authorization
+- CWE-862: Missing Authorization  
   [https://cwe.mitre.org/data/definitions/862.html](https://cwe.mitre.org/data/definitions/862.html)
 
 ## 説明
-Insufficient authorization occurs when the contract does not verify whether a user has the appropriate permissions to perform specific actions. This vulnerability arises when there are missing or improperly implemented authorization checks, allowing unauthorized users to access functions they should not have access to.
+不十分な認可はユーザーが特定のアクションを実行するための適切なパーミッションを持っているかどうかをコントラクトが検証しない場合に発生します。この脆弱性は認可チェックが欠落しているか適切に実装されていない場合に発生し、認可されていないユーザーが、アクセスできないはずの機能にアクセスできるようになります。
 
-Common causes of insufficient authorization include:
-- Missing access control modifiers or incorrect configuration.
-- Failure to validate roles before granting access to sensitive functions.
-- Poor handling of user permissions, which could lead to privilege escalation.
+不十分な認可のよくある原因には以下があります。
+- アクセス制御修飾子の欠落、または設定の誤り。
+- 機密機能へのアクセスを許可する前にロールを検証していない。
+- ユーザーパーミッションの不適切な処理。権限昇格につながる可能性があります。
 
 ## 対策
 - **Implement role-based access control (RBAC):** Define roles such as `admin`, `user`, etc., and assign permissions accordingly to ensure only authorized users can call restricted functions.
