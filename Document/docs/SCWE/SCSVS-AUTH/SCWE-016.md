@@ -69,4 +69,4 @@ contract FixedAuthorization {
 }
 
 ```
-In the fixed example, the `onlyOwner` modifier ensures that only the contract owner can withdraw funds, thus preventing unauthorized users from performing sensitive operations like withdrawing assets.
+この修正した例では、`onlyOwner` 修飾子により、コントラクトオーナーのみが資金を引き出しできるようになり、認可されていないユーザーが資産の引き出しなどの機密操作を実行することを防ぎます。
