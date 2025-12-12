@@ -24,10 +24,10 @@ status: new
 - ユーザーパーミッションの不適切な処理。権限昇格につながる可能性があります。
 
 ## 対策
-- **Implement role-based access control (RBAC):** Define roles such as `admin`, `user`, etc., and assign permissions accordingly to ensure only authorized users can call restricted functions.
-- **Use access control modifiers:** Protect sensitive functions with appropriate modifiers (e.g., `onlyOwner`, `onlyAdmin`) to restrict access.
-- **Principle of least privilege:** Ensure each user only has access to the minimal set of actions they need to perform their role.
-- **Thorough testing:** Test for authorization vulnerabilities to ensure all restricted functions are properly secured.
+- **ロールベースのアクセス制御 (RBAC) を実装する:** `admin`, `user` などのロールを定義し、それに応じたパーミッションを割り当て、認可したユーザーのみが制限された機能を呼び出すことができるようにします。
+- **アクセス制御修飾子を使用する:** アクセスを制限するための適切な修飾子 (`onlyOwner`, `onlyAdmin` など) で機密機能を保護します。
+- **最小権限の原則:** 各ユーザーがロールを実行するために必要な最小限のアクションのみにアクセスできるようにします。
+- **徹底的なテスト:** 認可の脆弱性についてテストして、制限されたすべての機能が適切に保護されていることを確認します。
 
 ## 事例
 
