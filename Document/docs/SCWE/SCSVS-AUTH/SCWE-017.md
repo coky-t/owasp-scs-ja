@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-269: Improper Privilege Management
+- CWE-269: Improper Privilege Management  
   [https://cwe.mitre.org/data/definitions/269.html](https://cwe.mitre.org/data/definitions/269.html)
 
 ## 説明
-Privileged role mismanagement occurs when a smart contract incorrectly assigns roles or permissions, granting excessive privileges to certain users. This can lead to users obtaining permissions beyond what is necessary for their intended function, creating a potential for privilege escalation or unauthorized actions. In the context of smart contracts, improper privilege management can lead to critical vulnerabilities such as unauthorized contract changes, malicious interactions, or loss of funds.
+特権トールの管理ミスは、スマートコントラクトがロールやパーミッションを誤って割り当て、特定のユーザーに過剰な権限を付与した場合に発生します。これはユーザーが意図した機能に必要なものを超えてパーミッションを取得し、権限昇格や不正なアクションをもたらす可能性があります。スマートコントラクトのコンテキストでは、不適切な権限管理は、不正なコントラクト変更、悪意のあるインタラクション、資金の喪失などの重大な脆弱性につながる可能性があります。
 
-Common causes include:
-- Insufficient checks for users attempting to access privileged functions.
-- Roles being dynamically assigned without validation.
-- Inadequate access control mechanisms for sensitive contract functions.
+よくある原因には以下があります。
+- 特権機能にアクセスしようとするユーザーに対する不十分なチェック。
+- バリデーションなしで動的に割り当てられるロール。
+- 機密性の高いコントラクト機能に対する不十分なアクセス制御メカニズム。
 
 ## 対策
 - **Role-based access control (RBAC):** Implement strict role checks using modifiers to ensure that users can only perform actions that correspond to their assigned roles.
