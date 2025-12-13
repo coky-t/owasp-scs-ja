@@ -51,7 +51,7 @@ contract PrivilegedRoleMismanagement {
 }
 ```
 
-In the above example, there is no check for the address assigning the `admin` role, and it can be changed by anyone, including malicious actors.
+上記の例では、`admin` ロールを割り当てるアドレスに対するチェックがなく、悪意のある人物を含む誰でも変更できる可能性があります。
 
 ### 修正した特権ロール管理
 ```solidity
@@ -79,4 +79,4 @@ contract FixedRoleManagement {
     }
 }
 ```
-In the fixed version, the `onlyOwner` modifier is used to ensure that only the owner can perform sensitive actions such as transferring ownership or withdrawing funds. This helps mitigate the risk of privilege mismanagement by enforcing access control at the contract level.
+修正版では、`onlyOwner` 修飾子を使用して、所有権の譲渡や資金の引き出しなどの機密性の高いアクションを所有者のみが実行できるようにします。これは、コントラクトレベルでアクセス制御を実行することで、権限管理の不備によるリスクを緩和できます。
