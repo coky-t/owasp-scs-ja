@@ -24,10 +24,10 @@ status: new
 - 機密性の高いコントラクト機能に対する不十分なアクセス制御メカニズム。
 
 ## 対策
-- **Role-based access control (RBAC):** Implement strict role checks using modifiers to ensure that users can only perform actions that correspond to their assigned roles.
-- **Principle of least privilege:** Limit the privileges of each role to the bare minimum needed to perform their task.
-- **Use of trusted or immutable sources:** Ensure that privileged roles cannot be arbitrarily changed by unauthorized users or during attacks.
-- **Periodic reviews and audits:** Regularly review roles and permissions to ensure they are correctly assigned and maintained.
+- **ロールベースのアクセス制御 (RBAC):** 修飾子を使用して厳格なロールチェックを実装し、ユーザーが割り当てられたロールに対応するアクションのみを実行できるようにします。
+- **最小権限の原則:** 各ロールの権限をタスクの実行に必要な最小限のみに制限します。
+- **信頼できるソースまたは不変なソースの使用:** 特権ロールが、認可されていないユーザーや攻撃によって、恣意的に変更されないようにします。
+- **定期的なレビューと監査:** ロールとパーミッションを定期的にレビューし、それらが適切に割り当てられ、維持されていることを確認します。
 
 ## 事例
 
