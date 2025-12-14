@@ -46,7 +46,7 @@ contract Vulnerable {
     }
 }
 ```
-In the vulnerable contract, the authorization check uses `tx.origin` to validate the caller. This is a problem because if the contract is called via another contract, `tx.origin` will return the original transaction sender (not the immediate caller), which opens up the contract to attacks such as phishing. The attacker can create a contract that interacts with the vulnerable contract on behalf of the victim.
+脆弱なコントラクトでは、認可チェックが呼び出し元を検証するために `tx.origin` を使用しています。これは、コントラクトが別のコントラクトを介して呼び出された場合、`tx.origin` が (直接の呼び出し元ではなく) 元のトランザクション送信者を返すため、コントラクトをフィッシングなどの攻撃にさらすため、問題となります。攻撃者は被害者に代わって脆弱なコントラクトとやり取りするコントラクトを柵瀬栄する可能性があります。
 
 
 
@@ -68,4 +68,4 @@ contract Secure {
 }
 
 ```
-In the fixed contract, `msg.sender` is used instead of `tx.origin`. This ensures that the contract checks the immediate sender of the call, which prevents attacks where malicious contracts impersonate the victim.
+修正したコントラクトでは、`tx.origin` の代わりに `msg.sender` を使用します。これは、コントラクトが呼び出しの直接の送信者をチェックし、悪意のあるコントラクトが被害者になりすます攻撃を防ぐようにします。
