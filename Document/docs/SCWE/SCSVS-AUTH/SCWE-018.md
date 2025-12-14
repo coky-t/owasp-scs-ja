@@ -19,13 +19,13 @@ status: new
 スマートコントラクトがトランザクションの発信元をチェックし、ユーザーがアクションを実行するために認可されているかどうかを判断する際に、`tx.origin` を使用した認可はセキュリティ上の脆弱性となります。`tx.origin` はトランザクションのチェーンを通じて攻撃者によって悪用され、認可されていないユーザーがコントラクトとやり取りできるようになるため、このアプローチは欠陥があります。攻撃者は、トランザクションチェーンの別のコントラクトを利用することで、コントラクトを騙して被害者に代わってアクションを実行する可能性があります。
 
 **主な問題**:
-- `msg.sender` の代わりに `tx.origin` 変数を使用することで、認可されていないトランザクションを許可します。
+- `msg.sender` ではなく `tx.origin` 変数を使用することで、認可されていないトランザクションを許可します。
 - フィッシング攻撃や再入攻撃に脆弱であり、攻撃者はコントラクトを使用して被害者になりすますことができます。
 - ロールの管理ミスや不適切なトランザクションフロー処理。
 
 ## 対策
-- **Use `msg.sender` instead of `tx.origin`**: Always rely on `msg.sender` for authentication and authorization, as it correctly represents the immediate sender of the current call.
-- **Strict validation checks**: Ensure that authorization checks are done on the direct sender of the transaction, i.e., `msg.sender`, and not the originator.
+- **`tx.origin` ではなく `msg.sender` を使用する**: 現在の呼び出しの直接の送信者を正しく表すために、認証と認可には常に `msg.sender` に依拠します。
+- **厳格なバリデーションチェック**: 認可チェックは、発信者ではなく、トランザクションの直接の送信者、つまり `msg.sender` に対して行われるようにします。
 
 ## 事例
 
