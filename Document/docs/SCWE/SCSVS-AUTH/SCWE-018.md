@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- **CWE-346**: Origin Validation Error
+- **CWE-346**: Origin Validation Error  
   [https://cwe.mitre.org/data/definitions/346.html](https://cwe.mitre.org/data/definitions/346.html)
 
 ## 説明
-The use of `tx.origin` for authorization is a security vulnerability in which a smart contract checks the origin of the transaction to determine if a user is authorized to perform an action. This approach is flawed because `tx.origin` can be exploited by an attacker through a chain of transactions, allowing unauthorized users to interact with the contract. An attacker could trick the contract into performing an action on behalf of the victim by utilizing another contract in the transaction chain.
+スマートコントラクトがトランザクションの発信元をチェックし、ユーザーがアクションを実行するために認可されているかどうかを判断する際に、`tx.origin` を使用した認可はセキュリティ上の脆弱性となります。`tx.origin` はトランザクションのチェーンを通じて攻撃者によって悪用され、認可されていないユーザーがコントラクトとやり取りできるようになるため、このアプローチは欠陥があります。攻撃者は、トランザクションチェーンの別のコントラクトを利用することで、コントラクトを騙して被害者に代わってアクションを実行する可能性があります。
 
-**Key Issues**:
-- Allows unauthorized transactions by using the `tx.origin` variable instead of `msg.sender`.
-- Vulnerable to phishing and reentrancy attacks, where attackers can use contracts to impersonate the victim.
-- Mismanagement of roles and improper transaction flow handling.
+**主な問題**:
+- `msg.sender` の代わりに `tx.origin` 変数を使用することで、認可されていないトランザクションを許可します。
+- フィッシング攻撃や再入攻撃に脆弱であり、攻撃者はコントラクトを使用して被害者になりすますことができます。
+- ロールの管理ミスや不適切なトランザクションフロー処理。
 
 ## 対策
 - **Use `msg.sender` instead of `tx.origin`**: Always rely on `msg.sender` for authentication and authorization, as it correctly represents the immediate sender of the current call.
