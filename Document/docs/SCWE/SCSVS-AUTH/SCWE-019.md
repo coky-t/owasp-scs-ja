@@ -12,17 +12,17 @@ status: new
 ---
 
 ## 関連
-- CWE-347: Improper Verification of Cryptographic Signature
+- CWE-347: Improper Verification of Cryptographic Signature  
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-Insecure signature verification occurs when a contract improperly verifies a cryptographic signature or fails to securely validate signatures, allowing attackers to forge or manipulate them. This vulnerability can allow unauthorized transactions or the bypassing of important security mechanisms, potentially leading to fraud, unauthorized access, or other attacks.
+安全でない署名検証は、コントラクトが暗号署名を不適切に検証する場合または署名を安全に検証できない場合に発生し、攻撃者がそれらを偽造や操作できるになります。この脆弱性は、不正なトランザクションや重要なセキュリティメカニズムのバイパスを可能にし、詐欺、不正アクセス、その他の攻撃につながる可能性があります。
 
-Common causes of insecure signature verification include:
-- Not validating the signer's address.
-- Using weak or outdated cryptographic libraries.
-- Failing to check signature validity before processing actions.
-- Incorrectly handling the signature format.
+安全でない署名検証のよくある原因には以下があります。
+- 署名者のアドレスを検証していない。
+- 弱いあるいは古い暗号ライブラリを使用している。
+- アクションを処理する前に署名の有効性をチェックしていない。
+- 署名形式を不適切に処理している。
 
 ## 対策
 - **Verify signatures properly:** Always verify that the signature matches the intended signer by using the `ecrecover` function for Ethereum addresses and comparing the result to the expected signer address.
