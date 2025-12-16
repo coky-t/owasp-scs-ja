@@ -25,10 +25,10 @@ status: new
 - 署名形式を不適切に処理している。
 
 ## 対策
-- **Verify signatures properly:** Always verify that the signature matches the intended signer by using the `ecrecover` function for Ethereum addresses and comparing the result to the expected signer address.
-- **Use strong cryptographic methods:** Ensure the use of robust cryptographic techniques and libraries. Avoid using outdated or weak algorithms.
-- **Use secure signature formats:** Make sure that signature formats are validated properly (e.g., ensure proper handling of `v`, `r`, `s` values in Ethereum signatures).
-- **Implement checks before acting on the signature:** Always perform checks for valid signature and relevant parameters before executing any logic that could be influenced by the signature.
+- **署名を適切に検証する:** 署名が意図した署名者と一致することを常に検証します。そのためには Ethereum アドレスに対して `ecrecover` 関数を使用し、その結果を想定した署名者アドレスと比較します。
+- **強力な暗号手法を使用する:** 堅牢な暗号技法とライブラリを使用します。古いまたは弱いアルゴリズムの使用を避けます。
+- **安全な署名形式を使用する:** 署名形式が適切に検証されていることを確認します (例: Ethereum 署名の `v`, `r`, `s` 値を適切に処理することを確認します)。
+- **署名に基づいて動作する前のチェックを実装する:** 署名により影響を受ける可能性のあるロジックを実行する前に、常に署名と関連パラメータが有効であることのチェックを実行します。
 
 ## 事例
 
