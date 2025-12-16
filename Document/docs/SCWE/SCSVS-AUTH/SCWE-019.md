@@ -53,7 +53,7 @@ contract InsecureSignatureExample {
     }
 }
 ```
-In the insecure version, the contract checks if the signature corresponds to the owner but does not properly validate or handle potential issues with the signature, such as its format or correctness.
+安全でないバージョンでは、コントラクトは署名が所有者に対応しているかどうかをチェックしますが、その形式や正確性など、署名に関する潜在的な問題を適切に検証または処理しません。
 
 ### 修正した署名検証
 ```solidity
@@ -74,4 +74,4 @@ contract SecureSignatureExample {
     }
 }
 ```
-In the fixed version, we use the `require()` function to ensure the signature matches the owner's address, thereby improving security by preventing unauthorized access or actions.
+修正したバージョンでは、`require()` 関数を使用して署名が所有者のアドレスと一致することを確認し、不正なアクセスやアクションを防ぐことでセキュリティを向上します。
