@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- CWE-840: Business Logic Errors
+- CWE-840: Business Logic Errors  
   [https://cwe.mitre.org/data/definitions/840.html](https://cwe.mitre.org/data/definitions/840.html)
 
 ## 説明
-Absence of time-locked functions occurs when smart contracts do not implement mechanisms to delay certain critical functions or actions based on time conditions. This can result in the contract allowing actions that should be restricted or postponed for a certain period, such as emergency fund withdrawals or sensitive administrative actions. Without time-locking mechanisms, malicious actors or faulty logic could trigger these actions at the wrong time, leading to undesired outcomes.
+時間ロック機能の欠如はスマートコントラクトが時間条件に基づいて特定の重要な機能やアクションを遅延するメカニズムを実装していない場合に発生します。これは、緊急資金引き落としや機密性の高い管理アクションなど、一定期間の制限や延期されるべきアクションをコントラクトが許可することにつながる可能性があります。時間ロックメカニズムなしでは、悪意のある人物や欠陥のあるロジックがこれらのアクションを不適切な時にトリガーし、望ましくない結果につながる可能性があります。
 
-Time-locking is commonly used in scenarios like:
-- Delaying admin or owner functions to prevent immediate misuse.
-- Ensuring withdrawal or fund transfer happens only after a predefined delay.
-- Enabling emergency actions only after a certain time or under specific conditions.
+時間ロックは以下のようなシナリオでよく使用されます。
+- 管理者または所有者の機能を遅らせて、即時の不正使用を防ぐ。
+- 事前定義された遅延後にのみ、引き落としや資金移動が発生するようにする。
+- 特定の時間後または特定の条件下でのみ、緊急アクションを有効にする。
 
 ## 対策
 - **Implement time-locked functions:** Ensure that critical functions, especially those related to fund transfers or administrative actions, are protected by a time lock, delaying their execution until an appropriate time has passed.
