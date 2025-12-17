@@ -24,10 +24,10 @@ status: new
 - 特定の時間後または特定の条件下でのみ、緊急アクションを有効にする。
 
 ## 対策
-- **Implement time-locked functions:** Ensure that critical functions, especially those related to fund transfers or administrative actions, are protected by a time lock, delaying their execution until an appropriate time has passed.
-- **Use block timestamps:** Leverage block timestamps or block numbers to control the execution of functions.
-- **Limit emergency access:** If implementing emergency mechanisms, ensure that there are time delays before they can be invoked, to reduce the chance of misuse.
-- **Review time-based logic regularly:** Verify the correctness of time-based logic to ensure that the system behaves as intended.
+- **時間ロック機能を実装する:** 重要な機能、特に資金移動や管理アクションに関連するものは、時間ロックによって保護され、適切な時間が経過するまで実行を遅延するようにします。
+- **ブロックタイムスタンプを使用する:** ブロックタイムスタンプまたはブロック番号を利用して、機能の実行を制御します。
+- **緊急アクセスを制限します:** 緊急メカニズムを実装する場合は、不正使用の機会を低減するため、それらが呼び出される前に時間遅延があるようにします。
+- **時間ベースのロジックを定期的にレビューする:** 時間ベースのロジックの正確性を検証して、システムが意図したとおりに動作することを確認します。
 
 ## 事例
 
