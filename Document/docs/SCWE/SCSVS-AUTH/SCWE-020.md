@@ -52,7 +52,7 @@ contract NoTimeLock {
     }
 }
 ```
-In this example, the contract lacks any time-lock mechanism, allowing the owner to withdraw funds at any time, which could be dangerous if mishandled. 
+この例では、コントラクトに時間ロックメカニズムがなく、所有者はいつでも資金を引き落としでき、取り扱いを誤ると危険となる可能性があります。
 
 ### 時間ロック機能の実装
 ```solidity
@@ -80,4 +80,4 @@ contract TimeLockExample {
     }
 }
 ```
-In the fixed version, a time-lock mechanism is implemented, ensuring that the owner can only withdraw funds after a certain delay (e.g., one week). This provides an added layer of security, particularly in cases where emergency withdrawals or administrative actions are necessary but should not be immediate.
+修正版では、時間ロックメカニズムが実装されており、所有者は特定の遅延 (例: 一週間) 後にのみ資産を引き落とすことができるようにします。これは、特に緊急引き落としや管理アクションが必要であるが、即時とすべきではない場合に、セキュリティの追加層を提供します。
