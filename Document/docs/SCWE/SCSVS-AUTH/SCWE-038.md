@@ -22,12 +22,12 @@ selfdestruct の安全でない使用は `selfdestruct` 関数が適切な安全
 - コントラクトロジックの脆弱性の悪用。
 
 ## 対策
-- **Restrict access:** Ensure only authorized addresses can call `selfdestruct`.
-- **Implement circuit breakers:** Add mechanisms to halt operations in case of suspicious activity.
-- **Test thoroughly:** Conduct extensive testing to ensure `selfdestruct` is used securely.
+- **アクセスを制限する:** 認可されたアドレスのみが `selfdestruct` を呼び出すことができるようにします。
+- **サーキットブレーカーを実装する:** 疑わしいアクティビティの場合に操作を停止するメカニズムを追加します。
+- **徹底的にテストする:** 広範なテストを実施して、`selfdestruct` が安全に使用されることを確認します。
 
 ## 事例
-- **Insecure Selfdestruct Usage**
+- **安全でない Selfdestruct の使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -38,7 +38,7 @@ selfdestruct の安全でない使用は `selfdestruct` 関数が適切な安全
     }
     ```
 
-- **Secure Selfdestruct Usage**
+- **安全な Selfdestruct の使用**
     ```solidity
     pragma solidity ^0.8.0;
 
