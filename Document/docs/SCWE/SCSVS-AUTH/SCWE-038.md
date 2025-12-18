@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-732: Incorrect Permission Assignment for Critical Resource
+- CWE-732: Incorrect Permission Assignment for Critical Resource  
   [CWE-732 Link](https://cwe.mitre.org/data/definitions/732.html)
 
 ## 説明
-Insecure use of selfdestruct refers to vulnerabilities that arise when the `selfdestruct` function is used without proper safeguards. This can lead to:
-- Unauthorized destruction of the contract.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in contract logic.
+selfdestruct の安全でない使用は `selfdestruct` 関数が適切な安全策なしで使用される場合に生じる脆弱性を指します。これは以下につながる可能性があります。
+- コントラクトの不正な破棄。
+- 資金やデータの喪失。
+- コントラクトロジックの脆弱性の悪用。
 
 ## 対策
 - **Restrict access:** Ensure only authorized addresses can call `selfdestruct`.
