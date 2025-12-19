@@ -27,7 +27,7 @@ modifier の安全でない使用は修飾子が不適切に使用された場�
 - **徹底的にテストする:** 広範なテストを実施して、modifier が安全であることを確認します。
 
 ## 事例
-- **Insecure Modifier Usage (With Storage Bug)**
+- **安全でない Modifier の使用 (ストレージバグあり)**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -54,16 +54,16 @@ modifier の安全でない使用は修飾子が不適切に使用された場�
     ```
 
 
-**Why is this Insecure?**
-- Wrong Condition in `onlyAdmin()`
-    - `require(admin == address(0), "Unauthorized");` only allows function execution when admin is zero.
-    - This means no valid admin can ever execute admin functions!
-    - If admin is ever non-zero, all `onlyAdmin` functions become unusable.
-    
-- Loss of Control
-    - If admin is accidentally set to `address(0)`, anyone can now execute admin functions, breaking security
+**なぜこれが安全でないのか？**
+- `onlyAdmin()` の条件の誤り
+    - `require(admin == address(0), "Unauthorized");` は admin がゼロの場合にのみ関数実行を許可します。
+    - これは有効な admin が管理機能を実行できないことを意味しています！
+    - admin がゼロ以外になった場合、すべての `onlyAdmin` 関数は使用できなくなります。
 
-- **Secure Modifier Usage**
+- 制御の喪失
+    - admin が誤って `address(0)` に設定された場合、誰でも admin 関数を実行できてしまい、セキュリティが破綻します
+
+- **安全な Modifier の使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -91,10 +91,10 @@ modifier の安全でない使用は修飾子が不適切に使用された場�
     }
     ```
 
-**Why is this Secure?**
-- Proper access control in `onlyAdmin()`
-    - `require(msg.sender == admin, "Unauthorized");` ensures only the correct admin can execute admin functions.
-        - Prevents privilege escalation
-- `updateAdmin()` prevents setting `admin = address(0)`, avoiding unintended loss of access.
+**なぜこれが安全なのか？**
+- `onlyAdmin()` の適切なアクセス制御
+    - `require(msg.sender == admin, "Unauthorized");` は適切な admin のみが管理機能を実行できるようにします。
+        - 権限昇格を防ぎます
+- `updateAdmin()` は `admin = address(0)` の設定を防ぎ、意図しないアクセス喪失を回避します。
 
 ---
