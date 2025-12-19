@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-732: Incorrect Permission Assignment for Critical Resource
+- CWE-732: Incorrect Permission Assignment for Critical Resource  
   [CWE-732 Link](https://cwe.mitre.org/data/definitions/732.html)
 
 ## 説明
-Insecure use of modifiers refers to vulnerabilities that arise when modifiers are used improperly. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in contract logic.
+modifier の安全でない使用は修飾子が不適切に使用された場合に生じる脆弱性を指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトロジックの脆弱性の悪用。
 
 ## 対策
 - **Restrict access:** Ensure only authorized addresses can use the modifier.
