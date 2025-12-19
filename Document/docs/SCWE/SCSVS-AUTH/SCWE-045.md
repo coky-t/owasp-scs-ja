@@ -22,9 +22,9 @@ modifier の安全でない使用は修飾子が不適切に使用された場�
 - コントラクトロジックの脆弱性の悪用。
 
 ## 対策
-- **Restrict access:** Ensure only authorized addresses can use the modifier.
-- **Validate inputs:** Ensure all inputs to the modifier are properly validated.
-- **Test thoroughly:** Conduct extensive testing to ensure modifiers are secure.
+- **アクセスを制限する:** 認可されたアドレスのみが modifier を使用できることを確保します。
+- **入力を検証する:** modifier へのすべての入力が適切に検証されていることを確保します。
+- **徹底的にテストする:** 広範なテストを実施して、modifier が安全であることを確認します。
 
 ## 事例
 - **Insecure Modifier Usage (With Storage Bug)**
