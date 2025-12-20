@@ -22,7 +22,7 @@ status: new
 この脆弱性を防ぐには、`onlyOwner` 修飾子や、より柔軟なロールベースのアクセス制御 (RBAC) システムなどの強力なアクセス制御メカニズムを実装します。認可されたユーザー (コントラクト所有者や特定のユーザーなど) のみが Ether の引き落としを開始できるように確保します。重要なコントラクト機能へのアクセスを許可する前に、必ずユーザーパーミッションを検証します。
 
 ## 影響
-An attacker can exploit this vulnerability to withdraw Ether from the contract, leading to potential financial loss. This could result in a total loss of funds if no protective measures are in place, exposing the contract and its users to significant risks.
+攻撃者はこの脆弱性を悪用してコントラクトから Ether を引き落とし、潜在的な金銭的損失につながる可能性があります。保護対策を講じていない場合、これは資金の全額損失につながり、コントラクトとそのユーザーを重大なリスクにさらします。
 
 ### 脆弱なコントラクトの例
 
