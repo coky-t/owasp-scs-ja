@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-732: Incorrect Permission Assignment for Critical Resource
+- CWE-732: Incorrect Permission Assignment for Critical Resource  
   [https://cwe.mitre.org/data/definitions/732.html](https://cwe.mitre.org/data/definitions/732.html)
 
 ## 説明
-Unprotected Ether withdrawal occurs when a smart contract allows withdrawal of Ether (ETH) without sufficient access control or proper authorization mechanisms. This vulnerability exposes the contract to unauthorized or malicious users, enabling them to drain funds without any checks on the withdrawal request.
+保護されていない Ether の引き落としはスマートコントラクトが十分なアクセス制御や適切な認可メカニズムなしで Ether (ETH) の引き落としを許可した場合に発生します。この脆弱性はコントラクトを不正なユーザーや悪意のあるユーザーにさらし、引き落としリクエストをいかなるチェックもなしで資金を引き出すことを可能にします。
 
 ## 対策
 To prevent this vulnerability, implement strong access control mechanisms like the `onlyOwner` modifier or a more flexible role-based access control (RBAC) system. Ensure that only authorized users (e.g., the contract owner or specific users) can initiate Ether withdrawals. Always verify user permissions before allowing access to critical contract functions.
