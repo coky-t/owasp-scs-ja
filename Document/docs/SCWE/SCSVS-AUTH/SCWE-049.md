@@ -19,7 +19,7 @@ status: new
 保護されていない Ether の引き落としはスマートコントラクトが十分なアクセス制御や適切な認可メカニズムなしで Ether (ETH) の引き落としを許可した場合に発生します。この脆弱性はコントラクトを不正なユーザーや悪意のあるユーザーにさらし、引き落としリクエストをいかなるチェックもなしで資金を引き出すことを可能にします。
 
 ## 対策
-To prevent this vulnerability, implement strong access control mechanisms like the `onlyOwner` modifier or a more flexible role-based access control (RBAC) system. Ensure that only authorized users (e.g., the contract owner or specific users) can initiate Ether withdrawals. Always verify user permissions before allowing access to critical contract functions.
+この脆弱性を防ぐには、`onlyOwner` 修飾子や、より柔軟なロールベースのアクセス制御 (RBAC) システムなどの強力なアクセス制御メカニズムを実装します。認可されたユーザー (コントラクト所有者や特定のユーザーなど) のみが Ether の引き落としを開始できるように確保します。重要なコントラクト機能へのアクセスを許可する前に、必ずユーザーパーミッションを検証します。
 
 ## 影響
 An attacker can exploit this vulnerability to withdraw Ether from the contract, leading to potential financial loss. This could result in a total loss of funds if no protective measures are in place, exposing the contract and its users to significant risks.
