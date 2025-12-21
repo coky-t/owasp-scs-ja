@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-732: Incorrect Permission Assignment for Critical Resource
+- CWE-732: Incorrect Permission Assignment for Critical Resource  
   [https://cwe.mitre.org/data/definitions/732.html](https://cwe.mitre.org/data/definitions/732.html)
 
 ## 説明
-The `SELFDESTRUCT` instruction in Ethereum allows a contract to destroy itself and send its remaining Ether balance to a specified address. If this instruction is not properly protected with access controls, an attacker could trigger it, causing the contract to self-destruct and possibly transferring all the funds to an unauthorized address. This can result in the total loss of funds or disruption of contract functionality.
+Ethereum の `SELFDESTRUCT` 命令は、コントラクトが自身を破壊し、残りの Ether 残高を使用されたアドレスに送信することを可能にします。この命令がアクセス制御で適切に保護されていない場合、攻撃者はそれをトリガーし、コントラクトに自己破壊を引き起こし、すべての資金を不正なアドレスに送金する可能性があります。これは、資金の全額損失やコントラクト機能の中断につながる可能性があります。
 
 ## 対策
 To mitigate this vulnerability, it is crucial to protect the `SELFDESTRUCT` instruction with proper access control mechanisms. Only authorized users, such as the contract owner or admin, should be allowed to call the `SELFDESTRUCT` function. Consider using modifiers like `onlyOwner` or a role-based access control system to enforce permission checks before allowing this critical operation.
