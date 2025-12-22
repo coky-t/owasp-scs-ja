@@ -25,10 +25,10 @@ status: new
 - **説明責任の欠如**: 意思決定は一方的に行われ、透明性とセキュリティを低下します。
 
 ## 対策
-- **Implement a Multisig Wallet**: Use multisignature schemes (e.g., Gnosis Safe) to require multiple signers for critical transactions.
-- **Role-Based Access Control (RBAC)**: Assign multiple roles with different privileges to prevent centralized control.
-- **Timelocks for Critical Functions**: Introduce a delay for privileged actions, allowing time for community intervention if needed.
-- **On-Chain Governance Mechanisms**: Decentralize decision-making using **DAO-based governance** where applicable.
+- **マルチシグウォレットを実装する**: マルチシグスキーム (Gnosis Safe など) を使用して、重要なトランザクションには複数の署名者を要求します。
+- **ロールベースのアクセス制御 (RBAC)**: 異なる権限を持つ複数のロールを割り当て、集中管理を防止します。
+- **重要な機能のタイムロック**: 特権アクションに遅延を持ち込み、必要に応じてコミュニティの介入のための時間を確保します。
+- **オンチェーンガバナンスメカニズム**: 適用できる場合には **DAO ベースのガバナンス** を使用して意思決定を分散化します。
 
 ## 事例
 
