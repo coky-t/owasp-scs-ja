@@ -12,17 +12,17 @@ status: new
 ---
 
 ## 関連
-- CWE-285: Improper Authorization
+- CWE-285: Improper Authorization  
   [https://cwe.mitre.org/data/definitions/285.html](https://cwe.mitre.org/data/definitions/285.html)
 
 ## 説明
-Lack of multisig governance occurs when critical smart contract functions, such as upgrades, fund withdrawals, or parameter changes, are controlled by a single entity. This creates a **single point of failure**, increasing the risk of **compromise, insider abuse, or unauthorized access**. Without multisig governance, attackers or malicious actors can easily exploit privileged functions if the private key of a single administrator is compromised.
+マルチシグガバナンスの欠如は、アップグレード、資金の引き落とし、パラメータの変更といった、重要なスマートコントラクト機能が単一のエンティティによって制御されている場合に発生します。これは **単一障害点** を作り出し、**侵害、内部関係者による悪用、不正アクセス** のリスクを高めます。マルチシグガバナンスなしでは、単一の管理者の秘密鍵が侵害された場合、攻撃者や悪意のある人物が特権機能を容易に悪用できます。
 
-Key risks associated with missing multisig governance:
-- **Centralization Risk**: A single entity can control and modify key contract parameters.
-- **Single Point of Failure**: Loss or compromise of the owner's private key can result in catastrophic consequences.
-- **Unauthorized Access**: An attacker gaining control of the private key can execute privileged functions without approval.
-- **Lack of Accountability**: Decisions are made unilaterally, reducing transparency and security.
+マルチシグガバナンスの欠如に伴う主なリスク:
+- **集中化リスク**: 単一エンティティが主要なコントラクトパラメータを制御および変更できます。
+- **単一障害点**: 所有者の秘密鍵の喪失または侵害は壊滅的な結果をもたらす可能性があります。
+- **不正アクセス**: 攻撃者が秘密鍵の制御を獲得すると、承認なしで特権機能を実行できます。
+- **説明責任の欠如**: 意思決定は一方的に行われ、透明性とセキュリティを低下します。
 
 ## 対策
 - **Implement a Multisig Wallet**: Use multisignature schemes (e.g., Gnosis Safe) to require multiple signers for critical transactions.
