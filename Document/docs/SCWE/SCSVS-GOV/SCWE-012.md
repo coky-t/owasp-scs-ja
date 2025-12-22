@@ -56,7 +56,7 @@ contract CentralizedGovernance {
 }
 ```
 
-- In this example, all governance actions depend on a single owner, making it a high-risk design.
+- この例では、すべてのガバナンスアクションは単一の所有者に依存し、リスクの高い設計になっています。
 
 ### マルチシグガバナンスを使用するようにリファクタリングしたもの
 
@@ -86,4 +86,4 @@ contract SecureGovernance {
 }
 ```
 
-- This improved version delegates authority to a multisig wallet, requiring multiple approvals before executing critical actions.
+- この改良版では、マルチシグウォレットに権限を委譲し、重要なアクションを実行する前に複数の承認を要求します。
