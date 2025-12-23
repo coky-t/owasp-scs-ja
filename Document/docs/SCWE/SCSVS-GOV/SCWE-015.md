@@ -12,20 +12,20 @@ status: new
 ---
 
 ## 関連
-- CWE-933: Security Misconfiguration
+- CWE-933: Security Misconfiguration  
   [https://cwe.mitre.org/data/definitions/933.html](https://cwe.mitre.org/data/definitions/933.html)
 
-- CWE-1118: Insufficient Documentation of Error Handling Techniques
+- CWE-1118: Insufficient Documentation of Error Handling Techniques  
     [https://cwe.mitre.org/data/definitions/1118.html](https://cwe.mitre.org/data/definitions/1118.html)
 
 ## 説明
-Poor governance documentation refers to the **lack of clear, transparent, and publicly accessible records** regarding a smart contract system’s decision-making processes, upgrade mechanisms, and role-based permissions. Without proper documentation, **users, developers, and auditors struggle to understand the governance model**, leading to **reduced trust, misconfigurations, and potential security vulnerabilities**.
+不十分なガバナンス文書は、スマートコントラクトシステムの意思決定プロセス、アップグレードメカニズム、ロールベースのパーミッションに関する **明確で、透明性があり、公にアクセスできる記録の欠如** を指します。適切な文書なしでは、**ユーザー、開発者、監査担当者はガバナンスモデルを理解するのに苦労し**、**信頼の低下、構成ミス、潜在的なセキュリティ脆弱性** につながります。
 
-Key risks associated with poor governance documentation:
-- **Unclear Decision-Making Process**: Users may not understand how governance proposals are initiated, approved, or executed.
-- **Hidden Centralization Risks**: Critical governance powers may be concentrated in a small group without public awareness.
-- **Lack of Upgradeability Transparency**: If upgrade procedures are not well-documented, malicious or unintended changes may go unnoticed.
-- **Poor Incident Response Handling**: Without clear emergency protocols, governance failures can lead to slow or inadequate responses to attacks.
+不十分なガバナンス文書に関連する主なリスク:
+- **不明確な意思決定プロセス**: ユーザーはガバナンス提案がどのように開始、承認、実行されるかを理解できない可能性があります。
+- **隠れた集中化リスク**: 重要なガバナンス権限は一般の認識なしで少数のグループに集中している可能性があります。
+- **アップグレード可能性の透明性の欠如**: アップグレード手順が十分に文書化されていない場合、悪意のある変更や意図しない変更は見過ごされる可能性があります。
+- **不十分なインシデント対応**: 明確な緊急プロトコルなしでは、ガバナンス不良が攻撃への対応の遅れや不十分な対応につながる可能性があります。
 
 ## 対策
 - **Comprehensive Governance Documentation**: Clearly outline roles, permissions, voting mechanisms, and upgradeability in technical and non-technical formats.
