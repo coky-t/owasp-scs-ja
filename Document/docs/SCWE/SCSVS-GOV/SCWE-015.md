@@ -28,11 +28,11 @@ status: new
 - **不十分なインシデント対応**: 明確な緊急プロトコルなしでは、ガバナンス不良が攻撃への対応の遅れや不十分な対応につながる可能性があります。
 
 ## 対策
-- **Comprehensive Governance Documentation**: Clearly outline roles, permissions, voting mechanisms, and upgradeability in technical and non-technical formats.
-- **Public Governance Reports**: Regularly publish governance decisions, major votes, and protocol updates in a transparent manner.
-- **Well-Defined Emergency Procedures**: Establish and document response plans for governance failures, protocol attacks, or keyholder compromises.
-- **On-Chain Governance Visibility**: Ensure that governance smart contracts expose relevant functions for transparency and accountability.
-- **Third-Party Audits of Governance Mechanisms**: Periodically review governance documentation and processes through independent audits.
+- **包括的なガバナンス文書**: ロール、パーミッション、投票メカニズム、アップグレード可能性を技術的および非技術的な形式で明確に説明します。
+- **公開ガバナンスレポート**: ガバナンスの決定、主要な投票、プロトコルの更新を透明性のある方法で定期的に公開します。
+- **明確に定義された緊急手順**: ガバナンスの不良、プロトコル攻撃、キーホルダーの侵害に対する対応計画を策定し、文書化します。
+- **オンチェーンガバナンスの可視化**: ガバナンススマートコントラクトが透明性と説明責任のために関連する機能を公開することを確保します。
+- **ガバナンスメカニズムの第三者監査**: 独立した監査を通じて、ガバナンス文書とプロセスを定期的にレビューします。
 
 ## 事例
 Unlike code vulnerabilities, **poor governance documentation is a process failure rather than a direct coding flaw**. However, its consequences can be illustrated with real-world governance failures:
