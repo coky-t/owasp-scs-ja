@@ -35,19 +35,19 @@ status: new
 - **ガバナンスメカニズムの第三者監査**: 独立した監査を通じて、ガバナンス文書とプロセスを定期的にレビューします。
 
 ## 事例
-Unlike code vulnerabilities, **poor governance documentation is a process failure rather than a direct coding flaw**. However, its consequences can be illustrated with real-world governance failures:
+コードの脆弱性とは異なり、**不十分なガバナンス文書は直接的なコーディング上の欠陥ではなくプロセスの不良です**。しかし、その結果は現実世界のガバナンスの不良として説明できます。
 
 ### 事例: セキュリティ侵害につながる不明確なアップグレードポリシー
-A DeFi protocol allows smart contract upgrades but **fails to document the governance process for approving upgrades**. A small group of developers, holding majority control over the governance multisig, **pushes an unreviewed upgrade** that introduces a critical vulnerability, resulting in a protocol exploit.
+DeFi プロトコルはスマートコントラクトのアップグレードを許可していますが **アップグレードを承認するためのガバナンスプロセスを文書化していません**。ガバナンスマルチシグ上の主要な制御を保持する少数の開発者グループが **レビューされていないアップグレードをプッシュ** し、重大な脆弱性をもたらし、プロトコルのエクスプロイトにつながります。
 
 ### 修正: 透明性のあるアップグレードポリシーの確保
-Protocols should establish a clear and documented upgradeability framework outlining who can propose, review, and approve upgrades. Implementing timelocks, community review periods, and independent security audits ensures upgrades are thoroughly vetted before execution. Additionally, maintaining an on-chain governance audit log enhances accountability and prevents unauthorized changes.
+プロトコルは、アップグレードを提案、レビュー、承認できる人物を明記した、明確かつ文書化されたアップグレード可能性フレームワークを確立する必要があります。タイムロック、コミュニティレビュー期間、独立したセキュリティ監査を実施することで、アップグレードが実行前に徹底的に精査されるようになります。さらに、オンチェーンガバナンス監査ログを維持することで、説明責任を強化し、不正な変更を防ぎます。
 
 
 ### 事例: ガバナンス採択における透明性の欠如
-A DAO implements an **opaque governance process**, where voting power is controlled by a few insiders without **a clear framework on how votes are counted or executed**. Community members later discover that **critical protocol changes were pushed without public discussion**, leading to governance disputes and loss of user trust.
+DAO は **不透明なガバナンスプロセス** を実施しており、**投票の集計方法や執行方法に関する明確な枠組み** がないまま、投票権は少数の内部関係者によって管理されています。コミュニティメンバーは後に **重要なプロトコル変更が公開討論なしにプッシュされた** ことを発見し、ガバナンス上の紛争やユーザーの信頼の喪失につながります。
 
 ### ガバナンス採択における透明性の向上
-Governance processes should be transparent, well-documented, and resistant to centralization risks to maintain trust. Clearly defining voting mechanisms, proposal review procedures, and decision-making criteria prevents manipulation and governance capture. Public governance discussions, decentralized voting structures, and immutable records of voting outcomes further enhance credibility and community trust.
+信頼を維持するためには、ガバナンスプロセスは透明性があり、十分に文書化され、集中化のリスクに耐性を持つ必要があります。投票メカニズム、提案レビュー手順、意思決定基準を明確に定義することで、不正操作やガバナンス乗っ取りを防ぎます。公開ガバナンス議論、分散型投票構造、投票結果の不変な記録は信頼性とコミュニティの信頼をさらに高めます。
 
 ---
