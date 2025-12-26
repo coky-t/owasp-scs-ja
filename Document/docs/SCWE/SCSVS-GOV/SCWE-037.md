@@ -22,9 +22,9 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **Use commit-reveal schemes:** Implement commit-reveal mechanisms to hide transaction details until they are finalized.
-- **Add delays:** Introduce time delays for critical operations to reduce the risk of front-running.
-- **Test thoroughly:** Conduct extensive testing to ensure front-running protection is effective.
+- **コミット公開スキームを使用する:** コミット公開メカニズムを実装して、トランザクションの詳細が確定するまでそれを隠します。
+- **遅延を追加する:** 重要な操作に時間遅延を導入して、フロントランニングのリスクを軽減します。
+- **徹底的にテストする:** 広範なテストを実施して、フロントランニング保護が効果的であることを確認します。
 
 ## 事例
 - **Vulnerable to Front-Running**
