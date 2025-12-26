@@ -12,14 +12,14 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Insufficient protection against front-running refers to vulnerabilities that allow malicious actors to exploit the order of transactions for profit. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data.
-- Exploitation of the contract’s logic.
+フロントランニングに対する不十分な保護は悪意のある人物がトランザクションの順序を悪用して利益を得ることを可能にする脆弱性を指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 資金やデータの喪失。
+- コントラクトのロジックの悪用。
 
 ## 対策
 - **Use commit-reveal schemes:** Implement commit-reveal mechanisms to hide transaction details until they are finalized.
