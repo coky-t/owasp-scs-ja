@@ -22,12 +22,12 @@ status: new
 - コントラクトのロジックの悪用。
 
 ## 対策
-- **コミット公開スキームを使用する:** コミット公開メカニズムを実装して、トランザクションの詳細が確定するまでそれを隠します。
+- **コミットリビールスキームを使用する:** コミットリビールメカニズムを実装して、トランザクションの詳細が確定するまでそれを隠します。
 - **遅延を追加する:** 重要な操作に時間遅延を導入して、フロントランニングのリスクを軽減します。
 - **徹底的にテストする:** 広範なテストを実施して、フロントランニング保護が効果的であることを確認します。
 
 ## 事例
-- **Vulnerable to Front-Running**
+- **フロントランニングに脆弱**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -50,12 +50,12 @@ status: new
         }
     }
     ```
-Why is this vulnerable?
-- Attackers see the transaction in the mempool and execute a transaction to buy first, raising the price.
-- Victim's transaction executes at a higher price or fails due to slippage.
-- Attacker sells at a profit, exploiting sandwich attacks.
+なぜこれが脆弱なのか？
+- 攻撃者はメモリプールのトランザクションを参照し、まず購入トランザクションを実行して価格を引き上げます。
+- 被害者のトランザクションはより高い価格で実行するか、スリッページにより失敗します。
+- 攻撃者は、サンドイッチ攻撃を悪用して、利益を得て売却します。
 
-- **Protected Against Front-Running-  Commit-Reveal to Hide Trade Intent**
+- **フロントランニングに対する保護あり - トレード意図を隠すためのコミットリビール**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -76,7 +76,7 @@ Why is this vulnerable?
         }
     }
     ```
-Why is this better?
-- Traders commit to the trade off-chain before revealing the amount, preventing mempool sniping.
-- Transactions cannot be front-run because attackers don’t know the amount until revealed.
+なぜこれが優れているのか？
+- トレーダーは金額を公開する前にオフチェーンでトレードをコミットし、メモリプールのスナイピングを防ぎます。
+- 攻撃者は公開されるまで金額を分からないため、トランザクションはフロントランできません。
 ---
