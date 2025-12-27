@@ -24,10 +24,10 @@ status: new
 フォールバック関数はコントラクトが一致する関数シグネチャを持たない呼び出しを受け取る場合にトリガーされます。これらは Ether の転送を処理したり、不明な関数呼び出しをプロキシするために使用できます。誤って構成された場合、不正アクセスや資金喪失など、意図しない動作を有効にする可能性があります。
 
 ## 対策
-- **Restrict logic execution in fallback functions**: Avoid placing critical execution logic inside fallback functions unless necessary.  
-- **Separate Ether reception**: Use `receive()` explicitly to handle Ether transfers instead of overloading `fallback()`.  
-- **Validate calls**: Ensure fallback functions do not execute unintended behavior. If required, use access control for specific use cases (e.g., controlled proxy calls).  
-- **Use explicit function definitions**: Instead of relying on fallback functions for critical operations, define explicit functions with proper access control.  
+- **フォールバック関数内でのロジック実行を制限する**: 必要な場合を除き、フォールバック関数内に重要な実行ロジックを配置することを避けます。
+- **Ether 受信を分離する**: Ethre 転送の処理には、`fallback()` をオーバーロードするのではなく、明示的に `receive()` を使用します。
+- **呼び出しを検証する**: フォールバック関数が意図しない動作を実行しないことを確認します。必要に応じて、特定のユースケース (制御されたプロキシ呼び出しなど) に対してアクセス制御を使用します。
+- **明示的な関数定義を使用する**: 重要な操作にはフォールバック関数に依存するのではなく、適切なアクセス制御を備えた明示的な関数を定義します。
 
 ## 事例
 ### 🚨 **安全でないフォールバック関数**
