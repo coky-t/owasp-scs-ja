@@ -12,16 +12,16 @@ status: new
 ---
 
 ## 関連
-- **CWE-250: Execution with Unnecessary Privileges**
+- **CWE-250: Execution with Unnecessary Privileges**  
   [CWE-250 Link](https://cwe.mitre.org/data/definitions/250.html)
 
 ## 説明
-Insecure use of fallback functions refers to vulnerabilities that arise when fallback functions are used improperly. This can lead to:
-- Unauthorized actions by malicious actors.
-- Loss of funds or data due to unintended execution.
-- Exploitation of contract logic if the fallback function allows arbitrary interactions.
+フォールバック関数の安全でない使用はフォールバック関数が不適切に使用された場合に生じる脆弱性を指します。これは以下につながる可能性があります。
+- 悪意のある人物による不正行為。
+- 意図しない実行による資金やデータの喪失。
+- フォールバック関数が任意のインタラクションを許可している場合のコントラクトロジックの悪用。
 
-Fallback functions are triggered when a contract receives a call with no matching function signature. They can be used to handle Ether transfers or proxy unknown function calls. If misconfigured, they may enable unintended behaviors, such as unauthorized access or fund loss.
+フォールバック関数はコントラクトが一致する関数シグネチャを持たない呼び出しを受け取る場合にトリガーされます。これらは Ether の転送を処理したり、不明な関数呼び出しをプロキシするために使用できます。誤って構成された場合、不正アクセスや資金喪失など、意図しない動作を有効にする可能性があります。
 
 ## 対策
 - **Restrict logic execution in fallback functions**: Avoid placing critical execution logic inside fallback functions unless necessary.  
