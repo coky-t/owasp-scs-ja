@@ -41,10 +41,10 @@ contract InsecureFallback {
     }
 }
 ```
-- This contract allows any call with an unknown function signature to trigger the fallback function, which could result in unintended behavior.
+- このコントラクトは、不明な関数シグネチャを持つ呼び出しがフォールバック関数をトリガーし、意図しない動作につながる可能性があります。
 
 ### 安全なフォールバック関数 (Ether の安全な処理)
-- Solution: Explicitly handle Ether transfers using receive()
+- 解決策: receive() を使用して Ether 転送を明示的に処理する
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -65,6 +65,6 @@ contract SecureFallback {
     }
 }
 ```
-This version properly separates Ether reception from fallback execution, preventing unintended behavior.
+このバージョンは Ether 受信とフォールバック関数を適切に分離し、意図しない動作を防ぎます。
 
 ---
