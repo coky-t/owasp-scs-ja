@@ -22,12 +22,12 @@ status: new
 - コントラクトロジックの脆弱性の悪用。
 
 ## 対策
-- **Encrypt sensitive data:** Encrypt sensitive data before storing it.
-- **Validate inputs:** Ensure all storage updates are properly validated.
-- **Test thoroughly:** Conduct extensive testing to ensure storage is secure.
+- **機密データを暗号化する:** 機密データを保存前に暗号化します。
+- **入力を検証する:** すべてのストレージアップデートが適切に検証されていることを確認します。
+- **徹底的にテストする:** 広範なテストを実施して、ストレージが安全であることを確認します。
 
 ## 事例
-- **Insecure Storage Usage**
+- **安全でないストレージ使用**
     ```solidity
     pragma solidity ^0.8.0;
 
@@ -40,7 +40,7 @@ status: new
     }
     ```
 
-- **Secure Storage Usage**
+- **安全なストレージ使用**
     ```solidity
     pragma solidity ^0.8.0;
 
