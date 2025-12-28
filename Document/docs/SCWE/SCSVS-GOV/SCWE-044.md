@@ -13,13 +13,13 @@ status: new
 
 ## 関連
 - CWE-20: Improper Input Validation  
-  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html)
+  [CWE-20 Link](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Insecure use of storage refers to vulnerabilities that arise when storage variables are improperly managed. This can lead to:
-- Unauthorized access to sensitive data.
-- Loss of funds or data.
-- Exploitation of vulnerabilities in contract logic.
+ストレージの安全でない使用はストレージ変数が不適切に管理される場合に発生する脆弱性を指します。これは以下につながる可能性があります。
+- 機密データへの不正アクセス。
+- 資金やデータの喪失。
+- コントラクトロジックの脆弱性の悪用。
 
 ## 対策
 - **Encrypt sensitive data:** Encrypt sensitive data before storing it.
