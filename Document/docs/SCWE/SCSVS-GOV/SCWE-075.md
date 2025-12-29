@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-852: Untrusted Control Sphere
+- CWE-852: Untrusted Control Sphere  
   [https://cwe.mitre.org/data/definitions/852.html](https://cwe.mitre.org/data/definitions/852.html)  
 
 ## 説明
-Incorrect Ether balance tracking occurs when a contract manually maintains an internal balance variable instead of relying on `address(this).balance`. This creates inconsistencies when Ether is received outside of expected functions (e.g., via `selfdestruct()`, `transfer()`, or direct deposits).  
+不正な Ether 残高追跡は、コントラクトが `address(this).balance` に依存せず、手動で内部残高変数を維持している場合に発生します。これは想定した関数以外 (`selfdestruct()`, `transfer()`, 直接入金を経由するなど) で Ether を受け取った場合に不整合を引き起こします。
 
-Attackers can exploit this by artificially inflating the contract's perceived balance, leading to unauthorized withdrawals or failed transactions. This issue is common in poorly designed deposit/withdraw systems that do not properly verify the actual contract balance.
+攻撃者は、コントラクトの見た目の残高を人為的に水増しすることでこれを悪用し、不正な引き落としやトランザクションの失敗につながる可能性があります。この問題は、実際のコントラクト残高を適切に検証しない、不備のある設計の入出金システムによくあります。
 
 ## 攻撃シナリオ
 An attacker sends Ether to the contract using `selfdestruct()`, increasing its actual balance without updating the internal tracking variable. Later, a user tries to withdraw funds, but the contract incorrectly assumes it has more Ether than it actually does, causing unexpected failures or exploits.
