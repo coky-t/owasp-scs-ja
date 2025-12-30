@@ -45,10 +45,10 @@ contract IncorrectBalanceTracking {
     }
 }
 ```
-**Why is this vulnerable?**
-- The contract does not account for direct Ether transfers outside deposit().
-- An attacker can send Ether via `selfdestruct()`, inflating the contract balance without updating balance.
-- This can lead to withdrawals being blocked or excessive withdrawals.
+**なぜこれが脆弱なのか？**
+- このコントラクトは deposit() 以外の直接 Ether 送金を考慮していません。
+- 攻撃者は `selfdestruct()` を介して Ether を送信し、残高を更新することなくコントラクト残高を水増しします。
+- これは引き落としをブロックされたり、過剰な引き落としにつながる可能性があります。
 
 ### 修正したコントラクトの例
 
@@ -68,9 +68,9 @@ contract CorrectBalanceTracking {
     }
 }
 ```
-**Why is this secure?**
-- Uses `address(this).balnce` for accurate balance tracking.
-- Prevents external deposits unless explicitly intended.
-- No manual `balance` variable, reducing risk of inconsistencies.
+**なぜこれが安全なのか？**
+- 正確な残高追跡のために `address(this).balnce` を使用します。
+- 明示的に意図しない限り、外部入金を防止します。
+- 手動の `balance` 変数がなく、不整合のリスクを軽減します。
 
 ---
