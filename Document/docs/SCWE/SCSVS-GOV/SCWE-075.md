@@ -24,9 +24,9 @@ status: new
 攻撃者は `selfdestruct()` を使用してコントラクトに Ether を送信し、内部追跡変数を更新せずに実際の残高を増やします。その後、ユーザーは資金を引き落とそうとしますが、コントラクトは実際よりも多くの Ether を保有すると誤って想定し、予期せぬ障害や悪用を引き起こします。
 
 ## 対策
-- **Use `address(this).balance`** instead of manually tracking Ether balance.
-- **Prevent external Ether deposits** by disabling the fallback function unless explicitly needed.
-- **Ensure proper accounting** by always reconciling balances before allowing withdrawals.
+- 手動で Ether 残高を追跡するのではなく **`address(this).balance` を使用します**。
+- 明示的に必要な場合を除き、フォールバック関数を無効にすることで、**外部 Ether 入金を防止します**。
+- 引き落としを許可する前に常に照合することで **適切なアカウンティングを確保します**。
 
 ### 脆弱なコントラクトの例
 ```solidity
