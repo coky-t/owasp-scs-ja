@@ -21,7 +21,7 @@ status: new
 攻撃者は、コントラクトの見た目の残高を人為的に水増しすることでこれを悪用し、不正な引き落としやトランザクションの失敗につながる可能性があります。この問題は、実際のコントラクト残高を適切に検証しない、不備のある設計の入出金システムによくあります。
 
 ## 攻撃シナリオ
-An attacker sends Ether to the contract using `selfdestruct()`, increasing its actual balance without updating the internal tracking variable. Later, a user tries to withdraw funds, but the contract incorrectly assumes it has more Ether than it actually does, causing unexpected failures or exploits.
+攻撃者は `selfdestruct()` を使用してコントラクトに Ether を送信し、内部追跡変数を更新せずに実際の残高を増やします。その後、ユーザーは資金を引き落とそうとしますが、コントラクトは実際よりも多くの Ether を保有すると誤って想定し、予期せぬ障害や悪用を引き起こします。
 
 ## 対策
 - **Use `address(this).balance`** instead of manually tracking Ether balance.
