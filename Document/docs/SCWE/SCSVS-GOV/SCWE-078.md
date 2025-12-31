@@ -19,7 +19,7 @@ status: new
 Solidity における Ether 送金の不適切な取り扱いは、トランザクションの失敗や資金の喪失などの予期せぬ動作につながる可能性があります。たとえば、`transfer()` や `send()` を使用する際に、実行の成功チェックを怠ったり、例外処理を適切に行わないと、Ether がコントラクト内でロックされたり、失われる可能性があります。
 
 ## 対策
-Always handle exceptions properly when transferring Ether. Ensure that you check for success or failure using `require()` or `assert()` after Ether transfers. Additionally, use `call()` with a specified gas limit for greater flexibility and error handling.
+Ether を送金する際は、常に例外を適切に処理します。Ether 送金後は `require()` または `assert()` を使用して、成功または失敗をチェックするようにします。さらに、柔軟性とエラー処理を向上するために、ガス制限を指定して `call()` を使用します。
 
 ### 脆弱なコントラクトの例
 ```solidity
