@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-703: Improper Check or Handling of Exceptional Conditions
+- CWE-703: Improper Check or Handling of Exceptional Conditions  
   [https://cwe.mitre.org/data/definitions/703.html](https://cwe.mitre.org/data/definitions/703.html)
 
 ## 説明
-Improper handling of Ether transfers in Solidity can lead to unexpected behaviors, such as failed transactions or loss of funds. For instance, when using `transfer()` or `send()`, failure to check for successful execution or not handling exceptions correctly can cause Ether to be locked or lost in the contract.
+Solidity における Ether 送金の不適切な取り扱いは、トランザクションの失敗や資金の喪失などの予期せぬ動作につながる可能性があります。たとえば、`transfer()` や `send()` を使用する際に、実行の成功チェックを怠ったり、例外処理を適切に行わないと、Ether がコントラクト内でロックされたり、失われる可能性があります。
 
 ## 対策
 Always handle exceptions properly when transferring Ether. Ensure that you check for success or failure using `require()` or `assert()` after Ether transfers. Additionally, use `call()` with a specified gas limit for greater flexibility and error handling.
