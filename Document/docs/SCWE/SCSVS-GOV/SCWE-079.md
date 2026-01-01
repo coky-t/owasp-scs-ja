@@ -22,7 +22,7 @@ Solidity における Ether 送金のための `.transfer()` と ` .send() ` の
 
 
 ## 対策
-Instead of `.transfer()` and `.send()`, use `.call{value: msg.value}("")`, which allows more flexible gas allocation and prevents DoS risks. Always check for the return value of `.call()` to ensure the transfer was successful.
+`.transfer()` や `.send()` ではなく `.call{value: msg.value}("")` を使用します。これはより柔軟なガス割り当てを可能にし、DoS リスクを防ぎます。常に `.call()` の戻り値をチェックし、送金が成功したことを確認します。
 
 
 ### 脆弱なコントラクトの例
