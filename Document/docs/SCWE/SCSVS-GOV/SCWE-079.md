@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-400: Uncontrolled Resource Consumption
+- CWE-400: Uncontrolled Resource Consumption  
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-The use of `.transfer()` and` .send() `for Ether transfers in Solidity is insecure because they impose a fixed gas limit of 2300 gas. This restriction can cause transactions to fail unexpectedly when the receiving contract has complex logic that requires more gas. Additionally, it can result in a Denial of Service (DoS) vulnerability if the receiving contract cannot execute due to insufficient gas.
+Solidity における Ether 送金のための `.transfer()` と ` .send() ` の使用は、2300 ガスの固定のガス制限を課すため、安全ではありません。この制限は、受信するコントラクトが多くのガスを必要とする複雑なロジックを持つ場合、トランザクションが予期せず失敗することにつながる可能性があります。さらに、受信するコントラクトが不十分なガスにより実行できない場合、サービス拒否 (DoS) 脆弱性につながる可能性があります。
 
-This issue is especially problematic in upgradable smart contracts or protocol interactions, where the gas requirements of a receiving contract might change over time.
+この問題は、受信するコントラクトのガス要件が時間経過とともに変化する可能性がある、アップグレード可能なスマートコントラクトやプロトコルインタラクションにおいて特に厄介です。
 
 
 ## 対策
