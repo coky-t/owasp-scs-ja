@@ -16,9 +16,9 @@ status: new
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Solidity における Ether 送金のための `.transfer()` と ` .send() ` の使用は、2300 ガスの固定のガス制限を課すため、安全ではありません。この制限は、受信するコントラクトが多くのガスを必要とする複雑なロジックを持つ場合、トランザクションが予期せず失敗することにつながる可能性があります。さらに、受信するコントラクトが不十分なガスにより実行できない場合、サービス拒否 (DoS) 脆弱性につながる可能性があります。
+Solidity における Ether 送金のための `.transfer()` と ` .send() ` の使用は、2300 ガスの固定のガス制限を課すため、安全ではありません。この制限は、受信側コントラクトが多くのガスを必要とする複雑なロジックを持つ場合、トランザクションが予期せず失敗することにつながる可能性があります。さらに、受信側コントラクトが不十分なガスにより実行できない場合、サービス拒否 (DoS) 脆弱性につながる可能性があります。
 
-この問題は、受信するコントラクトのガス要件が時間経過とともに変化する可能性がある、アップグレード可能なスマートコントラクトやプロトコルインタラクションにおいて特に厄介です。
+この問題は、受信側コントラクトのガス要件が時間経過とともに変化する可能性がある、アップグレード可能なスマートコントラクトやプロトコルインタラクションにおいて特に厄介です。
 
 
 ## 対策
@@ -34,9 +34,9 @@ contract Example {
     }
 }
 ```
-**Problem**:
-- If `_to` is a contract that requires more than `2300 gas` (e.g., it has a fallback function with state changes), this transfer will fail.
-- The contract has no error handling, meaning the sender won't be aware of the failure.
+**問題点**:
+- `_to` が `2300 gas` を超えるコントラクト (たとえば、状態変化を伴うフォールバック関数を持つもの) である場合、この送信は失敗します。
+- コントラクトはエラー処理を持たず、送信側は失敗に気が付かないことを意味します。
 
 
 ### 修正したコントラクトの例
@@ -49,6 +49,6 @@ contract Example {
     }
 }
 ```
-**Why is this better?**
-- `.call{value: msg.value}("")` does not impose a gas limit, allowing the receiving contract to execute as needed.
-- It includes a `require(success, "Transfer failed");` check, ensuring failures are properly handled.
+**なぜこれが優れているのか？**
+- `.call{value: msg.value}("")` はガス制限を課さず、受信側コントラクトは必要に応じて実行できます。
+- `require(success, "Transfer failed");` チェックを含み、失敗が適切に処理されるようにしています。
