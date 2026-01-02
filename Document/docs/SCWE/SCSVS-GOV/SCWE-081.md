@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-20: Improper Input Validation
-  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html)
+- CWE-20: Improper Input Validation  
+  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Nonce values are used to ensure that transactions are processed in the correct order and prevent replay attacks. Improper handling or validation of nonces can lead to issues such as transaction replay or improper sequencing of transactions, which can be exploited by attackers.
+nonce 値は、トランザクションが正しい順序で処理されることを確保し、リプレイ攻撃を防ぐために使用されます。nonce の不適切な取り扱いやバリデーションは、トランザクションリプレイやトランザクションの不適切な順序付けのような問題を引き起こし、攻撃者に悪用される可能性があります。
 
 ## 対策
 Always validate nonce values to ensure that they are correctly incremented and avoid reusing nonces. Ensure that nonce handling is robust, especially in cases where external calls are involved, to prevent replay attacks or transaction malleability.
