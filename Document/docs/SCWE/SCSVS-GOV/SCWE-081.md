@@ -77,9 +77,9 @@ contract SecureExample {
 }
 ```
 
-Why is this better?
-- Nonce is no longer user input: It is validated as part of a signed message, preventing arbitrary replay attempts.
-- Prevents transaction replay attacks: By signing the message, an attacker cannot reuse an old transaction because the signature includes the nonce.
-- Ensures integrity & authenticity: The contract only processes the transaction if the signed message is valid and matches the expected sender.
+なぜこれが優れているのか？
+- nonce はもはやユーザー入力ではありません。著名付きメッセージの一部として検証され、任意のリプレイ試行を防ぎます。
+- トランザクションリプレイ攻撃を防ぎます。メッセージに署名することで、署名が nonce を含むため、攻撃者は古いトランザクションを再使用できません。
+- 完全性と真正性を確保します。署名付きメッセージが有効で、想定した送信者と一致する場合にのみ、コントラクトはトランザクションを処理します。
 
 ---
