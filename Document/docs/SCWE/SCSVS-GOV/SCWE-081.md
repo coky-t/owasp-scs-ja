@@ -19,7 +19,7 @@ status: new
 nonce 値は、トランザクションが正しい順序で処理されることを確保し、リプレイ攻撃を防ぐために使用されます。nonce の不適切な取り扱いやバリデーションは、トランザクションリプレイやトランザクションの不適切な順序付けのような問題を引き起こし、攻撃者に悪用される可能性があります。
 
 ## 対策
-Always validate nonce values to ensure that they are correctly incremented and avoid reusing nonces. Ensure that nonce handling is robust, especially in cases where external calls are involved, to prevent replay attacks or transaction malleability.
+nonce 値が正しくインクリメントされていることを確認するために常に検証し、nonce の再使用を避けます。特に外部呼び出しが関係する場合、nonce の取り扱いが堅牢であることを確認し、リプレイ攻撃やトランザクションの可鍛性を防ぎます。
 
 ### 脆弱なコントラクトの例
 ```solidity
