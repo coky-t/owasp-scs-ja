@@ -12,15 +12,15 @@ status: new
 ---
 
 ## 関連
-- CWE-1008: Architectural Concepts
+- CWE-1008: Architectural Concepts  
   [https://cwe.mitre.org/data/definitions/1008.html](https://cwe.mitre.org/data/definitions/1008.html)
 
 ## 説明
-Improper contract architecture refers to the flawed design of a smart contract’s structure, which compromises its security, scalability, and maintainability. This often occurs due to monolithic designs, inefficient inheritance structures, and poor separation of concerns. Such flaws create challenges in managing, upgrading, and auditing the contract. Key issues associated with improper architecture include:
+不適切なコントラクトアーキテクチャは、スマートコントラクトの構造設計に欠陥があり、そのセキュリティ、スケーラビリティ、保守性を損なうことを指します。これは、モノリシックな設計、非効率な継承構造、不十分な関心の分離によって発生することがよくあります。そのような欠陥は、コントラクトを管理、アップグレード、監査することを困難にします。不適切なアーキテクチャに関連する主な問題は以下のとおりです。
 
-- Difficulty in upgrading the contract without introducing risks.
-- Increased complexity leading to hidden attack surfaces.
-- Lack of flexibility in contract logic, making it hard to isolate bugs or exploits.
+- リスクを伴わずにコントラクトをアップグレードすることが困難である。
+- 複雑さが増し、隠れた攻撃対象領域につながる。
+- コントラクトロジックの柔軟性に欠け、バグやエクスプロイトの特定が困難となる。
 
 ## 対策
 - **Modular design:** Break down contracts into smaller, more manageable modules to ensure a clean separation of concerns.
