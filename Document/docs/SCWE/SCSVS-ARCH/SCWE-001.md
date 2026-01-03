@@ -23,10 +23,10 @@ status: new
 - コントラクトロジックの柔軟性に欠け、バグやエクスプロイトの特定が困難となる。
 
 ## 対策
-- **Modular design:** Break down contracts into smaller, more manageable modules to ensure a clean separation of concerns.
-- **Proxy pattern implementation:** Use proxies to allow contract upgrades while preserving contract state.
-- **Separate logic and state:** Keep business logic and data storage separate to improve scalability and maintainability.
-- **Periodic code review and refactoring:** Regularly assess the architecture and refactor to maintain efficiency and security.
+- **モジュール化設計:** コントラクトをより小さく管理しやすいモジュールに分割し、明確な関心の分離を確保します。
+- **プロキシパターン実装:** プロキシを使用して、コントラクトの状態を維持しながらコントラクトのアップグレードを可能にします。
+- **ロジックと状態の分離:** ビジネスロジックとデータストレージを分離し続け、スケーラビリティと保守性を向上します。
+- **定期的なコードレビューとリファクタリング:** 定期的にアーキテクチャを評価し、効率性とセキュリティを維持するためにリファクタします。
 
 ## 事例
 
