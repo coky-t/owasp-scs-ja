@@ -78,7 +78,7 @@ contract MonolithicContract {
 }
 ```
 
-**Problem**: The contract has a monolithic design, tightly coupling storage, business logic, and access control. This makes upgrading or fixing specific parts difficult.
+**問題点**: コントラクトはモノリシックな設計で、ストレージ、ビジネスロジック、アクセス制御を密接に結合しています。これは特定の部分をアップグレードしたり修正することが困難になります。
 
 
 ### 改良したモジュラーコントラクトアーキテクチャ
@@ -111,4 +111,4 @@ contract Transfer {
 }
 ```
 
-**Solution**: Separate storage from logic using proxy patterns. Now the contract logic can be updated without touching storage!
+**解決策**: プロキシパターンを使用してストレージとロジックを分離します。これでコントラクトロジックはストレージにタッチすることなく更新できます。
