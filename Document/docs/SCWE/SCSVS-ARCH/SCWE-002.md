@@ -16,13 +16,13 @@ status: new
   [https://cwe.mitre.org/data/definitions/710.html](https://cwe.mitre.org/data/definitions/710.html)
 
 ## 説明
-Excessive contract complexity refers to situations where the design or implementation of a smart contract becomes overly complicated, making it difficult to understand, audit, and maintain. Such complexity increases the likelihood of introducing bugs and vulnerabilities that may not be apparent during development or testing. It often arises from:
+過度なコントラクトの複雑さは、スマートコントラクトの設計または実装が過度に複雑になり、理解、監査、保守が困難になる状況を指します。そのような複雑さは開発時やテスト時には顕在化しないバグや脆弱性をもたらす可能性を高めます。多くの場合、以下の場合に発生します。
 
-- Overuse of complex inheritance structures or external libraries.
-- Too many functions, interdependencies, and conditions within the contract.
-- Unnecessarily convoluted logic that could be simplified.
+- 複雑な継承構造や外部ライブラリの過剰な使用。
+- コントラクト内の多すぎる関数、相互依存関係、条件。
+- 簡素化できるはずの不必要に複雑なロジック。
 
-The more complex the code, the higher the chance that mistakes are made, especially if future developers or auditors need to interact with the contract. Complexity can lead to hidden vulnerabilities that may be exploited over time.
+コードが複雑になるほど、特に将来の開発者や監査担当者がコントラクトとやり取りする必要がある場合に、ミスが発生する可能性が高くなります。複雑さは時間経過とともに悪用される可能性のある隠れた脆弱性につながる可能性があります。
 
 ## 対策
 - **Refactor and simplify the code**: Break down complex functions into smaller, easier-to-understand components.
