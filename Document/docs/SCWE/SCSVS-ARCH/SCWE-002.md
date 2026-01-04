@@ -25,11 +25,11 @@ status: new
 コードが複雑になるほど、特に将来の開発者や監査担当者がコントラクトとやり取りする必要がある場合に、ミスが発生する可能性が高くなります。複雑さは時間経過とともに悪用される可能性のある隠れた脆弱性につながる可能性があります。
 
 ## 対策
-- **Refactor and simplify the code**: Break down complex functions into smaller, easier-to-understand components.
-- **Limit inheritance depth**: Use inheritance judiciously and prefer composition over deep inheritance chains.
-- **Use clear and descriptive names**: Functions, variables, and events should have self-explanatory names that indicate their purpose.
-- **Avoid redundant logic**: Consolidate repeated logic into reusable functions or libraries.
-- **Ensure modularity**: Split the contract into manageable modules that focus on specific tasks, improving readability and maintainability.
+- **コードをリファクタして簡素化する**: 複雑な関数をより小さく理解しやすいコンポーネントに分割します。
+- **継承の深さを制限する**: 継承を慎重に使用し、深い継承チェーンよりもコンポジションを優先します。
+- **明確で説明的な名前を使用する**: 関数、変数、イベントはその目的を示す自己説明的な名前を付ける必要があります。
+- **冗長なロジックを避ける**: 繰り返されるロジックを再使用可能な関数またはライブラリに統合します。
+- **モジュール性を確保する**: コントラクトを特定のタスクに焦点を当てた管理しやすいモジュールに分割し、可読性と保守性を向上します。
 
 ## 事例
 
