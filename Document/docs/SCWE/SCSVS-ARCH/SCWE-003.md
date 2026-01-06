@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-1047: Modules with Circular Dependencies
+- CWE-1047: Modules with Circular Dependencies  
   [https://cwe.mitre.org/data/definitions/1047.html](https://cwe.mitre.org/data/definitions/1047.html)
 
 ## 説明
-Lack of modularity refers to a design flaw where a system's components are not sufficiently separated into independent, reusable modules. This deficiency leads to tightly coupled code, making the system difficult to understand, maintain, and extend. In the context of smart contracts, this manifests as monolithic contracts where all functionalities are bundled together, increasing complexity and the potential for errors.
+モジュール性の欠如は、システムのコンポーネントが独立した再使用可能なモジュールに十分に分離されていない、設計上の欠陥を指します。この欠陥はコードの密結合につながり、システムを理解、保守、拡張することが困難になります。スマートコントラクトのコンテキストでは、これはすべての機能がバンドルされたモノリシックなコントラクトとして現れ、複雑さとエラーの可能性を高めます。
 
 ## 対策
 - **Modular Design:** Break down the contract into smaller, focused modules that handle specific responsibilities.
