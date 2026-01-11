@@ -19,10 +19,10 @@ status: new
 モジュール性の欠如は、システムのコンポーネントが独立した再使用可能なモジュールに十分に分離されていない、設計上の欠陥を指します。この欠陥はコードの密結合につながり、システムを理解、保守、拡張することが困難になります。スマートコントラクトのコンテキストでは、これはすべての機能がバンドルされたモノリシックなコントラクトとして現れ、複雑さとエラーの可能性を高めます。
 
 ## 対策
-- **Modular Design:** Break down the contract into smaller, focused modules that handle specific responsibilities.
-- **Use of Libraries:** Leverage existing, well-tested libraries to handle common functionalities, reducing the need for custom code.
-- **Simplify Logic:** Avoid unnecessary complexity by streamlining the contract's logic and removing redundant code.
-- **Regular Audits:** Conduct periodic code reviews and audits to identify and address areas of excessive complexity.
+- **モジュール化設計:** コントラクトを、特定の責任を担う、より小さく焦点を当てたモジュールに分割します。
+- **ライブラリの使用:** 既存の十分にテストされたライブラリを活用して共通機能を処理し、カスタムコードの必要性を減らします。
+- **ロジックの簡素化:** コントラクトのロジックを合理化し、冗長なコードを削除することで、不要な複雑さを回避します。
+- **定期的な監査:** 定期的にコードレビューと監査を実施し、過度に複雑な領域を特定して対処します。
 
 ## 事例
 
