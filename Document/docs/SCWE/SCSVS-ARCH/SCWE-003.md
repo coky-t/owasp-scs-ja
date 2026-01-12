@@ -64,13 +64,13 @@ contract TightlyCoupledContract {
 }
 ```
 
-**Problem:** Instead of separating concerns into independent, reusable modules, everything is handled within one contract.
+**問題点:** 独立した再使用可能なモジュールに関心を分離するのではなく、すべてが一つのコントラクト内で処理されています。
 
-Why is this lack of modularity?
+なぜこれがモジュール性の欠如なのか？
 
-- Single contract handling multiple responsibilities (balance management, approvals, transfers).
-- Code is not reusable: If another contract needs balance functions, it must copy-paste this logic.
-- Testing is harder: Changing transfer() might break withdraw(), as they're tightly coupled.
+- 単一のコントラクトは複数の責任 (残高管理、承認、送金) を処理します。
+- コードは再使用可能ではありません。別のコントラクトが残高機能を必要である場合、子のロジックをコピー＆ペーストする必要があります。
+- テストが困難です。transfer() を変更すると、withdraw() が機能しなくなる可能性があります。これは密結合しているためです。
 
 ### モジュラー設計でリファクタリングしたもの:
 
@@ -144,4 +144,4 @@ contract ModularContract {
 
 ```
 
-**Solution:** Use libraries for shared functionality and separate contract concerns. Now, storage is separated, reusable libraries are used, and responsibilities are divided!
+**解決策:** 共有機能にはライブラリを使用してコントラクトの関心を分離します。これで、ストレージが分離され、再使用可能なライブラリが使用され、責任が分割されています！
