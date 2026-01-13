@@ -16,13 +16,13 @@ status: new
   [https://cwe.mitre.org/data/definitions/703.html](https://cwe.mitre.org/data/definitions/703.html)
 
 ## 説明
-Uncaught exceptions occur when a smart contract fails to properly handle errors, leading to unintended behaviors, lost funds, or denial of service (DoS). In Solidity, low-level calls such as `call()`, `delegatecall()`, and `send()` return a boolean instead of reverting automatically, requiring explicit checks. Ignoring return values or using `assert()` instead of `require()` can result in vulnerabilities that attackers can exploit.
+捕捉されない例外はスマートコントラクトがエラーを適切に処理できない場合に発生し、意図しない動作、資金の喪失、サービス拒否 (DoS) につながります。Solidity では、`call()`, `delegatecall()`, `send()` などの低レベルの呼び出しは、自動的に元に戻るのではなくブール値を返すため、明示的なチェックが必要です。戻り値を無視したり、`require()` の代わりに `assert()` を使用すると、攻撃者が悪用できる脆弱性につながる可能性があります。
 
-Common issues with uncaught exceptions:
-- Ignoring return values of `call()`, `delegatecall()`, `send()`
-- Unchecked external contract calls
-- Incorrect use of `assert()` instead of `require()`
-- Failure to catch errors in `try/catch` blocks
+捕捉されない例外でのよくある問題:
+- `call()`, `delegatecall()`, `send()` の戻り値を無視する
+- チェックされていない外部コントラクトの呼び出し
+- `require()` の代わりに `assert()` の誤った使用
+- `try/catch` ブロックでエラーを捕捉できない
 
 ## 対策
 - **Check Return Values:** Always verify the return values of low-level calls to ensure execution succeeded.
