@@ -25,11 +25,11 @@ status: new
 - `try/catch` ブロックでエラーを捕捉できない
 
 ## 対策
-- **Check Return Values:** Always verify the return values of low-level calls to ensure execution succeeded.
-- **Use `require()` for Input Validation:** `require()` should be used for checking user input, while `assert()` should only be used for invariants.
-- **Implement Try/Catch:** Use `try/catch` when interacting with external contracts to prevent silent failures.
-- **Use Safe Libraries:** Utilize OpenZeppelin’s `SafeERC20` for secure token transfers.
-- **Minimize External Dependencies:** Avoid relying on external contract behavior unless necessary.
+- **戻り値をチェックする:** 低レベル呼び出しでは常に戻り値を検証し、実行が成功したことを確認します。
+- **入力バリデーションに `require()` を使用する:** ユーザー入力のチェックに `require()` を使用し、不変条件にのみ `assert()` を使用します。
+- **Try/Catch を実装する:** 外部コントラクトとやり取りする際に `try/catch` を使用し、サイレントな失敗を防ぎます。
+- **安全なライブラリを使用する:** 安全なトークン転送には OpenZeppelin の `SafeERC20` を利用します。
+- **外部依存関係を最小限に抑える:** 必要がない限り、外部コントラクトの動作に依存することを避けます。
 
 ## 事例
 
