@@ -45,9 +45,9 @@ contract UncheckedCall {
 }
 ```
 
-In the above example, `call()` returns a boolean indicating success, but it is ignored, which can lead to silent failures.
+上記の例では、`call()` は成功を示すブール値を返しますが、それは無視され、サイレントな失敗につながる可能性があります。
 
-### 事例外を適切に処理するようにリファクタリングしたもの:
+### 例外を適切に処理するようにリファクタリングしたもの:
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -60,12 +60,12 @@ contract SafeCall {
 }
 ```
 
-In this improved version, the contract checks whether `call()` was successful, preventing execution from continuing on failure.
+この改良バージョンでは、コントラクトは `call()` が成功したかどうかをチェックし、失敗時に実行を継続することを防ぎます。
 
 
 ### 事例 2: バッドプラクティス (require() ではなく assert() を使用している)
 
-- Problem: Using assert() for input validation instead of require().
+- 問題点: 入力バリデーションに require() ではなく assert() を使用している。
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -78,9 +78,9 @@ contract WrongAssertion {
 }
 ```
 
-Why is this vulnerable?
-- `assert()` is meant for invariants, not input validation.
-- If `assert()` fails, it consumes all remaining gas and does not return gas to the caller.
+なぜこれが脆弱なのか？
+- `assert()` は不変条件を満たすためのものであり、入力バリデーションのためのものではありません。
+- `assert()` が失敗した場合、残りのガスをすべて消費し、呼び出し側にガスを返しません。
 
 ### ベタープラクティス (入力バリデーションの修正)
 
@@ -94,11 +94,11 @@ contract CorrectValidation {
     }
 }
 ```
-- Now, a proper `require()` statement prevents execution if amount is invalid.
+- こちらでは、適切な `require()` ステートメントにより、量が無効な場合に実行を防ぎます。
 
 ### 事例 3: バッドプラクティス (Try/Catch でエラーをキャッチしない)
 
-- Problem: Not using try/catch for external contract calls.
+- 問題点: 外部コントラクト呼び出しに try/catch を使用していない。
 
 ```solidity
 pragma solidity ^0.8.0;
@@ -114,9 +114,9 @@ contract NoErrorHandling {
 }
 ```
 
-Why is this vulnerable?
-- If riskyFunction() fails, the transaction completely reverts.
-- There is no way to recover or take alternative action.
+なぜこれが脆弱なのか？
+- riskyFunction() が失敗すると、トランザクションは完全に元に戻ります。
+- 回復したり、代替アクションを実行する方法はありません。
 
 ### ベタープラクティス (外部呼び出しに Try/Catch を使用する)
 
@@ -137,4 +137,4 @@ contract SafeExternalCall {
     }
 }
 ```
-- Now, errors are properly caught, and alternative actions can be taken.
+- こちらでは、エラーが適切にキャッチされ、代替アクションが実行されます。
