@@ -21,10 +21,10 @@ status: new
 この脆弱性は、コントラクト呼び出しを悪意のあるロジックにリダイレクトしたり、コントラクトの完全性を損なう不正な更新を行うなど、重大な障害につながる可能性があります。
 
 ## 対策
-- **Access Control:** Ensure only trusted parties (e.g., contract owners, multisig wallets) can perform upgrades.
-- **Timelock Mechanism:** Implement a timelock to delay upgrades and provide transparency.
-- **Transparent Proxy Pattern:** Use patterns that prevent unauthorized contract logic changes, such as the Transparent Proxy Pattern.
-- **Audit Proxy Logic Regularly:** Conduct regular audits to ensure that the upgrade mechanism is secure and follows best practices.
+- **アクセス制御:** 信頼できる関係者 (コントラクト所有者、マルチシグウォレットなど) のみがアップグレードを実行できるようにします。
+- **タイムロックメカニズム:** アップグレードを遅らせ、透明性を提供するためにタイムロックを実装します。
+- **透過プロキシパターン:** 透過プロキシパターンなど、不正なコントラクトロジックの変更を防ぐパターンを使用します。
+- **プロキシロジックを定期的に監査する:** 定期的に監査を実施して、アップグレードメカニズムが安全であり、ベストプラクティスに準拠していることを確認します。
 
 ## 事例
 
