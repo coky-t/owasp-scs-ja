@@ -54,7 +54,7 @@ contract VulnerableProxy {
     }
 }
 ```
-In this example, the `VulnerableProxy` contract allows the owner to update the implementation contract. If the owner is compromised, they can point the proxy to a malicious implementation, allowing the attacker to control the contract's logic.
+この例では、`VulnerableProxy` コントラクトは所有者が実装コントラクトを更新できます。所有者が侵害された場合、プロキシを悪意のある実装に向けることができ、攻撃者がコントラクトのロジックを制御できます。
 
 ### 安全なアップグレードメカニズムを備えたプロキシコントラクトに修正したもの
 
@@ -96,8 +96,8 @@ contract SecureProxy {
 }
 ```
 
-In the fixed `SecureProxy` contract, the following changes have been made:
+修正した `SecureProxy` コントラクトでは、以下の変更が行われました。
 
-- Access Control: The `onlyOwner` modifier ensures that only the contract owner can update the proxy’s implementation.
-- Timelock Mechanism: The `upgradeable` modifier adds a delay (set to 1 day in this example) to prevent rapid contract upgrades. The contract cannot be upgraded until the specified time has passed since the last upgrade.
-- Secure Upgrade Logic: The proxy logic is updated only after passing the necessary access control and timelock checks.
+- アクセス制御: `onlyOwner` 修飾子はコントラクト所有者のみがプロキシの実装を更新できるようにします。
+- タイムロックメカニズム: `upgradeable` 修飾子は遅延を追加 (この例では 1 日に設定) して、急なコントラクトのアップグレードを防ぎます。このコントラクトは最後のアップグレードから所定の時間が経過されるまでアップグレードできません。
+- 安全なアップグレードロジック: プロキシロジックは、必要なアクセス制御とタイムロックチェックを合格した後にのみ更新されます。
