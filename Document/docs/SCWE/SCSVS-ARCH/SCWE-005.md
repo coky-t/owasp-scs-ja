@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-668: Exposure of Resource to Wrong Sphere
+- CWE-668: Exposure of Resource to Wrong Sphere  
   [https://cwe.mitre.org/data/definitions/668.html](https://cwe.mitre.org/data/definitions/668.html)
 
 ## 説明
-Insecure upgradeable proxy designs occur when a smart contract implements an upgradeable proxy pattern without properly securing or validating upgrades. This may allow unauthorized actors to change the contract’s logic, possibly introducing malicious behavior. It often happens when the upgrade functionality lacks proper access controls or when there is no timelock to delay the upgrade, giving malicious actors an opportunity to exploit the contract.
+全でないアップグレード可能なプロキシ設計は、スマートコントラクトがアップグレードを適切に保護または検証せずにアップグレード可能なプロキシパターンを実装する場合に発生します。これは認可されていないアクターがコントラクトのロジックを変更し、悪意のある動作を引き起こす可能性があります。これは、アップグレード機能に適切なアクセス制御がない場合や、アップグレードを遅らせるためのタイムロックがない場合によく発生し、悪意のあるアクターがコントラクトを悪用する機会を与えます。
 
-This vulnerability can lead to critical failures, including the redirection of contract calls to malicious logic or unauthorized updates that compromise the integrity of the contract.
+この脆弱性は、コントラクト呼び出しを悪意のあるロジックにリダイレクトしたり、コントラクトの完全性を損なう不正な更新を行うなど、重大な障害につながる可能性があります。
 
 ## 対策
 - **Access Control:** Ensure only trusted parties (e.g., contract owners, multisig wallets) can perform upgrades.
