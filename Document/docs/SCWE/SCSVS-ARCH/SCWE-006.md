@@ -12,18 +12,18 @@ status: new
 ---
 
 ## 関連
-- CWE-710: Improper Adherence to Coding Standards
+- CWE-710: Improper Adherence to Coding Standards  
   [https://cwe.mitre.org/data/definitions/710.html](https://cwe.mitre.org/data/definitions/710.html)
 
 ## 説明
-Inconsistent inheritance hierarchies occur when a contract inherits from multiple contracts or libraries in an inconsistent or contradictory way. This leads to unexpected behavior or errors due to conflicting function implementations, state variables, or access controls. A proper and consistent inheritance structure is essential for clear logic and predictable contract execution.
+一貫性のない継承階層は、コントラクトが複数のコントラクトまたはライブラリから一貫性のないあるいは矛盾した方法で継承する場合に発生します。これは、関数実装、状態変数、アクセス制御の競合により、予期しない動作やエラーにつながります。適切で一貫性のある継承階層は明確なロジックと予測可能なコントラクト実行に不可欠です。
 
-Some common issues in inheritance hierarchies include:
-- Ambiguous function overrides.
-- Conflicting variable definitions.
-- Misuse of multiple inheritance, which can lead to the diamond problem.
+継承階層のよくある問題には以下を含みます。
+- 曖昧な関数オーバーライド。
+- 変数定義の競合。
+- 多重継承の誤用。ダイヤモンド問題につながる可能性があります。
 
-Inconsistent inheritance can significantly compromise a contract’s functionality and security, especially when multiple contracts or libraries with similar function names are used.
+一貫性のない継承は、特に類似した関数名を持つ複数のコントラクトまたはライブラリが使用されている場合、コントラクトの機能とセキュリティを大幅に損なう可能性があります。
 
 ## 対策
 - **Clear Inheritance Structure:** Ensure that the inheritance hierarchy is logically structured and does not have overlapping functionalities or conflicting state variables.
