@@ -61,7 +61,7 @@ contract Child is ParentA, ParentB {
     }
 }
 ```
-In the above example, the `Child` contract inherits from both `ParentA` and `ParentB`. Both parent contracts define the `setValue` function. There is no clear indication of which function should be called, leading to ambiguity and potential bugs or undesired behavior.
+上記の例では、`Child` コントラクトは `ParentA` と `ParentB` の両方から継承しています。両方の親コントラクトは `setValue` 関数を定義しています。どちらの関数が呼び出されるべきかを明確に示しておらず、曖昧さにつながり、バグや望ましくない動作の可能性があります。
 
 ### 一貫した継承でのコントラクトに修正したもの
 ```solidity
@@ -90,4 +90,4 @@ contract Child is ParentA {
     }
 }
 ```
-In the fixed version of the contract, the `Child` contract only inherits from one parent (`ParentA`), which resolves the ambiguity. If both `ParentA` and `ParentB` were needed, explicit overriding or more careful contract design would be required to ensure the correct functionality.
+修正版のコントラクトでは、`Child` コントラクトは一つの親 (`ParentA`) からのみ継承し、曖昧さを解消しています。`ParentA` と `ParentB` の両方が必要とされる場合、正しい機能を確保するために、明示的なオーバーライドやより慎重なコントラクト設計が必要になります。
