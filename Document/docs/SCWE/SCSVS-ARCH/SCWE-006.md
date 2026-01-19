@@ -26,10 +26,10 @@ status: new
 一貫性のない継承は、特に類似した関数名を持つ複数のコントラクトまたはライブラリが使用されている場合、コントラクトの機能とセキュリティを大幅に損なう可能性があります。
 
 ## 対策
-- **Clear Inheritance Structure:** Ensure that the inheritance hierarchy is logically structured and does not have overlapping functionalities or conflicting state variables.
-- **Use Explicit Overrides:** Clearly override functions when necessary to avoid ambiguity, and ensure there is no unintentional function masking.
-- **Favor Single Inheritance or Controlled Multiple Inheritance:** Avoid overly complex inheritance structures; if multiple inheritance is necessary, consider using design patterns like the Diamond Problem Resolver (i.e., using interfaces or abstract contracts).
-- **Regular Audits:** Periodically audit the inheritance structure to identify any inconsistencies early on.
+- **継承構造を明確にする:** 継承構造が論理的に構成されており、機能が重複したり、状態変数が競合することがないことを確認します。
+- **明示的なオーバーライドを使用する:** 必要に応じて関数を明確にオーバーライドして曖昧さを避け、意図しない関数マスキングがないようにします。
+- **単一継承または制御された多重継承を優先する:** 過度に複雑な継承構造を避けます。多重継承が必要な場合は、Diamond Problem Resolver などの設計パターン (インタフェースや抽象コントラクトなど) の使用を検討します。
+- **定期的に監査する:** 継承構造を定期的に監査し、一貫性のなさを早期に特定します。
 
 ## 事例
 
