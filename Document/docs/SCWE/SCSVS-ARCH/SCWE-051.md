@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/706.html](https://cwe.mitre.org/data/definitions/706.html)  
 
 ## 説明
-The `CREATE2` opcode allows for deterministic contract deployment, meaning the contract's address can be precomputed before deployment. However, improper handling of the salt parameter, constructor arguments, or contract bytecode can lead to vulnerabilities such as address predictability, re-deployment attacks, and malicious contract substitution. If an attacker can influence the salt or code, they may deploy a contract at a known address before the legitimate one, leading to security risks.
+`CREATE2` オペコードは決定論的なコントラクトのデプロイメントを可能にします。つまり、デプロイメント前にコントラクトのアドレスが事前に計算できるということです。しかし、ソルトパラメータ、コンストラクタ引数、コントラクトバイトコードの不適切な処理は、アドレス予測可能性、再デプロイメント攻撃、悪意のあるコントラクト代替などの脆弱性につながる可能性があります。攻撃者がソルトまたはコードに影響を及ぼすことができる場合、正当なものより前に既知のアドレスにコントラクトをデプロイする可能性があり、セキュリティリスクにつながります。
 
 ## 対策
 To prevent misuse of `CREATE2`:  
