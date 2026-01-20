@@ -19,10 +19,10 @@ status: new
 `CREATE2` オペコードは決定論的なコントラクトのデプロイメントを可能にします。つまり、デプロイメント前にコントラクトのアドレスが事前に計算できるということです。しかし、ソルトパラメータ、コンストラクタ引数、コントラクトバイトコードの不適切な処理は、アドレス予測可能性、再デプロイメント攻撃、悪意のあるコントラクト代替などの脆弱性につながる可能性があります。攻撃者がソルトまたはコードに影響を及ぼすことができる場合、正当なものより前に既知のアドレスにコントラクトをデプロイする可能性があり、セキュリティリスクにつながります。
 
 ## 対策
-To prevent misuse of `CREATE2`:  
-- Use unpredictable and unique salt values (e.g., incorporating nonces, sender addresses, or randomness).  
-- Ensure the deployed contract logic remains consistent to prevent re-deployment attacks.  
-- Hash important contract parameters into the salt to prevent unintended address collisions.  
+`CREATE2` の不正使用を防ぐには:
+- 予測不可能で一意のソルト値を使用します (例: ノンス、送信元アドレス、ランダム性を組み込みます)。
+- 再デプロイメント攻撃を防ぐために、デプロイしたコントラクトロジックが一貫性を維持していることを確保します。
+- 意図しないアドレス衝突を防ぐために、重要なコントラクトパラメータをソルトにハッシュ化します。
 
 ### 脆弱なコントラクトの例
 ```solidity
