@@ -36,11 +36,11 @@ contract Factory {
 }
 ```
 
-**Why is this vulnerable?**
+**なぜこれが脆弱なのか？**
 
-- If `salt` is predictable (e.g., user-supplied or a static value), an attacker can precompute and front-run the deployment.
-- The same contract address can be re-used by deploying different bytecode, leading to logic changes at a fixed address.
-- No validation ensures that the deployed contract is safe or expected.
+- `salt` が予測可能な場合 (例: ユーザー提供の値や静的な値)、攻撃者は事前に計算してデプロイメントをフロントランできます。
+- 同じコントラクトアドレスが異なるバイトコードをデプロイすることにより再使用され、固定アドレスのロジック変更につながる可能性があります。
+- バリデーションではデプロイされたコントラクトが安全または期待どおりであることを確保できません。
 
 ### 修正したコントラクトの例
 
@@ -63,9 +63,9 @@ contract SecureFactory {
 }
 ```
 
-**Why is this safe?**
-- Uses `keccak256(abi.encodePacked(msg.sender, salt))` to make the salt unique per sender.
-- Ensures the contract bytecode is non-empty before deploying.
-- Validates that the deployed contract is nonzero, ensuring a successful deployment.
+**なぜこれが安全なのか？**
+- `keccak256(abi.encodePacked(msg.sender, salt))` を使用して、送信者ごとにソルトを一意にしています。
+- デプロイ前にコントラクトバイトコードが空ではないことを確認しています。
+- デプロイされたコントラクトがゼロでないことを検証し、デプロイメントの成功を確保します。
 
-**By securing CREATE2 deployments, developers can prevent predictable contract addresses, front-running risks, and contract replacement vulnerabilities.**
+**CREATE2 デプロイメントを保護することで、開発者は予測可能なコントラクトアドレス、フロントランニングリスク、コントラクト置換の脆弱性を防止できます。**
