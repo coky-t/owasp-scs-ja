@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)  
 
 ## 説明
-Transaction Order Dependence (TOD) occurs when the outcome of a contract's execution depends on the order of transactions. Attackers can exploit this issue by submitting transactions in a specific order, manipulating the contract's state and gaining an unfair advantage, such as front-running or back-running other transactions. This can lead to unexpected behavior and resource consumption.
+トランザクション順序の依存性 (TOD) はコントラクトの実行結果がトランザクションの順序に依存する場合に発生します。攻撃者は特定の順序でトランザクションを送信することでこの問題を悪用し、コントラクトの状態を操作し、他のトランザクションのフロントランニングやバックランニングといった不当な優位性を獲得できます。これは予期しない動作やリソース消費につながる可能性があります。
 
 ## 対策
 To mitigate TOD vulnerabilities, ensure that the contract's logic does not depend on transaction order. Use techniques like commit-reveal schemes or randomization to prevent attackers from predicting the transaction order and exploiting it.
