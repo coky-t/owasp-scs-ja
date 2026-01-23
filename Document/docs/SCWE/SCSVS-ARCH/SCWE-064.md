@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-1001: Variable Shadowing
+- CWE-1001: Variable Shadowing  
   [https://cwe.mitre.org/data/definitions/1001.html](https://cwe.mitre.org/data/definitions/1001.html)
 
 ## 説明
-Incorrect inheritance order in Solidity can lead to unintended behavior, especially when multiple base contracts define similar variables or functions. Solidity’s linearization of the inheritance order can result in one contract unintentionally overriding or shadowing variables or functions defined in a parent contract, leading to confusion, errors, and potential vulnerabilities.
+Solidity での不正な継承順位は、特に複数のベースコントラクトが類似の変数や関数を定義している場合、意図しない動作につながる可能性があります。Solidity の継承順位の線形化は、あるコントラクトが親コントラクトで定義された変数や関数を意図せず上書きまたはシャドウイングしてしまい、混乱、エラー、潜在的な脆弱性につながる可能性があります。
 
-In Solidity, the order of inheritance matters. If the inheritance hierarchy is not properly structured, the wrong version of a variable or function may be called, causing bugs or security issues.
+Solidity では、継承の順位が重要です。継承階層が適切に構成されていない場合、変数や関数の誤ったバージョンが呼び出され、バグやセキュリティ上の問題を引き起こす可能性があります。
 
 ## 対策
 To mitigate this vulnerability, carefully review and order the inheritance structure. Ensure that parent contracts are inherited in a logical sequence and that any variables or functions are not unintentionally shadowed or overridden. Consider following a clear and consistent inheritance pattern.
