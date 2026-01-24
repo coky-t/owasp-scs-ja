@@ -21,7 +21,7 @@ Solidity での不正な継承順位は、特に複数のベースコントラ�
 Solidity では、継承の順位が重要です。継承階層が適切に構成されていない場合、変数や関数の誤ったバージョンが呼び出され、バグやセキュリティ上の問題を引き起こす可能性があります。
 
 ## 対策
-To mitigate this vulnerability, carefully review and order the inheritance structure. Ensure that parent contracts are inherited in a logical sequence and that any variables or functions are not unintentionally shadowed or overridden. Consider following a clear and consistent inheritance pattern.
+この脆弱性を緩和するには、継承構造を慎重にレビューして順位付けします。親コントラクトが論理的な順序で継承され、変数や関数が意図せずシャドウされたりオーバーライドされることがないことを確保します。明確で一貫性のある継承パターンに従うことを検討します。
 
 ### 脆弱なコントラクトの例
 ```solidity
