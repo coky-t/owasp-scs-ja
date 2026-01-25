@@ -21,7 +21,7 @@ Solidity では、コンストラクタは、デプロイ時にコントラク�
 コンストラクタ名が正しくない場合、意図したとおりに実行されず、コントラクトが期待通りに動作しない可能性があり、初期化されていない状態や一貫性のない状態のままになる可能性があります。
 
 ## 対策
-Ensure that the constructor has the correct name, which must match the contract name and contain no return type. In newer versions of Solidity (0.4.22 and later), the constructor keyword is used instead of the contract name for constructor functions.
+コンストラクタが正しい名前を持つことを確保します。コントラクト名と一致し、戻り型を含まれていないようにしなければなりません。Solidity の新しいバージョン (0.4.22 以降) では、constructor キーワードがコンストラクタ関数のためのコントラクト名の代わりに使用されます。
 
 ### 脆弱なコントラクトの例
 ```solidity
