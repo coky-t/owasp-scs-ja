@@ -12,13 +12,13 @@ status: new
 ---
 
 ## 関連
-- CWE-1001: Variable Shadowing
+- CWE-1001: Variable Shadowing  
   [https://cwe.mitre.org/data/definitions/1001.html](https://cwe.mitre.org/data/definitions/1001.html)
 
 ## 説明
-In Solidity, the constructor is a special function used to initialize a contract's state variables when it is deployed. If a constructor is incorrectly named, it will not function as expected, leading to issues such as failing to initialize state variables or triggering unexpected behavior. The constructor must have the exact name of the contract and no return type.
+Solidity では、コンストラクタは、デプロイ時にコントラクトの状態変数を初期化するために使用される特別な関数です。コンストラクタは正しく名前付けされていないと、期待通りに機能せず、状態変数の初期化に失敗したり、予期しない動作をトリガーすることにつながります。コンストラクタはコントラクトの正確な名前を持ち、戻り型がないようにしなければなりません。
 
-If the constructor name is not correct, it will not be executed as intended, and the contract may not behave as expected, potentially leaving it in an uninitialized or inconsistent state.
+コンストラクタ名が正しくない場合、意図したとおりに実行されず、コントラクトが期待通りに動作しない可能性があり、初期化されていない状態や一貫性のない状態のままになる可能性があります。
 
 ## 対策
 Ensure that the constructor has the correct name, which must match the contract name and contain no return type. In newer versions of Solidity (0.4.22 and later), the constructor keyword is used instead of the contract name for constructor functions.
