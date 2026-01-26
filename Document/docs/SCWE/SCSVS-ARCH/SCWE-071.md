@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- CWE-457: Use of Uninitialized Variable
+- CWE-457: Use of Uninitialized Variable  
   [https://cwe.mitre.org/data/definitions/457.html](https://cwe.mitre.org/data/definitions/457.html)
 
 ## 説明
-An uninitialized storage pointer in Solidity refers to a variable that has been declared but not assigned a value before being used. This can result in unpredictable behavior, as the variable might point to unintended locations in the contract's storage, potentially exposing sensitive data or allowing attackers to exploit the uninitialized pointer. This is a critical issue because Solidity does not automatically initialize storage variables, leaving them with default values that may be unsafe.
+Solidity での初期化されていないストレージポインタは、宣言されているが、使用前に値を割り当てられていない変数を指します。この変数はコントラクトのストレージ内の意図しない場所を指す可能性があるため、予測できない動作を引き起こす可能性があり、その結果、機密データをさらしたり、攻撃者が未初期化ポインタを悪用できる恐れがあります。これは重大な問題です。Solidity はストレージ変数を自動的に初期化しないため、安全でない可能性のあるデフォルト値が残ってしまうためです。
 
 ## 対策
 Always initialize storage pointers to avoid potential vulnerabilities. Ensure that all variables, especially storage pointers, are properly assigned a value before being used. This prevents accessing uninitialized or garbage data from the contract’s storage.
