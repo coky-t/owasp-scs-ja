@@ -19,7 +19,7 @@ status: new
 Solidity での初期化されていないストレージポインタは、宣言されているが、使用前に値を割り当てられていない変数を指します。この変数はコントラクトのストレージ内の意図しない場所を指す可能性があるため、予測できない動作を引き起こす可能性があり、その結果、機密データをさらしたり、攻撃者が未初期化ポインタを悪用できる恐れがあります。これは重大な問題です。Solidity はストレージ変数を自動的に初期化しないため、安全でない可能性のあるデフォルト値が残ってしまうためです。
 
 ## 対策
-Always initialize storage pointers to avoid potential vulnerabilities. Ensure that all variables, especially storage pointers, are properly assigned a value before being used. This prevents accessing uninitialized or garbage data from the contract’s storage.
+ストレージポインタを常に初期化して、潜在的な脆弱性を避けます。すべての変数、特にストレージポインタ、は使用前に適切に値を割り当てられていることを確保します。これはコントラクトのストレージから初期化されていないデータやゴミデータへのアクセスを防ぎます。
 
 ### 脆弱なコントラクトの例
 ```solidity
