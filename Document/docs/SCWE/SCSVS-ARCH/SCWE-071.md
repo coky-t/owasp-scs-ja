@@ -35,13 +35,13 @@ contract Example {
 }
 ```
 
-**Why is this vulnerable?**
-- `uninitializedPointer` is a storage pointer but is not assigned a reference to valid storage.
-- Writing to `uninitializedPointer.push(10);` could overwrite unintended storage locations.
+**なぜこれが脆弱なのか？**
+- `uninitializedPointer` はストレージポインタですが、有効なストレージへの参照を割り当てられていません。
+- `uninitializedPointer.push(10);` への書き込みは意図しないストレージ位置を上書きする可能性があります。
 
-**Potential outcomes:**
-- Corrupting storage layout (e.g., overwriting contract variables).
-- Unexpected behaviors due to storage reallocation.
+**潜在的な結果:**
+- ストレージレイアウトの破損 (例: コントラクト変数の上書き)。
+- ストレージの再割り当てによる予期しない動作。
 
 ### 修正したコントラクトの例
 ```solidity
@@ -56,7 +56,7 @@ contract Example {
   }
 ```
 
-**Why is this safe?**
-- `initializedPointer` explicitly references `data`, ensuring that it does not point to an arbitrary storage slot.
-- Prevents unintended overwrites of contract state.
-- Ensures expected behavior and protects contract integrity.
+**なぜこれが安全なのか？**
+- `initializedPointer` は `data` を明示的に参照し、任意のストレージスロットを指し示すことはありません。
+- コントラクト状態の意図しない上書きを防ぎます。
+- 期待される動作を確保し、コントラクトの完全性を保護します。
