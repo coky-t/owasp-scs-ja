@@ -12,11 +12,11 @@ status: new
 ---
 
 ## 関連
-- **CWE-704: Incorrect Type Conversion or Cast**
+- **CWE-704: Incorrect Type Conversion or Cast**  
   [https://cwe.mitre.org/data/definitions/704.html](https://cwe.mitre.org/data/definitions/704.html)
 
 ## 説明
-Incorrect type conversion occurs when a value is cast or implicitly converted between incompatible types, potentially leading to precision loss, unexpected behavior, or security vulnerabilities. Solidity allows certain implicit conversions (e.g., from `uint256` to `uint8`), which can lead to silent truncation of data. Additionally, casting between types like `address` and `uint` can lead to unexpected security risks.
+不正な型変換は、互換性のない型間でキャストまたは暗黙的に変換される場合に発生し、精度低下、予期しない動作、セキュリティ脆弱性につながる可能性があります。Solidity は特定の暗黙的な変換 (例: `uint256` から `uint8` へ) を許可しており、データの暗黙的な切り捨てにつながる可能性があります。さらに、`address` と `uint` などの型間のキャストは予期しないセキュリティリスクにつながる可能性があります。
 
 ## 対策
 - Avoid unsafe downcasts from larger to smaller types unless explicitly required.  
