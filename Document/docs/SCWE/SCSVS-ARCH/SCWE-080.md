@@ -35,10 +35,10 @@ contract Example {
     }
 }
 ```
-**Why is this vulnerable?**
+**なぜこれが脆弱なのか？**
 
-- `uint8(value)` will silently truncate values above 255, leading to unintended loss of data.
-- `uint256(uint160(addr))` might be used incorrectly in arithmetic operations, potentially allowing address manipulation.
+- `uint8(value)` は 255 を超える値を暗黙的に切り捨て、いとしないデータの損失につながります。
+- `uint256(uint160(addr))` は算術演算で誤って使用される可能性があり、アドレス操作を許可する可能性があります。
 
 ### 修正したコントラクトの例
 
@@ -54,10 +54,10 @@ contract SecureExample {
     }
 }
 ```
-**Why is this safe?**
+**なぜこれが安全なのか？**
 
-- Ensures that values do not exceed the allowed range before downcasting.
-- Re- stricts type conversion to avoid security risks from improper arithmetic operations.
-- Prevents silent data loss that could lead to unintended contract behavior.
+- ダウンキャスト前に値が許容範囲を超えないことを確保しています。
+- 型変換を制限し、不適切な算術演算からのセキュリティリスクを避けています。
+- 意図しないコントラクトの動作につながる可能性のある暗黙的なデータ損失を防いでいます。
 
-**By enforcing safe type conversions, developers can ensure contract logic remains reliable and free from unexpected truncation issues.**
+**安全な型変換を強制することで、開発者はコントラクトロジックが信頼性を維持し、予期しない切り捨ての問題を回避できます。**
