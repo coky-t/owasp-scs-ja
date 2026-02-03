@@ -12,18 +12,18 @@ status: new
 ---
 
 ## 関連
-- CWE-563: Assignment to Variable with No Effect
+- CWE-563: Assignment to Variable with No Effect  
   [https://cwe.mitre.org/data/definitions/563.html](https://cwe.mitre.org/data/definitions/563.html)
 
 ## 説明
-The presence of unused variables in smart contracts refers to variables that are declared but never utilized in the contract logic. These variables consume storage or memory space unnecessarily, potentially wasting gas when deployed or executed. This situation often arises due to incomplete code, forgotten variables, or code that was intended for future use but never implemented. The presence of such variables increases the attack surface by making it harder to understand the contract and opens up potential vulnerabilities.
+スマートコントラクトにおける未使用変数の存在は、宣言されているもののコントラクトロジックで利用されることのない変数を指します。これらの変数はストレージやメモリを不必要に消費し、デプロイ時や実行時にガスを無駄にする可能性があります。この状況は、不完全なコード、忘れられた変数、将来使用することを想定していたものの実装されていないコードにより発生することがよくあります。そのような変数の存在は、コントラクトの理解を困難にすることにより攻撃対象領域を拡大し、潜在的な脆弱性を生み出します。
 
-Some common risks include:
-- Wasted gas due to storage and memory consumption.
-- Increased complexity and difficulty in understanding contract behavior.
-- Potential confusion for auditors or future developers working on the contract.
+よくあるリスクには以下があります。
+- ストレージやメモリの消費によるガスの浪費。
+- 複雑さが増し、コントラクトの動作を理解することが困難になる。
+- 監査担当者や将来コントラクトに取り組む開発者に混乱を招く可能性がある。
 
-Unused variables can also hide logic errors or indicate that parts of the contract are not functioning as intended.
+未使用変数は、ロジックエラーを隠したり、コントラクトの一部が意図したとおりに機能していないことを示唆することもあります。
 
 ## 対策
 - **Remove Unused Variables:** Ensure that any variables that are not required for the contract’s functionality are removed.
