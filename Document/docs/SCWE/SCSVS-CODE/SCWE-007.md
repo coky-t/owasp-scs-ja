@@ -26,9 +26,9 @@ status: new
 未使用変数は、ロジックエラーを隠したり、コントラクトの一部が意図したとおりに機能していないことを示唆することもあります。
 
 ## 対策
-- **Remove Unused Variables:** Ensure that any variables that are not required for the contract’s functionality are removed.
-- **Code Review and Refactoring:** Regularly review and refactor the code to eliminate dead or unnecessary variables.
-- **Automated Static Analysis Tools:** Use static analysis tools to detect unused variables and other unnecessary code patterns.
+- **未使用変数を削除する:** コントラクトの機能に必要ではないすべての変数を削除します。
+- **コードレビューとリファクタリング:** 定期的にコードをレビューしてリファクタし、デッド変数や不要な変数を排除します。
+- **自動静的解析ツール:** 静的解析ツールを使用して、未使用変数やその他の不要なコードパターンを検出します。
 
 ## 事例
 
