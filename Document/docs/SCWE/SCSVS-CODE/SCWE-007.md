@@ -51,7 +51,7 @@ contract UnusedVariables {
 }
 ```
 
-In the example above, the `unusedVariable` is declared but never used within the contract. This is a waste of storage space and can confuse anyone reading or auditing the code.
+上記の例では、`unusedVariable` が宣言されていますが、コントラクト内で使用されることはありません。これはストレージスペースの無駄であり、コードを読んだり監査する人を混乱させる可能性があります。
 
 
 ### 未使用変数を削除した修正済みコード
@@ -71,4 +71,4 @@ contract FixedUnusedVariables {
 }
 
 ```
-The improved contract removes the unnecessary `unusedVariable`, reducing the complexity and improving gas efficiency.
+改良したコントラクトは不要な `unusedVariable` を削除し、複雑さを軽減してガス効率を改善します。
