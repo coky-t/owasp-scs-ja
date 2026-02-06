@@ -25,11 +25,13 @@ Solidity では、コンストラクタは、デプロイ時にコントラク�
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.4.0;
+
 contract Example {
     uint public value;
 
-    // Incorrect constructor name (for Solidity <0.4.22)
-    function Example() public {  // Constructor name must match the contract name in older Solidity versions
+    // In Solidity <0.4.22, constructor had to match contract name. In 0.5+, this is a regular function, not a constructor.
+    function Example() public {
         value = 10;
     }
 }
@@ -37,11 +39,13 @@ contract Example {
 
 ### 修正したコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract Example {
     uint public value;
 
     // Correct constructor definition (Solidity >=0.4.22)
-    constructor() public {  // Use "constructor" instead of the contract name
+    constructor() {  // Use "constructor" instead of the contract name
         value = 10;
     }
 }
