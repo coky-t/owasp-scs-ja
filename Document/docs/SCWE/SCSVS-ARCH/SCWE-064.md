@@ -25,6 +25,8 @@ Solidity では、継承の順位が重要です。継承階層が適切に構�
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract BaseA {
     uint public value;
 
@@ -50,6 +52,8 @@ contract Child is BaseB, BaseA {
 
 ### 修正したコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract BaseA {
     uint public value;
 
