@@ -22,7 +22,7 @@ contract Solidity_UncheckedExternalCall {
         owner = msg.sender;
     }
 
-    function forward(address callee, bytes _data) public {
+    function forward(address callee, bytes memory _data) public {
         require(callee.delegatecall(_data));
     }
 }
@@ -31,8 +31,8 @@ contract Solidity_UncheckedExternalCall {
 - チェックされていない外部呼び出しにより、トランザクションが失敗し、意図された操作が正しく完了しない可能性があります。送金が成功したという誤った判断の下でコントラクトが進行するため、資金の損失につながる可能性があります。さらに、コントラクトの状態が不正確になり、コントラクトがさらなる悪用に脆弱となったり、そのロジックに不整合が生じる可能性もあります。
 
 ### 対策:
-- transfer() は外部呼び出しが失敗した場合にトランザクションを元に戻すため、可能な限り send() ではなく transfer() を使用します。
-- send() や call() 関数の戻り値を常にチェックして、false を返した場合に適切な処理が行われるようにします。
+- 低レベル呼び出し (`call`, `delegatecall`, `staticcall`) および `send()` の戻り値を常にチェックします。成功を前提としてはいけません。`(bool success, ) = target.call{...}(...)` の後に `require(success, "message")` を使用します。
+- ETH 転送では、`transfer()` や `send()` よりも、明示的な成功チェックを行う `call{value}("")` を優先します (SCWE-079 参照)。`transfer()` は 2300 ガス手数料がかかり、受容者がコントラクトの場合に DoS を引き起こす可能性があります。
 
 ### 事例 (修正バージョン):
 ```
