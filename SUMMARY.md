@@ -217,7 +217,7 @@
     - [SCWE-034 安全でないクロスチェーンメッセージング (Insecure Cross-Chain Messaging)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-034.md)
     - [SCWE-087 クロスチェーンメッセージングにおけるペイロードサイズ検証の欠如 (サービス拒否/資金の滞留) (Missing Payload Size Validation in Cross-Chain Messaging (Denial of Service/Stuck Funds))](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-087.md)
     - [SCWE-094 LayerZero メッセージ送信における不十分なガス制限バリデーション (Insufficient Gas Limit Validation in LayerZero Message Sending)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-094.md)
-    - [SCWE-096 クロスチェーン NFT 引き落とし時のトークンバーンの欠如 (Missing Token Burn on During Cross-Chain NFT Withdrawal)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-096.md)
+    - [SCWE-096 クロスチェーン NFT 引き落とし時のトークンバーンの欠如 (Missing Token Burn During Cross-Chain NFT Withdrawal)](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-096.md)
 
   - SCSVS-DEFI
     - [SCWE-036 不適切なガス制限処理 (Inadequate Gas Limit Handling)](Document/docs/SCWE/SCSVS-DEFI/SCWE-036.md)
