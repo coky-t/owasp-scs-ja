@@ -23,6 +23,8 @@ TOD 脆弱性を緩和するには、コントラクトのロジックがトラ�
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract TODExample {
     address public winner;
     
@@ -34,6 +36,8 @@ contract TODExample {
 ```
 ### 修正したコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract FixedTODExample {
     address public winner;
     uint public highestBid;
