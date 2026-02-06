@@ -32,6 +32,9 @@ status: new
 
 ❌ **脆弱なコード (ペイロードサイズバリデーションなし)**
 ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
 // SourceChain.sol
 event Locked(address indexed user, uint256 amount, bytes payload);
 function lockTokens(uint256 amount, bytes calldata merkleProof) external {
@@ -46,6 +49,9 @@ function lockTokens(uint256 amount, bytes calldata merkleProof) external {
 ```
 宛先チェーン: デコードとミント
 ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
 // DestinationChain.sol
 function mintFromPayload(bytes calldata payload) external {
     // Will revert if payload is too large for decode!
@@ -57,6 +63,9 @@ function mintFromPayload(bytes calldata payload) external {
 ```
 ✅  安全なコード (ペイロードサイズバリデーションあり)
 ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
 // SourceChain.sol
 event Locked(address indexed user, uint256 amount, bytes payload);
 function lockTokens(uint256 amount, bytes calldata merkleProof) external {
@@ -72,6 +81,9 @@ function lockTokens(uint256 amount, bytes calldata merkleProof) external {
 ```
 宛先チェーン: デコードとミント (オプションで二重チェック)
 ```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
 // DestinationChain.sol
 function mintFromPayload(bytes calldata payload) external {
     require(payload.length <= 10_000, "Payload too large");
