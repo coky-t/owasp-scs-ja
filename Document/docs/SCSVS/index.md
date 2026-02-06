@@ -44,6 +44,6 @@ SCSVS を補完するために、OWASP SCS プロジェクトでは [OWASP ス�
 > **SCS テストプロファイル**  
 > SCS プロジェクトは従来、三つの検証レベル (L1, L2, L3) を提供してきましたが、2024 年の SCSVS リファクタリング時に再検討され、「SCS テストプロファイル」として作り直されました。
 > 
-> 再配置の間、一時的な措置として、[OWASP SCS チェックリスト](https://scs.owasp.org/checklists) には現在の SCSTG v0.0.1 テストに関連付けられた検証レベルを引き続き含みます。
+> 再配置の間、一時的な措置として、[OWASP SCS チェックリスト](https://scs.owasp.org/checklists) には現在の SCSTG v1.0 テストに関連付けられた検証レベルを引き続き含みます。
 
 <br><br>
