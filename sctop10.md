@@ -10,4 +10,4 @@
 * [SC07:2025](Document/docs/sctop10/SC07-FlashLoanAttacks.md) - フラッシュローン攻撃 (Flash Loan Attacks)
 * [SC08:2025](Document/docs/sctop10/SC08-IntegerOverUnderFlow.md) - 整数オーバーフローとアンダーフロー (Integer Overflow and Underflow)
 * [SC09:2025](Document/docs/sctop10/SC09-InsecureRandomness.md) - 安全でないランダム性 (Insecure Randomness)
-* [SC10:2025](Document/docs/sctop10/SC10-DenailOfService.md) - サービス拒否 (Denial Of Service)
+* [SC10:2025](Document/docs/sctop10/SC10-DenialOfService.md) - サービス拒否 (Denial Of Service)

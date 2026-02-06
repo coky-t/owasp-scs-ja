@@ -66,7 +66,7 @@
   - [SC07:2025 - フラッシュローン攻撃 (Flash Loan Attacks)](Document/docs/sctop10/SC07-FlashLoanAttacks.md)
   - [SC08:2025 - 整数オーバーフローとアンダーフロー (Integer Overflow and Underflow)](Document/docs/sctop10/SC08-IntegerOverUnderFlow.md)
   - [SC09:2025 - 安全でないランダム性 (Insecure Randomness)](Document/docs/sctop10/SC09-InsecureRandomness.md)
-  - [SC10:2025 - サービス拒否 (Denial Of Service)](Document/docs/sctop10/SC10-DenailOfService.md)
+  - [SC10:2025 - サービス拒否 (Denial Of Service)](Document/docs/sctop10/SC10-DenialOfService.md)
 
 - [OWASP スマートコントラクトセキュリティテストガイド 目次](SCSTG.md)
 
