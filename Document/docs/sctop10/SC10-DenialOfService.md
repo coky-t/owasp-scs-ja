@@ -38,6 +38,7 @@ contract Solidity_DOS {
 
 ### 対策:
 - スマートコントラクトが、失敗する可能性のある外部呼び出しの非同期処理など、失敗を一貫して処理できるようにし、コントラクトの完全性を維持し、予期しない動作を防止します。
+- **pull-over-push** パターンを使用します: ETH を前のキングにプッシュする (フォールバックを元に戻すコントラクトの場合は失敗する可能性があります) 代わりに、保留中の残高を記録し、別の `withdraw()` 関数を介して引き落としを行います。
 - 外部呼び出し、ループ、トラバーサルに `call` を使用する際は慎重に行い、トランザクションの失敗や予期しないコストにつながる可能性のある過剰なガス消費を避けます。
 - コントラクトのパーミッションで単一のロールに過剰な認可を与えないでください。代わりに、パーミッションを合理的に分割し、重要なパーミッションを持つロールにはマルチシグナルウォレットを使用して、秘密鍵の侵害によるパーミッション喪失を防止します。
 
@@ -49,21 +50,32 @@ pragma solidity ^0.8.24;
 contract Solidity_DOS {
     address public king;
     uint256 public balance;
+    mapping(address => uint256) public pendingWithdrawals;
 
-    // Use a safer approach to transfer funds, like transfer, which has a fixed gas stipend.
-    // This avoids using call and prevents issues with malicious fallback functions.
     function claimThrone() external payable {
         require(msg.value > balance, "Need to pay more to become the king");
 
         address previousKing = king;
         uint256 previousBalance = balance;
 
-        // Update the state before transferring Ether to prevent reentrancy issues.
+        // Update state first
         king = msg.sender;
         balance = msg.value;
 
-        // Use transfer instead of call to ensure the transaction doesn't fail due to a malicious fallback.
-        payable(previousKing).transfer(previousBalance);
+        // Pull-over-push: record pending withdrawal instead of pushing ETH.
+        // The previous king withdraws via withdraw() — no external call during claimThrone,
+        // so a malicious fallback cannot cause DoS.
+        if (previousKing != address(0)) {
+            pendingWithdrawals[previousKing] = previousBalance;
+        }
+    }
+
+    function withdraw() external {
+        uint256 amount = pendingWithdrawals[msg.sender];
+        require(amount > 0, "Nothing to withdraw");
+        pendingWithdrawals[msg.sender] = 0;
+        (bool sent,) = msg.sender.call{value: amount}("");
+        require(sent, "Transfer failed");
     }
 }
 ```
