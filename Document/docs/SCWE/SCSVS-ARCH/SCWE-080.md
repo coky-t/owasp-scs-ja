@@ -25,6 +25,8 @@ status: new
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract Example {
     function unsafeDowncast(uint256 value) public pure returns (uint8) {
         return uint8(value);  // ❌ Truncates value if > 255
@@ -43,6 +45,8 @@ contract Example {
 ### 修正したコントラクトの例
 
 ```solidity
+pragma solidity ^0.8.0;
+
 contract SecureExample {
     function safeDowncast(uint256 value) public pure returns (uint8) {
         require(value <= type(uint8).max, "Value exceeds uint8 range");  // ✅ Ensure valid range
