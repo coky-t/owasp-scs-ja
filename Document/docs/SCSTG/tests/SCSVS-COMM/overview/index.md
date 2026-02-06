@@ -18,8 +18,8 @@ contract Proxy {
         owner = msg.sender;
     }
 
-    function forward(address callee, bytes _data) public {
-        require(callee.delegatecall(_data)); // Unchecked external call vulnerability
+    function forward(address callee, bytes memory _data) public {
+        require(callee.delegatecall(_data)); // Unchecked: no validation of callee; delegatecall executes in caller context
     }
 }
 ```
@@ -32,7 +32,6 @@ contract Proxy {
 
 ### **対策**
 
-
-- Ether を転送する際は send() ではなく transfer() などのより安全なメソッドを使用します。transfer() 関数は、呼び出しが失敗した場合、自動的に元に戻ります。
-- call や delegatecall などの低レベル関数では、常に戻り値をチェックし、失敗を適切に処理します。
+- `call`, `delegatecall`, `staticcall` などの低レベル関数では、常に戻り値をチェックし、`require(success, "message")` で失敗を処理します。
+- ETH 転送では、`transfer()` や `send()` よりも、明示的な成功チェックを行う `call{value}("")` を優先します (SCWE-079 参照)。`transfer()` は 2300 ガス手数料がかかり、受容者がコントラクトである場合に DoS を引き起こす可能性があります。
 - 信頼できないコントラクトとのやり取りを制限し、重要な操作を実行する前に堅牢なバリデーションを実施します。
