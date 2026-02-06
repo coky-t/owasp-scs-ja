@@ -16,13 +16,13 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-Ethereum のようなブロックチェーンネットワークでは、ブロック変数 `(block.timestamp, block.number, block.difficulty など)` がブロックチェーンの現在の状態に関する情報を提供します。しかし、これらの値は完全に決定論的ではなく、マイナーによって操作される可能性があり、スマートコントラクトの脆弱性につながります。
+Ethereum のようなブロックチェーンネットワークでは、ブロック変数 `(block.timestamp, block.number, block.difficulty` / `block.prevrandao` post-merge など) がブロックチェーンの現在の状態に関する情報を提供します。しかし、これらの値は完全に決定論的ではなく、バリデータ (または PoW チェーン上のマイナー) によって操作される可能性があり、スマートコントラクトの脆弱性につながります。
 
-ブロックのタイムスタンプは正確性や一貫性があることを保証されておらず、マイナーは一定の範囲で影響を及ぼすことができます。トークン配布、アクセス制御、その他の時間的制約のあるイベントなど、重要な機能の正確なタイミングにコントラクトが依存している場合、これは問題を引き起こす可能性があります。
+ブロックのタイムスタンプは正確性や一貫性があることを保証されておらず、バリデータ (または PoW チェーン上のマイナー) は一定の範囲で影響を及ぼすことができます。トークン配布、アクセス制御、その他の時間的制約のあるイベントなど、重要な機能の正確なタイミングにコントラクトが依存している場合、これは問題を引き起こす可能性があります。
 
 安全でないタイムスタンプの使用から生じる潜在的な問題には以下があります。
 
-- タイムスタンプ操作: マイナーは `block.timestamp` をわずかに改変して、時間的制約のあるロジック (オークション、トークン配布、ステーキング報酬など) に影響を及ぼす可能性があります。
+- タイムスタンプ操作: バリデータ (または PoW チェーン上のマイナー) は `block.timestamp` をわずかに改変して、時間的制約のあるロジック (オークション、トークン配布、ステーキング報酬など) に影響を及ぼす可能性があります。
 - 予測可能なランダム性: ランダム性のソースとして `block.number` や `block.difficulty` を使用すると、攻撃者は結果を予測し、操作できます。
 - 悪用可能なアクセス制御: パーミッションやアクションについてブロックのタイムスタンプに頼るコントラクトは、タイムスタンプが調整されると、バイパスされる可能性があります。
 
@@ -45,7 +45,7 @@ contract TimestampExample {
     }
 
     function checkDeadline() public view returns (string) {
-        if (now > deadline) {
+        if (block.timestamp > deadline) {
             return "Deadline passed";
         } else {
             return "Deadline not passed";
@@ -54,7 +54,7 @@ contract TimestampExample {
 }
 ```
 
-上記の例では、`now` キーワードはブロックのタイムスタンプを取得し、期限と比較しています。これは、マイナーが事前に定義された枠内でブロックのタイムスタンプを操作できるため、潜在的な脆弱性が生じます。
+上記の例では、`block.timestamp` キーワードはブロックのタイムスタンプを取得し、期限と比較しています。これは、マイナーが事前に定義された枠内でブロックのタイムスタンプを操作できるため、潜在的な脆弱性が生じます。
 
 ### 修正したブロックタイムスタンプの使用
 ```solidity
@@ -96,36 +96,51 @@ contract InsecureLottery {
 
     function pickWinner() public {
         uint index = uint(block.timestamp) % players.length; // Insecure: Predictable outcome
-        payable(players[index]).transfer(address(this).balance);
+        (bool ok, ) = payable(players[index]).call{value: address(this).balance}("");
+        require(ok, "Transfer failed");
     }
 }
 ```
 問題点:
-- 予測可能性: `block.timestamp` は狭い範囲内で操作可能であるため、マイナーは勝者の選択に影響を及ぼす可能性があります。
-- 攻撃ベクトル: マイナーはトランザクションを並び替えて、特定の結果を確実にする可能性があります。
+- 予測可能性: `block.timestamp` は狭い範囲内で操作可能であるため、バリデータ (または PoW チェーン上のマイナー) は勝者の選択に影響を及ぼす可能性があります。
+- 攻撃ベクトル: バリデータ (または PoW チェーン上のマイナー) はトランザクションを並び替えて、特定の結果を確実にする可能性があります。
 
-### 安全な代替手段
+### 安全な代替手段 (Commit-Reveal)
 
 ```solidity
 pragma solidity ^0.8.0;
 
 contract SecureLottery {
+    mapping(address => bytes32) public commits;
+    mapping(address => bytes32) public revealed;
     address[] public players;
 
-    function enter() public payable {
+    function commit(bytes32 hash) external payable {
         require(msg.value > 0.01 ether, "Minimum ETH required");
+        require(commits[msg.sender] == bytes32(0), "Already committed");
+        commits[msg.sender] = hash;
         players.push(msg.sender);
     }
 
-    function pickWinner() public {
-        require(players.length > 0, "No players joined");
-        uint index = uint(keccak256(abi.encodePacked(block.prevrandao, msg.sender, players.length))) % players.length;
-        payable(players[index]).transfer(address(this).balance);
+    function reveal(bytes32 secret) external {
+        require(keccak256(abi.encodePacked(secret)) == commits[msg.sender], "Invalid reveal");
+        revealed[msg.sender] = secret;
+    }
+
+    function pickWinner() external {
+        bytes32 combined = bytes32(0);
+        for (uint i = 0; i < players.length; i++) {
+            require(revealed[players[i]] != bytes32(0), "All must reveal");
+            combined = keccak256(abi.encodePacked(combined, revealed[players[i]]));
+        }
+        uint index = uint(combined) % players.length;
+        (bool ok, ) = payable(players[index]).call{value: address(this).balance}("");
+        require(ok, "Transfer failed");
     }
 }
 ```
 修正内容:
-- ランダム性の予測不可能なソースとして block.prevrandao (EIP-4399) を使用します。
-- msg.sender と players.length からエントロピーを追加して、マイナー操作を防ぎます。
+- commit-reveal を使用: 各プレイヤーはハッシュをコミットし、それからリビールします。シークレットの組み合わせで勝者を決定します。
+- `block.prevrandao` と `block.timestamp` は value-at-stake のランダム性に関して **安全ではありません**。VRF (例: Chainlink) または commit-reveal を使用します。
 
 ---
