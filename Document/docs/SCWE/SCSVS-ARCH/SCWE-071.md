@@ -23,6 +23,8 @@ Solidity での初期化されていないストレージポインタは、宣�
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract Example {
     uint[] public data;
 
@@ -45,7 +47,9 @@ contract Example {
 
 ### 修正したコントラクトの例
 ```solidity
-  contract Example {
+pragma solidity ^0.8.0;
+
+contract Example {
       uint[] public data;
 
       function addData(uint _value) public {
