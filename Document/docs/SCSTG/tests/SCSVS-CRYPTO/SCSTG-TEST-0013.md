@@ -78,7 +78,7 @@ contract RandomNumberGenerator {
 
 #### **なぜ脆弱なのか**
 
-- コントラクトは `block.timestamp` や `block.difficulty` などのブロックプロパティを使用して乱数を生成しますが、マイナーやバリデーターによって不正操作される可能性があります。
+- コントラクトは `block.timestamp` や `block.difficulty` (post-merge: `block.prevrandao`) などのブロックプロパティを使用して乱数を生成しますが、バリデーターによって不正操作される可能性があります。
 - この弱い乱数生成は予測可能な値につながる可能性があり、くじやギャンブルの結果の不正操作などの攻撃に対してコントラクトが脆弱になります。
 
 #### 修正されたコード:
@@ -86,12 +86,38 @@ contract RandomNumberGenerator {
 ```solidity
 pragma solidity ^0.8.0;
 
-contract SecureRandomNumberGenerator {
-    uint256 public randomValue;
+import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
 
-    function generateRandomNumber() public {
-        // Using Chainlink VRF for secure and verifiable randomness
-        randomValue = uint256(keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp)));
+contract SecureRandomNumberGenerator is VRFConsumerBaseV2 {
+    VRFCoordinatorV2Interface immutable COORDINATOR;
+    uint64 immutable s_subscriptionId;
+    bytes32 immutable s_keyHash;
+    uint256 public randomValue;
+    uint256 public s_requestId;
+
+    constructor(
+        address vrfCoordinator,
+        uint64 subscriptionId,
+        bytes32 keyHash
+    ) VRFConsumerBaseV2(vrfCoordinator) {
+        COORDINATOR = VRFCoordinatorV2Interface(vrfCoordinator);
+        s_subscriptionId = subscriptionId;
+        s_keyHash = keyHash;
+    }
+
+    function requestRandomNumber() external {
+        s_requestId = COORDINATOR.requestRandomWords(
+            s_keyHash,
+            s_subscriptionId,
+            3,      // requestConfirmations
+            100000, // callbackGasLimit
+            1      // numWords
+        );
+    }
+
+    function fulfillRandomWords(uint256, uint256[] memory randomWords) internal override {
+        randomValue = randomWords[0];
     }
 }
 
