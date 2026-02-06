@@ -33,7 +33,7 @@ status: new
 
     contract WeakRandomness {
         function generateRandomNumber() public view returns (uint) {
-            return uint(keccak256(abi.encodePacked(block.timestamp, block.difficulty))); // Insecure randomness
+            return uint(keccak256(abi.encodePacked(block.timestamp, block.difficulty))); // Insecure: post-merge use block.prevrandao; both are insecure for value-at-stake randomness
         }
     }
     ```
@@ -42,7 +42,7 @@ status: new
     ```solidity
     pragma solidity ^0.8.0;
 
-    import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+    import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol"; // Note: Chainlink VRF V1 is deprecated; use VRF V2 (VRFConsumerBaseV2) in production
 
     contract SecureRandomness is VRFConsumerBase {
         bytes32 internal keyHash;
