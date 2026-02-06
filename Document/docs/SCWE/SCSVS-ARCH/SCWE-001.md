@@ -7,7 +7,7 @@ profiles: [L1]
 mappings:
   scsvs-cg: [SCSVS-ARCH]
   scsvs-scg: [SCSVS-ARCH-1]
-  cwe: [709]
+  cwe: [1008]
 status: new
 ---
 
@@ -52,13 +52,15 @@ contract MonolithicContract {
     function withdraw(uint value) public {
         require(balance >= value, "Insufficient funds");
         balance -= value;
-        payable(msg.sender).transfer(value);
+        (bool ok, ) = msg.sender.call{value: value}("");
+        require(ok, "Transfer failed");
     }
 
     function transfer(address to, uint value) public {
         require(balance >= value, "Insufficient funds");
         balance -= value;
-        payable(to).transfer(value);
+        (bool ok1, ) = payable(to).call{value: value}("");
+        require(ok1, "Transfer failed");
     }
 
     function approve(address spender, uint value) public {
@@ -68,7 +70,8 @@ contract MonolithicContract {
     function transferFrom(address from, address to, uint value) public {
         require(allowances[from] >= value, "Allowance exceeded");
         allowances[from] -= value;
-        payable(to).transfer(value);
+        (bool ok2, ) = payable(to).call{value: value}("");
+        require(ok2, "Transfer failed");
     }
 
     function upgradeLogic() public {
@@ -84,31 +87,27 @@ contract MonolithicContract {
 ### 改良したモジュラーコントラクトアーキテクチャ
 
 ```solidity
-pragma solidity ^0.4.0;
+pragma solidity ^0.8.0;
 
-contract Deposit {
+contract ModularVault {
     uint public balance;
+    address public owner;
 
-    function deposit() public {
-        // Logic for deposit
-    }
-}
+    modifier onlyOwner() { require(msg.sender == owner, "Not authorized"); _; }
 
-contract Withdraw {
-    uint public balance;
+    constructor() { owner = msg.sender; }
 
-    function withdraw() public {
-        // Logic for withdrawal
-    }
-}
+    function deposit(uint value) external { _deposit(value); }
+    function withdraw(uint value) external { _withdraw(value); }
 
-contract Transfer {
-    uint public balance;
-
-    function transfer() public {
-        // Logic for transfer
+    function _deposit(uint value) internal { balance += value; }
+    function _withdraw(uint value) internal {
+        require(balance >= value, "Insufficient funds");
+        balance -= value;
+        (bool ok, ) = msg.sender.call{value: value}("");
+        require(ok, "Transfer failed");
     }
 }
 ```
 
-**解決策**: プロキシパターンを使用してストレージとロジックを分離します。これでコントラクトロジックはストレージにタッチすることなく更新できます。
+**解決策**: モジュラー内部関数 (`_deposit`, `_withdraw`) を使用して関心を分離します。状態を保持しながら完全なアップグレードを可能にするには、プロキシパターンを実装します (SCWE-005 参照)。
