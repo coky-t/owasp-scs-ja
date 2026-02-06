@@ -48,7 +48,7 @@ search:
 * SC07:2025 - [フラッシュローン攻撃 (Flash Loan Attacks)](SC07-FlashLoanAttacks.md)
 * SC08:2025 - [整数オーバーフローとアンダーフロー (Integer Overflow and Underflow)](SC08-IntegerOverUnderFlow.md)
 * SC09:2025 - [安全でないランダム性 (Insecure Randomness)](SC09-InsecureRandomness.md)
-* SC10:2025 - [サービス拒否 (DoS) 攻撃 (Denial of Service (DoS) Attacks)](SC10-DenailOfService.md)
+* SC10:2025 - [サービス拒否 (DoS) 攻撃 (Denial of Service (DoS) Attacks)](SC10-DenialOfService.md)
 
 ### 概要
 
