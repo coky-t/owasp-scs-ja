@@ -13,11 +13,11 @@ hide:
 *Solidity での安全でない乱数生成メカニズム: 開発者は以下のような block 関連メソッドを使用して、乱数を生成することがよくあります。*
   - block.timestamp: 現在のブロックのタイムスタンプ。
   - blockhash(uint blockNumber): 指定されたブロックのハッシュ (直近の 256 ブロックのみ)。
-  - block.difficulty: 現在のブロックの difficulty 。
+  - block.difficulty: 現在のブロックの difficulty (post-merge/PoS: 非推奨; 代わりに `block.prevrandao` を使用します。どちらも value-at-stake のランダム性に対して安全ではありません)。
   - block.number: 現在のブロック番号。
-  - block.coinbase: 現在のブロックのマイナーのアドレス。
+  - block.coinbase: 現在のブロックの提案者/検証者のアドレス (post-merge: マイナーではない)。
 
-これらのメソッドは、マイナーが操作して、コントラクトのロジックに影響を与えることができるため、安全ではありません。
+これらのメソッドは、検証者 (または PoW チェーン上のマイナー) が操作して、コントラクトのロジックに影響を与えることができるため、安全ではありません。
 
 ### 事例 (脆弱なコントラクト):
 ```
@@ -45,7 +45,7 @@ contract Solidity_InsecureRandomness {
 - 安全でないランダム性は、ゲーム、くじ、その他乱数生成に依存するあらゆるコントラクトにおいて、攻撃者が不当に優位を得るために悪用される可能性があります。本来ランダムであるはずの結果を予測または操作することで、攻撃者は結果を自分たちに有利に影響を及ぼすことができます。これは不公平な勝利、他の参加者の金銭的損失、スマートコントラクトの完全性と公平性に対する一般的な信頼の欠如につながる可能性があります。
 
 ### 対策:
-- オラクルをランダム性の外部ソースとして使用 (Oraclize) します。オラクルを信頼する際には注意が必要です。複数のオラクルを使用することもできます。
+- オラクル (例: Chainlink VRF, Provable (旧 Oraclize)) をランダム性の外部ソースとして使用します。オラクルを信頼する際には注意が必要です。複数のオラクルを使用することもできます。
 - コミットメントスキームを使用します。commit-reveal アプローチを使用する暗号プリミティブに従うことができます。コインフリップ、ゼロ知識証明、セキュアコンピュテーションにも広く応用しています。例: RANDAO
 - Chainlink VRF — 証明可能な公平性と検証可能な乱数生成器 (RNG) で、スマートコントラクトがセキュリティやユーザービリティを損なうことなくランダム値にアクセスできます。
 - Signidice アルゴリズム — 暗号署名を使用する二者間のアプリケーションにおける PRNG に適しています。
@@ -57,7 +57,7 @@ contract Solidity_InsecureRandomness {
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol"; // Note: Chainlink VRF V1 is deprecated; use VRF V2 (VRFConsumerBaseV2) in production
 
 contract Solidity_InsecureRandomness is VRFConsumerBase {
     bytes32 internal keyHash;
