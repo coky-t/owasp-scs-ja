@@ -68,21 +68,17 @@ contract Example {
     function withdraw(uint _amount) public {
         require(balances[msg.sender] >= _amount, "Insufficient funds");
 
-        uint beforeBalance = address(this).balance;
         (bool success, ) = payable(msg.sender).call{value: _amount}("");
-        uint afterBalance = address(this).balance;
-
         require(success, "Transfer failed");
 
-        uint actualWithdrawn = beforeBalance - afterBalance;
-        balances[msg.sender] -= actualWithdrawn;
+        balances[msg.sender] -= _amount;
 
-        // Logs the correct amount actually withdrawn
-        emit Withdraw(msg.sender, actualWithdrawn);
+        // Logs the amount actually withdrawn (equals _amount on success)
+        emit Withdraw(msg.sender, _amount);
     }
 }
 ```
 ### 安全なコードの修正内容
 - `call{value: _amount}("")` を使用して資金を安全に送金し、残高を更新する前に送金が成功したことを確認します。
-- 実際の引き落とし金額を `(beforeBalance - afterBalance)` で計算し、正確なログ記録を確保します。
-- トランザクションが成功した場合にのみイベントをログ記録することで、間違ったイベント発行を防ぎます。
+- 送金を成功した場合にのみ状態を更新し、イベントを発行します。`_amount` (成功時の実際の引き落とし額) をログ記録します。
+- 送金を失敗した場合、状態の変更やイベントの前に元に戻すことで、間違ったイベント発行を防ぎます。
