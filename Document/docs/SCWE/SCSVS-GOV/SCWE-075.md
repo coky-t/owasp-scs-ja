@@ -53,24 +53,32 @@ contract IncorrectBalanceTracking {
 ### 修正したコントラクトの例
 
 ```solidity
-// ✅ Secure implementation that tracks actual balance correctly
-contract CorrectBalanceTracking {
-    function deposit() public payable {}
+pragma solidity ^0.8.0;
 
-    function withdraw(uint _amount) public {
-        require(address(this).balance >= _amount, "Insufficient funds");  // ✅ Correct balance check
-        payable(msg.sender).transfer(_amount);
+// ✅ Secure implementation: per-user accounting + address(this).balance for consistency
+contract CorrectBalanceTracking {
+    mapping(address => uint) public balances;
+
+    function deposit() public payable {
+        balances[msg.sender] += msg.value;
     }
 
-    // Optional: Prevent direct Ether transfers
+    function withdraw(uint _amount) public {
+        require(balances[msg.sender] >= _amount, "Insufficient funds");
+        require(address(this).balance >= _amount, "Contract balance insufficient");
+        balances[msg.sender] -= _amount;
+        (bool success, ) = payable(msg.sender).call{value: _amount}("");
+        require(success, "Transfer failed");
+    }
+
     receive() external payable {
         revert("Direct deposits not allowed");
     }
 }
 ```
 **なぜこれが安全なのか？**
-- 正確な残高追跡のために `address(this).balnce` を使用します。
-- 明示的に意図しない限り、外部入金を防止します。
-- 手動の `balance` 変数がなく、不整合のリスクを軽減します。
+- ユーザーごとに `balances` をマッピングすることで、入金者のみがその資金を引き落とすことができるようになります。
+- 送金前に `address(this).balance` と照合し、予期しない流入 (例: `selfdestruct`) を検出します。
+- フレキシブルガスには `call{value}` を使用します。直接入金では `receive()` が元に戻ります。
 
 ---
