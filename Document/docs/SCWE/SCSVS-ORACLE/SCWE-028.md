@@ -53,7 +53,8 @@ status: new
         function withdraw(uint amount) external {
             require(balances[msg.sender] >= amount, "Insufficient balance");
             balances[msg.sender] -= amount;
-            payable(msg.sender).transfer(amount / priceOracle.getPrice()); // Uses current price
+            (bool ok, ) = msg.sender.call{value: amount / priceOracle.getPrice()}(""); // Uses current price
+            require(ok, "Transfer failed");
         }
     }
     ```
@@ -63,7 +64,7 @@ status: new
 - フラッシュローン攻撃: 攻撃者は withdraw() を呼び出す前に価格を操作し、資金を流出する可能性があります。
 - 操作された価格を拒否するバリデーションメカニズムがありません。
 
-- **オラクル操作に対する保護**- 修正されたコード: TWAP と 価格ガードの使用
+- **オラクル操作に対する保護**- 修正されたコード: 価格逸脱ガードの使用
 
     ```solidity
     pragma solidity ^0.8.0;
@@ -89,18 +90,21 @@ status: new
         }
 
         function deposit() external payable {
+            updatePrice(); // refresh price before use
             balances[msg.sender] += msg.value * lastValidPrice;
         }
 
         function withdraw(uint amount) external {
+            updatePrice(); // refresh price before use
             require(balances[msg.sender] >= amount, "Insufficient balance");
             balances[msg.sender] -= amount;
-            payable(msg.sender).transfer(amount / lastValidPrice);
+            (bool ok, ) = msg.sender.call{value: amount / lastValidPrice}("");
+            require(ok, "Transfer failed");
         }
     }
     ```
 
 修正内容:
-- 即時の価格更新に依存するのではなく、TWAP (時間加重平均価格) を使用します。
-- 価格ガードを実装して、極端な価格変動を防ぎます。
+- 価格逸脱ガード (最大 5% の変化) を実装し、操作された価格や古い価格を拒否します。
+- 入金/出金の前に `updatePrice()` を呼び出し、`lastValidPrice` が最新であることを確保します。
 ---
