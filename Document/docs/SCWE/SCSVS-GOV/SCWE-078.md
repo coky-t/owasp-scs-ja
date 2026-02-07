@@ -23,6 +23,8 @@ Ether を送金する際は、常に例外を適切に処理します。Ether �
 
 ### 脆弱なコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract Example {
     function transferEther(address payable _to) public payable {
         // Fails silently if transfer fails
@@ -32,10 +34,12 @@ contract Example {
 ```
 ### 修正したコントラクトの例
 ```solidity
+pragma solidity ^0.8.0;
+
 contract Example {
     function transferEther(address payable _to) public payable {
-        // Properly check for success
-        require(_to.send(msg.value), "Transfer failed");  // Using require to check for failure
+        (bool success, ) = _to.call{value: msg.value}("");
+        require(success, "Transfer failed");
     }
 }
 ```
