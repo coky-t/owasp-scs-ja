@@ -16,12 +16,12 @@ status: new
   [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-`blockhash` 関数はスマートコントラクトで乱数を生成するためにしばしば誤用されます。しかし、`blockhash` はパブリックに利用可能であり、マイナーによる影響を受ける可能性があり、信頼できず安全でない乱数源となります。
+`blockhash` 関数はスマートコントラクトで乱数を生成するためにしばしば誤用されます。しかし、`blockhash` はパブリックに利用可能であり、バリデータ (または PoW チェーン上のマイナー) による影響を受ける可能性があり、信頼できず安全でない乱数源となります。
 
 攻撃者は、ブロックに含まれるトランザクションを制御したり、トランザクションを並べ替えたり、不利なブロックを破棄して、`blockhash` を操作できます。これは予測可能なランダムの結果につながり、悪意のある人物がくじ、ゲーム、その他のランダム性に依存するメカニズムを悪用できるようになります。
 
 **攻撃シナリオ**
-- くじ操作: マイナーはトランザクションを保留または並べ替えて、勝利に有利な `blockhash` を確保できます。
+- くじ操作: バリデータ (または PoW チェーン上のマイナー) はトランザクションを保留または並べ替えて、勝利に有利な `blockhash` を確保できます。
 - ゲーム悪用: ゲームの結果が `blockhash` に依存する場合、攻撃者は将来の結果を予測し、それに応じて賭けを行うことができます。
 
 ## 対策
@@ -39,7 +39,7 @@ contract InsecureRandomness {
 }
 ```
 **なぜこれが安全でないのか？**
-- マイナーはブロック生成を制御します - ブロックを並べ替えたり破棄して `blockhash` を操作できます。
+- バリデータ (または PoW チェーン上のマイナー) はブロック生成を制御します — ブロックを並べ替えたり破棄して `blockhash` を操作できます。
 - 予測可能性 - 攻撃者は過去のブロック番号に対してこの関数を呼び出し、乱数を推測できます。
 
 
@@ -48,7 +48,7 @@ contract InsecureRandomness {
 ```solidity
 pragma solidity ^0.8.0;
 
-import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
+import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol"; // Note: Chainlink VRF V1 is deprecated; use VRF V2 (VRFConsumerBaseV2) in production
 
 contract SecureLottery is VRFConsumerBase {
     address[] public players;
@@ -79,12 +79,13 @@ contract SecureLottery is VRFConsumerBase {
 
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
         uint256 index = randomness % players.length;
-        payable(players[index]).transfer(address(this).balance);
+        (bool ok, ) = payable(players[index]).call{value: address(this).balance}("");
+        require(ok, "Transfer failed");
     }
 }
 ```
 
 **なぜこれが安全なのか？**
 - `Chainlink VRF` (Verifiable Random Function) を使用しています。これは予測不可能で改竄防止のある乱数を提供します。
-- マイナーは乱数を操作できません。検証可能な外部ソースから導出されるためです。
+- バリデータ (または PoW チェーン上のマイナー) は乱数を操作できません。検証可能な外部ソースから導出されるためです。
 - プレイヤーは参加前に結果を予測できません。
