@@ -12,15 +12,15 @@ status: new
 ---
 
 ## 関連
-- CWE-547: Use of Hard-coded, Security-relevant Constants
+- CWE-547: Use of Hard-coded, Security-relevant Constants  
   [https://cwe.mitre.org/data/definitions/547.html](https://cwe.mitre.org/data/definitions/547.html)
 
 ## 説明
-Hardcoded constants refer to values that are embedded directly into the code and cannot be easily changed without modifying the code itself. These constants may include critical parameters, addresses, or settings that could be subject to change based on external factors or evolving needs. Hardcoding these values in the code introduces several issues:
+ハードコードされた定数は、コードに直接埋め込まれ、コード自体を変更しなければ簡単に変更できない値を指します。これらの定数は、外部要素やニーズの変化に基づいて変更の対象となる可能性のある重要なパラメータ、アドレス、設定を含むことがあります。これらの値をコードにハードコードすると、いくつかの問題をもたらします。
 
-- **Lack of flexibility**: Once the contract is deployed, these hardcoded values cannot be changed without deploying a new version, leading to inefficiency and reduced adaptability.
-- **Security risks**: Hardcoded values may expose sensitive information or create vulnerabilities if they are not properly protected.
-- **Upgrade challenges**: Contracts with hardcoded constants cannot easily evolve to support new functionality or parameters without requiring costly redeployment.
+- **柔軟性の欠如**: コントラクトがデプロイされると、これらのハードコードされた値は新しいバージョンをデプロイしない限り変更できず、非効率性と適応性低下につながります。
+- **セキュリティリスク**: ハードコードされた値は、適切に保護されていない場合、機密情報をさらしたり、脆弱性を生み出す可能性があります。
+- **アップグレードの課題**: ハードコードされた定数を持つコントラクトは、コストのかかる再デプロイメントを必要とせずに新しい機能やパラメータをサポートするように簡単に進化することができません。
 
 ## 対策
 - **Use variables instead of constants**: Instead of hardcoding values, define them as variables that can be updated through administrative actions.
