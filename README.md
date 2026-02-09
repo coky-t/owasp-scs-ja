@@ -15,7 +15,7 @@ This is the unofficial Japanese translation of the [OWASP Smart Contract Securit
 
 * [OWASP スマートコントラクトセキュリティ検証標準 日本語版](SCSVS.md)
 
-* [OWASP スマートコントラクト Top 10 2025 日本語版](sctop10.md)
+* [OWASP スマートコントラクト Top 10 日本語版](sctop10.md)
 
 * [OWASP スマートコントラクトセキュリティテストガイド 日本語版](SCSTG.md)
 
