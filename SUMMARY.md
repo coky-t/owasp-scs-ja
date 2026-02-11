@@ -56,7 +56,7 @@
 
 - [OWASP スマートコントラクト Top 10 目次](sctop10.md)
 
-- OWASP スマートコントラクト Top 10 2026
+- [OWASP スマートコントラクト Top 10 2026](Document/docs/sctop10/index.md)
   - [SC01:2026 - アクセス制御の脆弱性 (Access Control Vulnerabilities)](Document/docs/sctop10/SC01-AccessControlVulnerabilities.md)
   - [SC02:2026 - ビジネスロジックの脆弱性 (Business Logic Vulnerabilities)](Document/docs/sctop10/SC02-BusinessLogicVulnerabilities.md)
   - [SC03:2026 - 価格オラクル操作 (Price Oracle Manipulation)](Document/docs/sctop10/SC03-PriceOracleManipulation.md)
@@ -68,7 +68,7 @@
   - [SC09:2026 - 整数オーバーフローとアンダーフロー (Integer Overflow and Underflow)](Document/docs/sctop10/SC09-IntegerOverflowUnderflow.md)
   - [SC10:2026 - プロキシとアップグレード可能性の脆弱性 (Proxy & Upgradeability Vulnerabilities)](Document/docs/sctop10/SC10-ProxyAndUpgradeabilityVulnerabilities.md)
 
-- OWASP スマートコントラクト Top 10 2025
+- [OWASP スマートコントラクト Top 10 2025](Document/docs/sctop10/archive/2025/Top10_2025.md)
   - [SC01:2025 - 不適切なアクセス制御 (Improper Access Control)](Document/docs/sctop10/archive/2025/SC01-AccessControlVulnerabilities.md)
   - [SC02:2025 - 価格オラクル操作 (Price Oracle Manipulation)](Document/docs/sctop10/archive/2025/SC02-PriceOracleManipulation.md)
   - [SC03:2025 - ロジックエラー (Logic Errors)](Document/docs/sctop10/archive/2025/SC03-LogicErrors.md)
