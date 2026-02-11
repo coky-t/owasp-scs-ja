@@ -56,7 +56,7 @@
 
 - [OWASP スマートコントラクト Top 10 目次](sctop10.md)
 
-- [OWASP スマートコントラクト Top 10 2026](Document/docs/sctop10/index.md)
+- OWASP スマートコントラクト Top 10 2026
   - [SC01:2026 - アクセス制御の脆弱性 (Access Control Vulnerabilities)](Document/docs/sctop10/SC01-AccessControlVulnerabilities.md)
   - [SC02:2026 - ビジネスロジックの脆弱性 (Business Logic Vulnerabilities)](Document/docs/sctop10/SC02-BusinessLogicVulnerabilities.md)
   - [SC03:2026 - 価格オラクル操作 (Price Oracle Manipulation)](Document/docs/sctop10/SC03-PriceOracleManipulation.md)
