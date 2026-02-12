@@ -23,9 +23,9 @@ status: new
 - **アップグレードの課題**: ハードコードされた定数を持つコントラクトは、コストのかかる再デプロイメントを必要とせずに新しい機能やパラメータをサポートするように簡単に進化することができません。
 
 ## 対策
-- **Use variables instead of constants**: Instead of hardcoding values, define them as variables that can be updated through administrative actions.
-- **Implement upgradeable contract patterns**: Use proxy contracts or other patterns that support upgrades to allow flexibility in modifying constants.
-- **External configuration**: Use off-chain storage for configuration values that can be updated without needing to deploy new contract versions.
+- **定数ではなく変数を使用する**: 値をハードコードするのではなく、管理アクションを通じて更新できる変数として定義します。
+- **アップグレード可能なコントラクトパターンを実装する**: プロキシコントラクトや、アップグレードをサポートするその他のパターンを使用して、定数を変更する柔軟性を許容します。
+- **外部構成**: 新しいコントラクトバージョンをデプロイする必要なく更新できる構成値には、オフチェーンストレージを使用します。
 
 ## 事例
 
