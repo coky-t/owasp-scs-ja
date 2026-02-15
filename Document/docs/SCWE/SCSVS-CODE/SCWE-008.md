@@ -47,7 +47,7 @@ contract HardcodedConstants {
     }
 }
 ```
-In this example, the `owner` address and `maxSupply` are hardcoded values that cannot be changed without redeploying the contract. This reduces flexibility and creates potential security risks.
+この例では、`owner` アドレスと `maxSupply` はハードコードされた値であり、コントラクトを再デプロイしない限り変更できません。これは柔軟性を低下し、潜在的なセキュリティリスクを生み出します。
 
 
 ### 外部設定に改善されたコントラクト
@@ -73,4 +73,4 @@ contract ConfigurableContract {
 }
 ```
 
-In this improved example, the `owner` address and `maxSupply` are configurable through the constructor, allowing for more flexibility without the need for redeployment.
+この改善された例では、`owner` アドレスと `maxSupply` はコンストラクタを通じて構成可能であり、再デプロイメントを必要とせずにより柔軟性を向上します。
