@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/841.html](https://cwe.mitre.org/data/definitions/841.html)
 
 ## 説明
-Hardcoding gas price/basefee assumptions (e.g., fixed `gasprice` limits or expecting refunds) can break on EIP-1559 chains. Contracts that require exact `block.basefee` ranges or reimburse fixed gas can become stuck or exploitable via gas griefing.
+ガス価格/基本料金の想定をハードコードする (固定の `gasprice` 制限や払い戻しの期待など) と、EIP-1559 チェーンで機能しない可能性があります。正確な `block.basefee` 範囲を要求したり、固定ガスを払い戻すコントラクトは、ガス荒らしによってスタックしたり悪用できる可能性があります。
 
 ## 対策
 - Avoid relying on specific basefee values; parameterize and allow updates via governance with delays.
