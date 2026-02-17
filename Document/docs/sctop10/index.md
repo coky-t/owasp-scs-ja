@@ -40,10 +40,10 @@ search:
 
 ### ランキングの裏側
 
-The methodology, statistics, and data sources behind the 2026 ordering are documented in:
+2026 年の順位付けの根拠となる方法論、後継、データソースは以下に記載されています。
 
-- [Ranking Methodology](https://github.com/OWASP/owasp-scs/blob/main/docs/sctop10/methodology.md) — Elicitation model, aggregation formulas, computed statistics, and reasoning.
-- [Data Sources](https://github.com/OWASP/owasp-scs/blob/main/docs/sctop10/data-sources.md) — Practitioner survey, 2025 incident data, and external references.
+- [ランキング方法論](https://github.com/OWASP/owasp-scs/blob/main/docs/sctop10/methodology.md) — 誘出モデル、集計式、算出された統計、推論。
+- [データソース](https://github.com/OWASP/owasp-scs/blob/main/docs/sctop10/data-sources.md) — 実務者調査、2025 年インシデントデータ、外部リファレンス。
 
 ## 変更内容
 
