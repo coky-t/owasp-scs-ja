@@ -19,9 +19,9 @@ status: new
 ガス価格/基本料金の想定をハードコードする (固定の `gasprice` 制限や払い戻しの期待など) と、EIP-1559 チェーンで機能しない可能性があります。正確な `block.basefee` 範囲を要求したり、固定ガスを払い戻すコントラクトは、ガス荒らしによってスタックしたり悪用できる可能性があります。
 
 ## 対策
-- Avoid relying on specific basefee values; parameterize and allow updates via governance with delays.
-- Use robust gas estimation and caps on external calls; avoid refund-dependent logic.
-- Simulate on mainnet forks with varying basefee to validate liveness.
+- 特定の基本料金値への依存を避けます。パラメータ化し、ガバナンスを通じて遅延を伴う更新を許可します。
+- 堅牢なガス推定を使用し、外部呼び出しに上限を設けます。払い戻しに依存するロジックを避けます。
+- メインネットフォークで基本料金を変化してシミュレートし、稼働状況を検証します。
 
 ## 事例
 
