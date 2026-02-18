@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/330.html](https://cwe.mitre.org/data/definitions/330.html)
 
 ## 説明
-Post-merge (Ethereum PoS), `block.difficulty` was replaced by `block.prevrandao`. Both are manipulable by validators: they can influence the value within protocol rules. Using `block.prevrandao` (or `block.difficulty`) for high-value randomness—lotteries, airdrops, winner selection—allows validators or sophisticated actors to predict or bias outcomes. SCWE-024 and SCWE-084 cover blockhash/timestamp; this weakness specifically addresses `block.prevrandao`.
+マージ後 (Ethereum PoS)、`block.difficulty` は `block.prevrandao` に置き換えられました。どちらもバリデータによって操作可能であり、プロトコルルール内で値に影響を与える可能性があります。`block.prevrandao` (または `block.difficulty`) を高価値ランダム性 (くじ、エアドロップ、当選者選出) に使用すると、バリデータや教養のあるアクターが結果を予測したりバイアスをかけることが可能になります。SCWE-024 と SCWE-084 はブロックハッシュ/タイムスタンプをカバーしており、この弱点は特に `block.prevrandao` に対処しています。
 
 ## 対策
 - Do not use `block.prevrandao` or `block.difficulty` for value-at-stake randomness.
