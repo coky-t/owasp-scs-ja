@@ -19,8 +19,8 @@ status: new
 マージ後 (Ethereum PoS)、`block.difficulty` は `block.prevrandao` に置き換えられました。どちらもバリデータによって操作可能であり、プロトコルルール内で値に影響を与える可能性があります。`block.prevrandao` (または `block.difficulty`) を高価値ランダム性 (くじ、エアドロップ、当選者選出) に使用すると、バリデータや教養のあるアクターが結果を予測したりバイアスをかけることが可能になります。SCWE-024 と SCWE-084 はブロックハッシュ/タイムスタンプをカバーしており、この弱点は特に `block.prevrandao` に対処しています。
 
 ## 対策
-- Do not use `block.prevrandao` or `block.difficulty` for value-at-stake randomness.
-- Use Chainlink VRF, commit-reveal schemes, or other verifiable randomness sources.
+- value-at-stake のランダム性には `block.prevrandao` や `block.difficulty` を使用してはいけません。
+- Chainlink VRF、commit-reveal スキーム、またはその他の検証可能なランダム性ソースを使用します。
 
 ## 事例
 
