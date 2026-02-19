@@ -36,7 +36,7 @@ contract Lottery {
     }
 }
 ```
-**Why vulnerable:** `block.prevrandao` is manipulable by validators; they can influence the value to bias the outcome.
+**なぜ脆弱なのか:** `block.prevrandao` はバリデータによって操作可能であり、値に影響を与えて結果にバイアスをかけることが可能です。
 
 ### 修正済み
-Use Chainlink VRF V2 or a commit-reveal scheme where participants commit hashes before the random value is known. See SCWE-024 for a Chainlink VRF example.
+Chainlink VRF V2、または参加者がランダム値を知る前にハッシュをコミットする commit-reveal スキームを使用します。Chainlink VRF の事例については SCWE-024 を参照してください。
