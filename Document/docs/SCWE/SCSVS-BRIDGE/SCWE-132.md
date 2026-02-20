@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-Bridging tokens with differing decimals without normalization can over- or under-mint wrapped assets. Attackers can exploit decimal confusion to siphon value or lock funds when withdrawing back to the origin chain.
+正規化されていない異なる Decimal でのトークンをブリッジするとラップされた資産の発行過剰や不足を招きます。攻撃者は Decimal の混乱を悪用して価値を吸い上げたり、元のチェーンに引き戻す際に資金をロックする可能性があります。
 
 ## 対策
 - Normalize amounts to a canonical precision before mint/burn.
