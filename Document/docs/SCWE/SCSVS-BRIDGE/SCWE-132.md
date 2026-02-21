@@ -16,12 +16,12 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-正規化されていない異なる Decimal でのトークンをブリッジするとラップされた資産の発行過剰や不足を招きます。攻撃者は Decimal の混乱を悪用して価値を吸い上げたり、元のチェーンに引き戻す際に資金をロックする可能性があります。
+正規化されていない異なる Decimal でのトークンをブリッジするとラップされた資産のミント過剰や不足を招きます。攻撃者は Decimal の混乱を悪用して価値を吸い上げたり、元のチェーンに引き戻す際に資金をロックする可能性があります。
 
 ## 対策
-- Normalize amounts to a canonical precision before mint/burn.
-- Store per-token decimal config and validate consistency during bridge operations.
-- Add tests for round-trip conversions across chains with varying decimals.
+- ミント/バーン前に金額を正規化して標準精度にします。
+- トークンごとの Decimal 設定をブリッジ操作時に一貫性を検証します。
+- Decimal の異なるチェーン間での往復変換のテストを追加します。
 
 ## 事例
 
