@@ -19,9 +19,9 @@ status: new
 ソースチェーン/送信者ごとにノンスを追跡しないブリッジ受信者は同じメッセージのリプレイを許可し、重複したミントや引き落としにつながります。レーンが分離されていない場合、フォークされたチェーンも履歴メッセージをリプレイする可能性があります。
 
 ## 対策
-- Maintain monotonically increasing nonces per (sourceChain, sourceSender).
-- Reject messages with reused or out-of-order nonces.
-- Bind nonces into signed payloads or proofs to prevent tampering.
+- (sourceChain, sourceSender) ごとに単調に増加するノンスを維持します。
+- 再利用されたノンスや順序が違うノンスを含むメッセージを拒否します。
+- 署名されたペイロードや証明にノンスをバインドし、改竄を防止します。
 
 ## 事例
 
