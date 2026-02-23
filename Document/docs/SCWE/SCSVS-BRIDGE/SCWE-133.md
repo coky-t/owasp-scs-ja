@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/294.html](https://cwe.mitre.org/data/definitions/294.html)
 
 ## 説明
-Bridge receivers that do not track nonces per source chain/sender allow the same message to be replayed, causing duplicate mints or withdrawals. Forked chains can also replay historical messages if lanes are not isolated.
+ソースチェーン/送信者ごとにノンスを追跡しないブリッジ受信者は同じメッセージのリプレイを許可し、重複したミントや引き落としにつながります。レーンが分離されていない場合、フォークされたチェーンも履歴メッセージをリプレイする可能性があります。
 
 ## 対策
 - Maintain monotonically increasing nonces per (sourceChain, sourceSender).
