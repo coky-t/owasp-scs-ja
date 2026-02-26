@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-Assuming an ERC20 transfer moves the full requested amount fails with fee-on-transfer or deflationary tokens. Protocols that credit users for the requested amount instead of the received amount can be drained or mis-account balances.
+ERC20 送金で要求額全額を移動すると想定すると、fee-on-transfer やデフレトークンでは失敗します。受領額ではなく要求額をユーザーにクレジットするプロトコルでは残高を流出したり勘定ミスする可能性があります。
 
 ## 対策
 - Measure token balances before and after transfers to calculate the actual received amount.
