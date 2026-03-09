@@ -19,9 +19,9 @@ status: new
 ERC20 送金で要求額全額を移動すると想定すると、fee-on-transfer やデフレトークンでは失敗します。受領額ではなく要求額をユーザーにクレジットするプロトコルでは残高を流出したり勘定ミスする可能性があります。
 
 ## 対策
-- Measure token balances before and after transfers to calculate the actual received amount.
-- Maintain allowlists/blocks for incompatible tokens or handle fee-on-transfer explicitly.
-- Validate that accounting uses the net amount when updating shares or debts.
+- 送金前後のトークン残高を測定し、実際の受領額を計算します。
+- 互換性のないトークンの許可リスト/ブロックを維持するか、fee-on-transfer を明示的に処理します。
+- 株式または負債を更新する際に、会計処理では純額を使用することを検証します。
 
 ## 事例
 
