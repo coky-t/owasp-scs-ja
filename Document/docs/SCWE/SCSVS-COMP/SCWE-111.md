@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-Rebasing tokens change user balances over time. Protocols that track deposited amounts as fixed units (instead of shares) can become insolvent or let users withdraw more than their fair share after positive or negative rebases.
+トークンのリベースは時間の経過とともにユーザー残高を変化します。預け入れ金額を (株式ではなく) 固定単位で追跡するプロトコルは、正または負のリベース後に破綻したり、ユーザーが正当な割合を超えて引き落とす可能性があります。
 
 ## 対策
 - Track user positions using share-based accounting that scales with total supply.
