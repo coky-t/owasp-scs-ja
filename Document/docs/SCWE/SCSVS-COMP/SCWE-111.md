@@ -19,9 +19,9 @@ status: new
 トークンのリベースは時間の経過とともにユーザー残高を変化します。預け入れ金額を (株式ではなく) 固定単位で追跡するプロトコルは、正または負のリベース後に破綻したり、ユーザーが正当な割合を超えて引き落とす可能性があります。
 
 ## 対策
-- Track user positions using share-based accounting that scales with total supply.
-- Normalize balances on every interaction or use wrappers that expose a non-rebasing interface (e.g., wstETH).
-- Validate integrations against tokens with elastic supply and document unsupported assets.
+- 総供給量でスケールする株式ベースの会計処理を使用して、ユーザーのポジションを追跡します。
+- 取引ごとに残高を正規化するか、リベースを行わないインタフェース (例: wstETH) を提示するラッパーを使用します。
+- 供給量が変動するトークンとの統合を検証し、サポートされていない資産を文書化します。
 
 ## 事例
 
