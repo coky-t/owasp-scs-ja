@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-ERC4626 vaults that do not guard against free-asset donations can skew `totalAssets` and share price. Attackers can donate assets to inflate share value and then mint shares cheaply before normalization, extracting value from existing holders.
+無償資産寄付に対しての対策がない ERC4626 vault は `totalAssets` と株価を歪める可能性があります。攻撃者は資産を寄付して株価を吊り上げ、正規化前に安価に株式を発行して、既存の保有者から利益を搾取できます。
 
 ## 対策
 - Normalize share price on every deposit/mint using current `totalAssets`.
