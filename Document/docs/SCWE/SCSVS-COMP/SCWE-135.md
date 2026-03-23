@@ -19,9 +19,9 @@ status: new
 無償資産寄付に対しての対策がない ERC4626 vault は `totalAssets` と株価を歪める可能性があります。攻撃者は資産を寄付して株価を吊り上げ、正規化前に安価に株式を発行して、既存の保有者から利益を搾取できます。
 
 ## 対策
-- Normalize share price on every deposit/mint using current `totalAssets`.
-- Optionally block unsolicited donations by reverting on direct transfers or sweeping them into reserves before new share mints.
-- Add tests for donation and price-per-share edge cases.
+- 現在の `totalAssets` を使用して、預け入れ/発行ごとに株価を正規化します。
+- 任意で、直接送金を元に戻したり、新規発行前に準備金を振り返ることで、不当な寄付をブロックします。
+- 寄付と株価のエッジケースに対するテストを追加します。
 
 ## 事例
 
