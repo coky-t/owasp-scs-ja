@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/323.html](https://cwe.mitre.org/data/definitions/323.html)
 
 ## 説明
-Reusing the same ECDSA nonce (`k`) across signatures (or using predictable nonces) leaks the private key. Contracts that accept off-chain signatures for permits, meta-txs, or governance can be compromised if signing infrastructure mismanages nonces.
+署名間で同じ ECDSA nonce (`k`) を再使用 (または予測可能な nonce を使用) すると、秘密鍵を漏洩します。許可証、メタトランザクション、ガバナンスにオフチェーン署名を受け入れるコントラクトは、署名インフラストラクチャが nonce を誤って管理する場合、侵害される可能性があります。
 
 ## 対策
 - Use battle-tested libraries/wallets that generate unique, random or RFC6979 deterministic nonces per message.
