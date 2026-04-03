@@ -19,9 +19,9 @@ status: new
 署名間で同じ ECDSA nonce (`k`) を再使用 (または予測可能な nonce を使用) すると、秘密鍵を漏洩します。許可証、メタトランザクション、ガバナンスにオフチェーン署名を受け入れるコントラクトは、署名インフラストラクチャが nonce を誤って管理する場合、侵害される可能性があります。
 
 ## 対策
-- Use battle-tested libraries/wallets that generate unique, random or RFC6979 deterministic nonces per message.
-- Monitor and rotate keys if nonce reuse is suspected; support key revocation on-chain.
-- Avoid custom signing code or manual nonce management in scripts.
+- メッセージごとに一意のランダムな、または RFC6979 の決定論的な nonce を生成する、実績のあるライブラリ/ウォレットを使用します。
+- nonce の再使用が疑われる場合には鍵を監視して入れ替えます。オンチェーンでの鍵失効をサポートします。
+- スクリプトでのカスタム署名コードや手動 nonce 管理を避けます。
 
 ## 事例
 
