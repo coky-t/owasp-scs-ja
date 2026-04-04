@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/330.html](https://cwe.mitre.org/data/definitions/330.html)
 
 ## 説明
-Using VRF services without validating `requestId`, sender, or subscription can let attackers spoof fulfillments or drain subscription balances. Misconfigured key hashes, gas limits, or shared subscriptions can cause predictable failures and force fallback logic that leaks randomness.
+`requestId`、送信者、サブスクリプションを検証せずに VRF サービスを使用すると、攻撃者が処理を偽装したり、サブスクリプション残高を流出する可能性があります。キーハッシュ、ガス制限、または共有サブスクリプションを構成ミスすると、予測可能な障害を引き起こし、ランダム性を漏洩するフォールバックロジックを強制する可能性があります。
 
 ## 対策
 - Bind VRF fulfillments to tracked `requestId` values and trusted coordinator addresses.
