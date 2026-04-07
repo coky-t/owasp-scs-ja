@@ -19,9 +19,9 @@ status: new
 `requestId`、送信者、サブスクリプションを検証せずに VRF サービスを使用すると、攻撃者が処理を偽装したり、サブスクリプション残高を流出する可能性があります。キーハッシュ、ガス制限、または共有サブスクリプションを構成ミスすると、予測可能な障害を引き起こし、ランダム性を漏洩するフォールバックロジックを強制する可能性があります。
 
 ## 対策
-- Bind VRF fulfillments to tracked `requestId` values and trusted coordinator addresses.
-- Use dedicated subscriptions, appropriate key hashes, and sane callback gas limits.
-- Revert on unexpected fulfillments and avoid using fallback pseudo-randomness.
+- VRF の履行を、追跡される `requestId` 値と信頼できるコーディネーターアドレスに結びつけます。
+- 専用のサブスクリプション、適切なキーハッシュ、妥当なコールバックガス制限を使用します。
+- 予期しない履行を元に戻し、フォールバック擬似乱数の使用を避けます。
 
 ## 事例
 
