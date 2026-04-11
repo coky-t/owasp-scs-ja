@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-BLS/aggregate signature schemes that omit domain separation (e.g., chain id, contract, purpose) allow signature replay across domains. A valid signature for one network or message type can be reused elsewhere to authorize unintended actions.
+ドメイン分離 (チェーン ID、コントラクト、目的など) を省略する BLS/集約署名スキームはドメイン間での署名リプレイを可能にします。あるネットワークやメッセージタイプで有効な署名が他の場所で再使用され、意図しないアクションを認可する可能性があります。
 
 ## 対策
 - Include explicit domain separation tags in the signed message for every aggregate signature.
