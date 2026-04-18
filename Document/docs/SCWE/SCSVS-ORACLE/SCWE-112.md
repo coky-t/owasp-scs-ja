@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/346.html](https://cwe.mitre.org/data/definitions/346.html)
 
 ## 説明
-Using a single on-chain DEX spot price from an illiquid pool lets attackers move the price with small trades or flash loans, then exploit inflated/deflated valuations for lending, liquidations, or swaps.
+非流動性のプールから単一のオンチェーン DEX スポット価格を使用すると、攻撃者は少額の取引やフラッシュローンで価格を操作し、それから、過大評価/過小評価された評価額を悪用して貸付、清算、またはスワップを行います。
 
 ## 対策
 - Require minimum liquidity thresholds and sanity bounds before trusting a pool.
