@@ -19,9 +19,9 @@ status: new
 非流動性のプールから単一のオンチェーン DEX スポット価格を使用すると、攻撃者は少額の取引やフラッシュローンで価格を操作し、それから、過大評価/過小評価された評価額を悪用して貸付、清算、またはスワップを行います。
 
 ## 対策
-- Require minimum liquidity thresholds and sanity bounds before trusting a pool.
-- Use robust oracles (Chainlink, TWAP, median of multiple feeds) instead of raw spot prices.
-- Apply deviation checks against reference feeds and revert when deviation exceeds limits.
+- プールを信頼する前に、最低限の流動性閾値と健全性境界を要求します。
+- 生のスポット価格ではなく、堅牢なオラクル (Chainlink、TWAP、複数フィードの中央値) を使用します。
+- 参照フィードに対する逸脱チェックを適用し、逸脱が制限を超えた場合に元に戻します。
 
 ## 事例
 
