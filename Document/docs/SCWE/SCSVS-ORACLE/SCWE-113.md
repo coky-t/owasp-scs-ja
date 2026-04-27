@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/346.html](https://cwe.mitre.org/data/definitions/346.html)
 
 ## 説明
-TWAP oracles that use very short windows or a single cumulative observation can be manipulated within a block or a few trades. Attackers can swing the average price temporarily to borrow, liquidate, or mint at a favorable rate.
+非常に短いウィンドウや単一の累積観測値を使用する TWAP オラクルは、ブロック内または数回のトレード内で操作される可能性があります。攻撃者は平均価格を一時的に変動して、有利なレートで借入、清算、発行できます。
 
 ## 対策
 - Use sufficiently long averaging windows and multiple observations with minimum elapsed time.
