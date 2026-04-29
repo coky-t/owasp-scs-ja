@@ -19,9 +19,9 @@ status: new
 非常に短いウィンドウや単一の累積観測値を使用する TWAP オラクルは、ブロック内または数回のトレード内で操作される可能性があります。攻撃者は平均価格を一時的に変動して、有利なレートで借入、清算、発行できます。
 
 ## 対策
-- Use sufficiently long averaging windows and multiple observations with minimum elapsed time.
-- Enforce maximum per-block updates to prevent same-block manipulation.
-- Cross-check TWAP output against external reference feeds or deviation thresholds.
+- 十分な長さの平均化ウィンドウと、最小経過時間での複数の観測値を使用します。
+- ブロックごとの最大更新回数を強制して、同一ブロックの操作を防止します。
+- TWAP の出力を外部参照フィードまたは偏差閾値とクロスチェックします。
 
 ## 事例
 
