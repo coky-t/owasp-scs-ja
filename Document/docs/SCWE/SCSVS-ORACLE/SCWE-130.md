@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/346.html](https://cwe.mitre.org/data/definitions/346.html)
 
 ## 説明
-Price feeds that allow an admin to push arbitrary values immediately (no delay or quorum) let insiders force liquidations, manipulate collateralization, or drain AMMs. Even trusted operators can be compromised.
+管理者が任意の値を即座に (遅延や定足数なしで) プッシュできる価格フィードは、内部関係者による強制清算、担保設定の操作、AMM の流出につながります。信頼できるオペレータでさえも侵害される可能性があります。
 
 ## 対策
 - Require multi-sig + timelock for manual price pushes; emit events for monitoring.
