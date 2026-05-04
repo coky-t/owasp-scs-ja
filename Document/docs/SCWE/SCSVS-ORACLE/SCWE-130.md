@@ -19,9 +19,9 @@ status: new
 管理者が任意の値を即座に (遅延や定足数なしで) プッシュできる価格フィードは、内部関係者による強制清算、担保設定の操作、AMM の流出につながります。信頼できるオペレータでさえも侵害される可能性があります。
 
 ## 対策
-- Require multi-sig + timelock for manual price pushes; emit events for monitoring.
-- Use decentralized oracles with aggregation/quorum instead of single-writer feeds.
-- Enforce bounds/deviation checks against reference feeds and reject outliers.
+- 手動による価格プッシュにはマルチシグとタイムロックを必要とし、監視用のイベントを発行します。
+- 単一ライターのフィードの集約/クォーラムでの分散型オラクルを使用します。
+- 参照フィードに対して境界/逸脱チェックを強制し、外れ値を拒否します。
 
 ## 事例
 
