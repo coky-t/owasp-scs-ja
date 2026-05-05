@@ -16,15 +16,13 @@
 - [SCWE-070](Document/docs/SCWE/SCSVS-ARCH/SCWE-070.md) 不正なコンストラクタ名 (Incorrect Constructor Name)
 - [SCWE-071](Document/docs/SCWE/SCSVS-ARCH/SCWE-071.md) 初期化されていないストレージポインタ (Uninitialized Storage Pointer)
 - [SCWE-080](Document/docs/SCWE/SCSVS-ARCH/SCWE-080.md) 不正な型変換 (Incorrect Type Conversion)
-<!--
-- [SCWE-098](Document/docs/SCWE/SCSVS-ARCH/SCWE-098.md) (Initialization Front-Running in Upgradeable Contracts)
-- [SCWE-099](Document/docs/SCWE/SCSVS-ARCH/SCWE-099.md) (Storage Layout Collision on Upgrade)
-- [SCWE-117](Document/docs/SCWE/SCSVS-ARCH/SCWE-117.md) (Proxy Implementation Selfdestruct Exposure)
-- [SCWE-118](Document/docs/SCWE/SCSVS-ARCH/SCWE-118.md) (Unauthenticated Beacon Upgrade)
-- [SCWE-119](Document/docs/SCWE/SCSVS-ARCH/SCWE-119.md) (Shared Proxy Admin and Logic Owner Key)
-- [SCWE-145](Document/docs/SCWE/SCSVS-ARCH/SCWE-145.md) (Unvalidated Constructor Parameters)
-- [SCWE-150](Document/docs/SCWE/SCSVS-ARCH/SCWE-150.md) (Storage Slot Collision When Upgrading Implementation)
--->
+- [SCWE-098](Document/docs/SCWE/SCSVS-ARCH/SCWE-098.md) アップグレード可能なコントラクトでの初期化のフロントランニング (Initialization Front-Running in Upgradeable Contracts)
+- [SCWE-099](Document/docs/SCWE/SCSVS-ARCH/SCWE-099.md) アップグレードでのストレージレイアウトの衝突 (Storage Layout Collision on Upgrade)
+- [SCWE-117](Document/docs/SCWE/SCSVS-ARCH/SCWE-117.md) プロキシ実装の自己破壊の露出 (Proxy Implementation Selfdestruct Exposure)
+- [SCWE-118](Document/docs/SCWE/SCSVS-ARCH/SCWE-118.md) 認証されていないビーコンのアップグレード (Unauthenticated Beacon Upgrade)
+- [SCWE-119](Document/docs/SCWE/SCSVS-ARCH/SCWE-119.md) 共有プロキシ管理者とロジック所有者キー (Shared Proxy Admin and Logic Owner Key)
+- [SCWE-145](Document/docs/SCWE/SCSVS-ARCH/SCWE-145.md) 検証されていないコンストラクタパラメータ (Unvalidated Constructor Parameters)
+- [SCWE-150](Document/docs/SCWE/SCSVS-ARCH/SCWE-150.md) 実装のアップグレード時のストレージスロットの衝突 (Storage Slot Collision When Upgrading Implementation)
 
 ### SCSVS-CODE
 
@@ -57,21 +55,19 @@
 - [SCWE-092](Document/docs/SCWE/SCSVS-CODE/SCWE-092.md) プロキシコントラクトのコンストラクタでの初期化子無効化の欠如 (Missing Disable Initializer in Constructor for Proxy Contracts)
 - [SCWE-093](Document/docs/SCWE/SCSVS-CODE/SCWE-093.md) 名前のない関数パラメータ (Unnamed Function Parameters)
 - [SCWE-095](Document/docs/SCWE/SCSVS-CODE/SCWE-095.md) 宛先アドレスのサイズチェックの欠如 (Missing Destination Address Size Check)
-<!--
-- [SCWE-097](Document/docs/SCWE/SCSVS-CODE/SCWE-097.md) (Missing Explicit Function Visibility)
-- [SCWE-120](Document/docs/SCWE/SCSVS-CODE/SCWE-120.md) (Missing Return Data Length Validation)
-- [SCWE-121](Document/docs/SCWE/SCSVS-CODE/SCWE-121.md) (Swallowed Revert Reasons)
-- [SCWE-122](Document/docs/SCWE/SCSVS-CODE/SCWE-122.md) (Calldata Length Not Validated Before Decode)
-- [SCWE-123](Document/docs/SCWE/SCSVS-CODE/SCWE-123.md) (Corrupt Free Memory Pointer in Assembly)
-- [SCWE-124](Document/docs/SCWE/SCSVS-CODE/SCWE-124.md) (Inconsistent Rounding Direction in Financial Math)
-- [SCWE-137](Document/docs/SCWE/SCSVS-CODE/SCWE-137.md) (Read-Only Reentrancy via View Function State Staleness)
-- [SCWE-141](Document/docs/SCWE/SCSVS-CODE/SCWE-141.md) (Lack of Deadline Validation in Time-Sensitive External Calls)
-- [SCWE-143](Document/docs/SCWE/SCSVS-CODE/SCWE-143.md) (Critical Address Parameters Not Validated for Zero Address)
-- [SCWE-144](Document/docs/SCWE/SCSVS-CODE/SCWE-144.md) (Bypassable Contract Existence Check via extcodesize)
-- [SCWE-146](Document/docs/SCWE/SCSVS-CODE/SCWE-146.md) (Improper Use of try/catch Leading to Silent Failures)
-- [SCWE-152](Document/docs/SCWE/SCSVS-CODE/SCWE-152.md) (Misuse of Custom Errors Leading to Information Leakage or Wrong Revert Behavior)
-- [SCWE-154](Document/docs/SCWE/SCSVS-CODE/SCWE-154.md) (Calldata Decode Without Length Check)
--->
+- [SCWE-097](Document/docs/SCWE/SCSVS-CODE/SCWE-097.md) 明示的な関数の可視性の欠如 (Missing Explicit Function Visibility)
+- [SCWE-120](Document/docs/SCWE/SCSVS-CODE/SCWE-120.md) 戻りデータ長バリデーションの欠如 (Missing Return Data Length Validation)
+- [SCWE-121](Document/docs/SCWE/SCSVS-CODE/SCWE-121.md) 見えなくなった元に戻す理由 (Swallowed Revert Reasons)
+- [SCWE-122](Document/docs/SCWE/SCSVS-CODE/SCWE-122.md) デコード前に検証されないコールデータ長 (Calldata Length Not Validated Before Decode)
+- [SCWE-123](Document/docs/SCWE/SCSVS-CODE/SCWE-123.md) アセンブリ内の破損した空きメモリポインタ (Corrupt Free Memory Pointer in Assembly)
+- [SCWE-124](Document/docs/SCWE/SCSVS-CODE/SCWE-124.md) 金融演算での一貫性のない丸め方向 (Inconsistent Rounding Direction in Financial Math)
+- [SCWE-137](Document/docs/SCWE/SCSVS-CODE/SCWE-137.md) ビュー関数の状態の古さによる読み取り専用の再入可能性 (Read-Only Reentrancy via View Function State Staleness)
+- [SCWE-141](Document/docs/SCWE/SCSVS-CODE/SCWE-141.md) 時間的制約のある外部呼び出しでの期限バリデーションの欠如 (Lack of Deadline Validation in Time-Sensitive External Calls)
+- [SCWE-143](Document/docs/SCWE/SCSVS-CODE/SCWE-143.md) ゼロアドレスに対して検証されていない重要なアドレスパラメータ (Critical Address Parameters Not Validated for Zero Address)
+- [SCWE-144](Document/docs/SCWE/SCSVS-CODE/SCWE-144.md) extcodesize によるバイパス可能なコントラクトの存在チェック (Bypassable Contract Existence Check via extcodesize)
+- [SCWE-146](Document/docs/SCWE/SCSVS-CODE/SCWE-146.md) 暗黙的な障害につながる try/catch の不適切な使用 (Improper Use of try/catch Leading to Silent Failures)
+- [SCWE-152](Document/docs/SCWE/SCSVS-CODE/SCWE-152.md) 情報漏洩や間違った元に戻す動作につながるカスタムエラーの誤用 (Misuse of Custom Errors Leading to Information Leakage or Wrong Revert Behavior)
+- [SCWE-154](Document/docs/SCWE/SCSVS-CODE/SCWE-154.md) 長さチェックなしでのコールデータデコード (Calldata Decode Without Length Check)
 
 ### SCSVS-GOV
 
@@ -84,6 +80,13 @@
 - [SCWE-078](Document/docs/SCWE/SCSVS-GOV/SCWE-078.md) Ether 送金の不適切な取り扱い (Improper Handling of Ether Transfers)
 - [SCWE-079](Document/docs/SCWE/SCSVS-GOV/SCWE-079.md) Transfer と Send の安全でない使用 (Insecure Use of Transfer and Send)
 - [SCWE-081](Document/docs/SCWE/SCSVS-GOV/SCWE-081.md) Nonce の不適切な取り扱い (Improper Handling of Nonce)
+- [SCWE-100](Document/docs/SCWE/SCSVS-GOV/SCWE-100.md) ガバナンス実行での定足数バリデーションの欠如 (Missing Quorum Validation in Governance Execution)
+- [SCWE-101](Document/docs/SCWE/SCSVS-GOV/SCWE-101.md) フラッシュローンを原動力とするガバナンス操作 (Flash-Loan-Fueled Governance Manipulation)
+- [SCWE-102](Document/docs/SCWE/SCSVS-GOV/SCWE-102.md) Checks-Effects-Interactions パターンの欠如 (Missing Checks-Effects-Interactions Pattern)
+- [SCWE-136](Document/docs/SCWE/SCSVS-GOV/SCWE-136.md) 無制限の提案実行ガス (Unbounded Proposal Execution Gas)
+- [SCWE-140](Document/docs/SCWE/SCSVS-GOV/SCWE-140.md) 引き落とし経路の欠如によりロックされる Ether (Ether Locked Due to Missing Withdrawal Path)
+- [SCWE-142](Document/docs/SCWE/SCSVS-GOV/SCWE-142.md) 予測可能なトランザクション順序から抽出可能な値 (Extractable Value from Predictable Transaction Ordering)
+- [SCWE-156](Document/docs/SCWE/SCSVS-GOV/SCWE-156.md) 重要な操作のための緊急回路ブレーカーの欠如 (Missing Emergency Circuit Breaker for Critical Operations)
 
 ### SCSVS-AUTH
 
@@ -96,14 +99,12 @@
 - [SCWE-045](Document/docs/SCWE/SCSVS-AUTH/SCWE-045.md) Modifier の安全でない使用 (Insecure Use of Modifiers)
 - [SCWE-049](Document/docs/SCWE/SCSVS-AUTH/SCWE-049.md) 保護されていない Ether の引き落とし (Unprotected Ether Withdrawal)
 - [SCWE-050](Document/docs/SCWE/SCSVS-AUTH/SCWE-050.md) 保護されていない SELFDESTRUCT 命令 (Unprotected SELFDESTRUCT Instruction)
-<!--
-- [SCWE-105](Document/docs/SCWE/SCSVS-AUTH/SCWE-105.md) (Permit Signature Replay via Missing Domain Separator or Nonce)
-- [SCWE-106](Document/docs/SCWE/SCSVS-AUTH/SCWE-106.md) (Unauthenticated Meta-Transactions)
-- [SCWE-129](Document/docs/SCWE/SCSVS-AUTH/SCWE-129.md) (Single EOA Admin Without Rotation)
-- [SCWE-139](Document/docs/SCWE/SCSVS-AUTH/SCWE-139.md) (Single-Step Ownership Transfer Without Confirmation)
-- [SCWE-147](Document/docs/SCWE/SCSVS-AUTH/SCWE-147.md) (Permit or Meta-Transaction Signatures Without Expiration)
-- [SCWE-155](Document/docs/SCWE/SCSVS-AUTH/SCWE-155.md) (Single Point of Failure in Administrative Key Management)
--->
+- [SCWE-105](Document/docs/SCWE/SCSVS-AUTH/SCWE-105.md) ドメインセパレータまたは Nonce の欠如による署名リプレイの許可 (Permit Signature Replay via Missing Domain Separator or Nonce)
+- [SCWE-106](Document/docs/SCWE/SCSVS-AUTH/SCWE-106.md) 認証されていないメタトランザクション (Unauthenticated Meta-Transactions)
+- [SCWE-129](Document/docs/SCWE/SCSVS-AUTH/SCWE-129.md) ローテーションなしでの単一の EOA 管理者 (Single EOA Admin Without Rotation)
+- [SCWE-139](Document/docs/SCWE/SCSVS-AUTH/SCWE-139.md) 確認なしでの単一ステップの所有者移転 (Single-Step Ownership Transfer Without Confirmation)
+- [SCWE-147](Document/docs/SCWE/SCSVS-AUTH/SCWE-147.md) 有効期限なしでの許可またはメタトランザクション署名 (Permit or Meta-Transaction Signatures Without Expiration)
+- [SCWE-155](Document/docs/SCWE/SCSVS-AUTH/SCWE-155.md) 管理鍵管理での単一障害点 (Single Point of Failure in Administrative Key Management)
 
 ### SCSVS-COMM
 
@@ -113,16 +114,14 @@
 - [SCWE-035](Document/docs/SCWE/SCSVS-COMM/SCWE-035.md) 安全でない Delegatecall の使用 (Insecure Delegatecall Usage)
 - [SCWE-042](Document/docs/SCWE/SCSVS-COMM/SCWE-042.md) 外部呼び出しの安全でない使用 (Insecure Use of External Calls)
 - [SCWE-063](Document/docs/SCWE/SCSVS-COMM/SCWE-063.md) 安全でないイベント発行 (Insecure Event Emission)
-<!--
-- [SCWE-103](Document/docs/SCWE/SCSVS-COMM/SCWE-103.md) (ERC20 Approval Double-Spend (Allowance Race))
-- [SCWE-104](Document/docs/SCWE/SCSVS-COMM/SCWE-104.md) (Unprotected ERC777 Token Hooks)
-- [SCWE-107](Document/docs/SCWE/SCSVS-COMM/SCWE-107.md) (Missing Chain ID Validation in Cross-Chain Messages)
-- [SCWE-108](Document/docs/SCWE/SCSVS-COMM/SCWE-108.md) (Unverified Cross-Chain Message Proofs)
-- [SCWE-128](Document/docs/SCWE/SCSVS-COMM/SCWE-128.md) (Insecure Multicall Context Forwarding)
-- [SCWE-134](Document/docs/SCWE/SCSVS-COMM/SCWE-134.md) (Low-Level Call to Non-Contract Address)
-- [SCWE-138](Document/docs/SCWE/SCSVS-COMM/SCWE-138.md) (Reentrancy via ERC721/ERC1155 Safe Transfer Callbacks)
-- [SCWE-149](Document/docs/SCWE/SCSVS-COMM/SCWE-149.md) (Transfers to Addresses That Cannot Receive Funds)
--->
+- [SCWE-103](Document/docs/SCWE/SCSVS-COMM/SCWE-103.md) ERC20 承認二重支払い (支給競合) (ERC20 Approval Double-Spend (Allowance Race))
+- [SCWE-104](Document/docs/SCWE/SCSVS-COMM/SCWE-104.md) 保護されていない ERC777 トークンフック (Unprotected ERC777 Token Hooks)
+- [SCWE-107](Document/docs/SCWE/SCSVS-COMM/SCWE-107.md) クロスチェーンメッセージでのチェーン ID バリデーションの欠如 (Missing Chain ID Validation in Cross-Chain Messages)
+- [SCWE-108](Document/docs/SCWE/SCSVS-COMM/SCWE-108.md) 検証されていないクロスチェーンメッセージ証明 (Unverified Cross-Chain Message Proofs)
+- [SCWE-128](Document/docs/SCWE/SCSVS-COMM/SCWE-128.md) 安全でないマルチコールコンテキスト転送 (Insecure Multicall Context Forwarding)
+- [SCWE-134](Document/docs/SCWE/SCSVS-COMM/SCWE-134.md) 非コントラクトアドレスへの低レベル呼び出し (Low-Level Call to Non-Contract Address)
+- [SCWE-138](Document/docs/SCWE/SCSVS-COMM/SCWE-138.md) ERC721/ERC1155 Safe Transfer コールバックによる再入可能性 (Reentrancy via ERC721/ERC1155 Safe Transfer Callbacks)
+- [SCWE-149](Document/docs/SCWE/SCSVS-COMM/SCWE-149.md) 資金を受け取ることができないアドレスへの送金 (Transfers to Addresses That Cannot Receive Funds)
 
 ### SCSVS-CRYPTO
 
@@ -134,11 +133,9 @@
 - [SCWE-056](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-056.md) 適切な署名検証の欠如 (Lack of Proper Signature Verification)
 - [SCWE-074](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-074.md) 複数の可変長引数によるハッシュ衝突 (Hash Collisions with Multiple Variable Length Arguments)
 - [SCWE-084](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-084.md) blockhash の安全でない使用 (Insecure Use of blockhash)
-<!--
-- [SCWE-114](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-114.md) (ECDSA Nonce Reuse)
-- [SCWE-115](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-115.md) (Weak VRF Parameterization or Callback Validation)
-- [SCWE-131](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-131.md) (Missing Domain Separation in Aggregate Signatures)
--->
+- [SCWE-114](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-114.md) ECDSA Nonce 再使用 (ECDSA Nonce Reuse)
+- [SCWE-115](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-115.md) 弱い VRF パラメータ化またはコールバックバリデーション (Weak VRF Parameterization or Callback Validation)
+- [SCWE-131](Document/docs/SCWE/SCSVS-CRYPTO/SCWE-131.md) 集約署名でのドメイン分離の欠如 (Missing Domain Separation in Aggregate Signatures)
 
 ### SCSVS-ORACLE
 
@@ -148,11 +145,9 @@
 - [SCWE-085](Document/docs/SCWE/SCSVS-ORACLE/SCWE-085.md) オラクルの最小/最大価格帯の検証なしでの誤用 (Misuse of Oracle Min/Max Price Band Without Validation)
 - [SCWE-086](Document/docs/SCWE/SCSVS-ORACLE/SCWE-086.md) オラクルレスポンスフィールドの検証の欠如 (古いデータまたは不完全なデータ) (Missing Validation of Oracle Response Fields (Stale or Incomplete Data))
 - [SCWE-088](Document/docs/SCWE/SCSVS-ORACLE/SCWE-088.md) 価格ベースの計算における不適切な Decimal 正規化 (Improper Decimal Normalization in Price-Based Calculations)
-<!--
-- [SCWE-112](Document/docs/SCWE/SCSVS-ORACLE/SCWE-112.md) (Reliance on Low-Liquidity Spot Prices)
-- [SCWE-113](Document/docs/SCWE/SCSVS-ORACLE/SCWE-113.md) (Insufficient TWAP Window or Single Observation)
-- [SCWE-130](Document/docs/SCWE/SCSVS-ORACLE/SCWE-130.md) (Admin-Write Oracle Without Delay)
--->
+- [SCWE-112](Document/docs/SCWE/SCSVS-ORACLE/SCWE-112.md) 低流動性のスポット価格への依存 (Reliance on Low-Liquidity Spot Prices)
+- [SCWE-113](Document/docs/SCWE/SCSVS-ORACLE/SCWE-113.md) 不十分な TWAP ウィンドウまたは単一観測 (Insufficient TWAP Window or Single Observation)
+- [SCWE-130](Document/docs/SCWE/SCSVS-ORACLE/SCWE-130.md) 遅延なしでの管理者記述オラクル (Admin-Write Oracle Without Delay)
 
 ### SCSVS-BLOCK
 
@@ -160,10 +155,8 @@
 - [SCWE-031](Document/docs/SCWE/SCSVS-BLOCK/SCWE-031.md) ブロック変数の安全でない使用 (Insecure use of Block Variables)
 - [SCWE-065](Document/docs/SCWE/SCSVS-BLOCK/SCWE-065.md) 時間を代理としたブロック値 (Block Values as a Proxy for Time)
 - [SCWE-073](Document/docs/SCWE/SCSVS-BLOCK/SCWE-073.md) ハードコードされたガス量でのメッセージ呼び出し (Message Call with Hardcoded Gas Amount)
-<!--
-- [SCWE-127](Document/docs/SCWE/SCSVS-BLOCK/SCWE-127.md) (EIP-1559 Basefee Assumptions)
-- [SCWE-153](Document/docs/SCWE/SCSVS-BLOCK/SCWE-153.md) (Reliance on block.prevrandao for High-Value Randomness)
--->
+- [SCWE-127](Document/docs/SCWE/SCSVS-BLOCK/SCWE-127.md) EIP-1559 基本料金の想定 (EIP-1559 Basefee Assumptions)
+- [SCWE-153](Document/docs/SCWE/SCSVS-BLOCK/SCWE-153.md) 高価値ランダム性のための block.prevrandao への依存 (Reliance on block.prevrandao for High-Value Randomness)
 
 ### SCSVS-BRIDGE
 
@@ -173,10 +166,8 @@
 - [SCWE-087](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-087.md) クロスチェーンメッセージングにおけるペイロードサイズ検証の欠如 (サービス拒否/資金の滞留) (Missing Payload Size Validation in Cross-Chain Messaging (Denial of Service/Stuck Funds))
 - [SCWE-094](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-094.md) LayerZero メッセージ送信における不十分なガス制限バリデーション (Insufficient Gas Limit Validation in LayerZero Message Sending)
 - [SCWE-096](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-096.md) クロスチェーン NFT 引き落とし時のトークンバーンの欠如 (Missing Token Burn During Cross-Chain NFT Withdrawal)
-<!--
-- [SCWE-132](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-132.md) (Mismatched Token Decimals in Bridge Mint/Burn)
-- [SCWE-133](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-133.md) (Missing Replay Nonce per Bridge Lane)
--->
+- [SCWE-132](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-132.md) Bridge Mint/Burn でのトークン Decimal の不一致 (Mismatched Token Decimals in Bridge Mint/Burn)
+- [SCWE-133](Document/docs/SCWE/SCSVS-BRIDGE/SCWE-133.md) Bridge Lane ごとのリプレイ Nonce の欠如 (Missing Replay Nonce per Bridge Lane)
 
 ### SCSVS-DEFI
 
@@ -185,21 +176,17 @@
 - [SCWE-059](Document/docs/SCWE/SCSVS-DEFI/SCWE-059.md) 不十分なガスブリーフィング (Insufficient Gas Griefing)
 - [SCWE-077](Document/docs/SCWE/SCSVS-DEFI/SCWE-077.md) レート制限の欠如 (Lack of Rate Limiting)
 - [SCWE-082](Document/docs/SCWE/SCSVS-DEFI/SCWE-082.md) 適切なガス管理の欠如 (Lack of Proper Gas Management)
-<!--
-- [SCWE-109](Document/docs/SCWE/SCSVS-DEFI/SCWE-109.md) (Unbounded Loops on Untrusted Input)
-- [SCWE-116](Document/docs/SCWE/SCSVS-DEFI/SCWE-116.md) (Missing Supply Cap Enforcement)
-- [SCWE-125](Document/docs/SCWE/SCSVS-DEFI/SCWE-125.md) (Missing Post-Operation Health Check)
-- [SCWE-126](Document/docs/SCWE/SCSVS-DEFI/SCWE-126.md) (Unbounded Withdrawal Queue Growth)
-- [SCWE-148](Document/docs/SCWE/SCSVS-DEFI/SCWE-148.md) (Gas Exhaustion via Unbounded Loops with External Calls)
-- [SCWE-151](Document/docs/SCWE/SCSVS-DEFI/SCWE-151.md) (Add/Remove Liquidity Without Minimum Output Validation)
--->
+- [SCWE-109](Document/docs/SCWE/SCSVS-DEFI/SCWE-109.md) 信頼できない入力での無制限のループ (Unbounded Loops on Untrusted Input)
+- [SCWE-116](Document/docs/SCWE/SCSVS-DEFI/SCWE-116.md) 供給上限の強制の欠如 (Missing Supply Cap Enforcement)
+- [SCWE-125](Document/docs/SCWE/SCSVS-DEFI/SCWE-125.md) 操作後ヘルスチェックの欠如 (Missing Post-Operation Health Check)
+- [SCWE-126](Document/docs/SCWE/SCSVS-DEFI/SCWE-126.md) 無制限の引き落としキューの増加 (Unbounded Withdrawal Queue Growth)
+- [SCWE-148](Document/docs/SCWE/SCSVS-DEFI/SCWE-148.md) 外部呼び出しでの無制限のループによるガス消耗 (Gas Exhaustion via Unbounded Loops with External Calls)
+- [SCWE-151](Document/docs/SCWE/SCSVS-DEFI/SCWE-151.md) 最小出力バリデーションなしでの流動性の追加/削除 (Add/Remove Liquidity Without Minimum Output Validation)
 
 ### SCSVS-COMP
 
 - [SCWE-057](Document/docs/SCWE/SCSVS-COMP/SCWE-057.md) 任意のストレージ位置への書き込み (Write to Arbitrary Storage Location)
 - [SCWE-083](Document/docs/SCWE/SCSVS-COMP/SCWE-083.md) エッジケースの処理の失敗 (Failure to Handle Edge Cases)
-<!--
-- [SCWE-110](Document/docs/SCWE/SCSVS-COMP/SCWE-110.md) (Fee-On-Transfer Token Misaccounting)
-- [SCWE-111](Document/docs/SCWE/SCSVS-COMP/SCWE-111.md) (Rebase Token Balance Drift)
-- [SCWE-135](Document/docs/SCWE/SCSVS-COMP/SCWE-135.md) (ERC4626 Share Inflation via Donations)
--->
+- [SCWE-110](Document/docs/SCWE/SCSVS-COMP/SCWE-110.md) Fee-On-Transfer トークンの勘定ミス (Fee-On-Transfer Token Misaccounting)
+- [SCWE-111](Document/docs/SCWE/SCSVS-COMP/SCWE-111.md) トークン残高ドリフトのリベース (Rebase Token Balance Drift)
+- [SCWE-135](Document/docs/SCWE/SCSVS-COMP/SCWE-135.md) 寄付による ERC4626 株価インフレーション (ERC4626 Share Inflation via Donations)
