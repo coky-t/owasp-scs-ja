@@ -1,5 +1,5 @@
 ---
-title: Unbounded Loops on Untrusted Input
+title: 信頼できない入力での無制限のループ (Unbounded Loops on Untrusted Input)
 id: SCWE-109
 alias: unbounded-loops
 platform: []
@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/834.html](https://cwe.mitre.org/data/definitions/834.html)
 
 ## 説明
-Iterating over user-controlled arrays or mappings without bounds lets attackers submit large inputs that exhaust gas, causing denial of service. Functions like batch withdrawals, reward distribution, or liquidations may become permanently unusable.
+ユーザーが制御する配列やマッピングを制限なしで反復処理することで、攻撃者は大量の入力を送信してガスを消費させ、サービス拒否攻撃を引き起こす可能性があります。バッチ出金、報酬分配、清算などの機能が永久的に使用不能になる恐れがあります。
 
 ## 対策
 - Impose upper bounds on loop iterations or batch sizes.
