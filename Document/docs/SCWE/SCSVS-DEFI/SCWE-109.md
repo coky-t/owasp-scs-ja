@@ -19,9 +19,9 @@ status: new
 ユーザーが制御する配列やマッピングを制限なしで反復処理することで、攻撃者は大量の入力を送信してガスを消費させ、サービス拒否攻撃を引き起こす可能性があります。バッチ出金、報酬分配、清算などの機能が永久的に使用不能になる恐れがあります。
 
 ## 対策
-- Impose upper bounds on loop iterations or batch sizes.
-- Use pagination/iterative processing with checkpoints.
-- Avoid on-chain iteration over untrusted lists; rely on off-chain aggregation with verifiable proofs (Merkle leaves).
+- ループ反復やバッチサイズに上限を設けます。
+- ページネーション/反復処理をチェックポイントとともに使用します。
+- 信頼できないリストに対するオンチェーンの反復を避け、検証可能な証明 (マークルリーフ) を用いたオフチェーン集約に頼ります。
 
 ## 事例
 
