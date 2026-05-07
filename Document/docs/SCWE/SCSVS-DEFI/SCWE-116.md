@@ -1,5 +1,5 @@
 ---
-title: Missing Supply Cap Enforcement
+title: 供給上限の強制の欠如 (Missing Supply Cap Enforcement)
 id: SCWE-116
 alias: missing-supply-cap
 platform: []
@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/693.html](https://cwe.mitre.org/data/definitions/693.html)
 
 ## 説明
-Tokens or lending systems without hard supply caps allow privileged accounts or flawed logic to mint unlimited units, inflating supply and draining collateralized protocols. Lack of caps also breaks price assumptions in AMMs and oracles.
+厳格な供給上限なしでのトークンやレンディングシステムは、特権アカウントや欠陥のあるロジックが無制限にユニットを生成することを可能にし、供給を膨らませ、担保されたプロトコルを枯渇します。また、上限の欠落は AMM やオラクルの価格想定を破壊します。
 
 ## 対策
 - Define immutable max supply and enforce it on every mint path.
