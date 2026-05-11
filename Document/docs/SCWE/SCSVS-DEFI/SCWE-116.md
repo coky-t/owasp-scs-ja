@@ -19,9 +19,9 @@ status: new
 厳格な供給上限なしでのトークンやレンディングシステムは、特権アカウントや欠陥のあるロジックが無制限にユニットを生成することを可能にし、供給を膨らませ、担保されたプロトコルを枯渇します。また、上限の欠落は AMM やオラクルの価格想定を破壊します。
 
 ## 対策
-- Define immutable max supply and enforce it on every mint path.
-- Separate minting roles with multi-sig and timelock; emit events for mint changes.
-- Include cap checks in upgrades and cross-chain minting/bridging logic.
+- 不変の最大供給を定義し、すべてのミントパスでそれを強制します。
+- マルチシグとタイムロックを用いてミントのロールを分離し、ミントの変更に関するイベントを発行します。
+- アップグレードとクロスチェーンのミント/ブリッジのロジックに上限チェックを含めます。
 
 ## 事例
 
