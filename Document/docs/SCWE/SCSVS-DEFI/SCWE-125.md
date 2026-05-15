@@ -1,5 +1,5 @@
 ---
-title: Missing Post-Operation Health Check
+title: 操作後ヘルスチェックの欠如 (Missing Post-Operation Health Check)
 id: SCWE-125
 alias: missing-health-check
 platform: []
@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/754.html](https://cwe.mitre.org/data/definitions/754.html)
 
 ## 説明
-Lending/borrowing protocols that do not re-evaluate health factors after actions (borrow, withdraw, leverage) allow users to exit with unhealthy positions. Attackers can drain collateral or avoid liquidation by skipping post-operation solvency checks.
+アクション (借入、引出、レバレッジ) 後に健全性要因を再評価しない貸借プロトコルは、ユーザーが不健全なポジションで終了することを可能にします。攻撃者は、操作後の支払い能力チェックをスキップすることで、担保を流用したり、清算を回避できます。
 
 ## 対策
 - Recompute health factor after every state-changing action and revert if below threshold.
