@@ -1,5 +1,5 @@
 ---
-title: Unbounded Withdrawal Queue Growth
+title: 無制限の引き落としキューの増加 (Unbounded Withdrawal Queue Growth)
 id: SCWE-126
 alias: unbounded-withdrawal-queue
 platform: []
@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Protocols that queue withdrawals without bounding length or processing batches can face gas exhaustion when executing large queues. Attackers can spam small requests to DoS withdrawal execution or force users to accept delays.
+長さに制限を設けず、バッチ処理も行わずに引き落としをキューするプロトコルでは、大規模なキューを実行する際にガス枯渇に直面する可能性があります。攻撃者は小さなリクエストをスパムして、引き落とし実行を DoS したり、ユーザーが遅延を受け入れることを強制します。
 
 ## 対策
 - Cap queue size or use batched/paged processing with upper gas limits.
