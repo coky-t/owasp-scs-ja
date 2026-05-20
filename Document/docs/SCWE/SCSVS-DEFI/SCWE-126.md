@@ -19,9 +19,9 @@ status: new
 長さに制限を設けず、バッチ処理も行わずに引き落としをキューするプロトコルでは、大規模なキューを実行する際にガス枯渇に直面する可能性があります。攻撃者は小さなリクエストをスパムして、引き落とし実行を DoS したり、ユーザーが遅延を受け入れることを強制します。
 
 ## 対策
-- Cap queue size or use batched/paged processing with upper gas limits.
-- Charge fees or require minimum amounts to discourage spam.
-- Allow users to cancel/claim in smaller chunks rather than processing the entire queue at once.
+- キューのサイズを制限するか、ガスの上限があるバッチ処理/ページ処理を使用します。
+- 手数料を課すか、最小額を要求して、スパムを抑制します。
+- キュー全体を一度に処理するのではなく、ユーザーが小さな単位でキャンセル/請求できるようにします。
 
 ## 事例
 
