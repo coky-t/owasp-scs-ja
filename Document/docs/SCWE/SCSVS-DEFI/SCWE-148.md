@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/400.html](https://cwe.mitre.org/data/definitions/400.html)
 
 ## 説明
-Loops that iterate over user-controlled arrays and perform external calls (transfers, approvals, or other contract calls) in each iteration can exhaust gas when the array is large. Each external call consumes gas; unbounded loops cause the transaction to hit the block gas limit and revert, resulting in denial of service. SCWE-109 covers unbounded loops generally; this weakness focuses on loops that perform external calls.
+ユーザーが制御する配列を反復処理し、各反復処理で外部呼び出し (転送、承認、その他のコントラクト呼び出し) を実行するループは、配列が大きい場合にガスを枯渇する可能性があります。各外部呼び出しはガスを消費します。無制限のループはトランザクションがブロックガス制限にヒットして元に戻し、サービス拒否を引き起こします。SCWE-109 は無制限ループ全般をカバーしていますが、この弱点は外部呼び出しを実行するループに焦点を当てています。
 
 ## 対策
 - Impose an upper bound on loop iterations or batch size.
