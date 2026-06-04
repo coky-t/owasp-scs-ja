@@ -19,9 +19,9 @@ status: new
 ユーザーが制御する配列を反復処理し、各反復処理で外部呼び出し (転送、承認、その他のコントラクト呼び出し) を実行するループは、配列が大きい場合にガスを枯渇する可能性があります。各外部呼び出しはガスを消費します。無制限のループはトランザクションがブロックガス制限にヒットして元に戻し、サービス拒否を引き起こします。SCWE-109 は無制限ループ全般をカバーしていますが、この弱点は外部呼び出しを実行するループに焦点を当てています。
 
 ## 対策
-- Impose an upper bound on loop iterations or batch size.
-- Use pull-based patterns: let users claim individually instead of pushing to many addresses in one tx.
-- Process in chunks with pagination or checkpoints.
+- ループの反復処理またはバッチサイズに上限を設けます。
+- プルベースのパターンを使用します。一度のトランザクションで多数のアドレスにプッシュするのではなく、ユーザーが個別に請求できるようにします。
+- ページネーションまたはチェックポイントを用いてチャンク単位で処理します。
 
 ## 事例
 
@@ -38,7 +38,7 @@ contract Airdrop {
     }
 }
 ```
-**Why vulnerable:** Large `recipients.length` causes out-of-gas; one failed transfer reverts the entire batch.
+**脆弱である理由:** 大きな `recipients.length` はガス不足を引き起こします。一度の転送失敗でバッチ全体が元に戻ります。
 
 ### 修正済み
 ```solidity
