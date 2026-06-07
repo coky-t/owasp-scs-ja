@@ -13,10 +13,10 @@ status: new
 
 ## 関連
 - CWE-20: Improper Input Validation  
-  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html)
+  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Adding or removing liquidity in AMMs (e.g., Uniswap, Curve) without enforcing a minimum amount of LP tokens or underlying assets received can expose users to sandwich attacks or unfavorable execution. Similar to swap slippage (SCWE-090), LP operations can be front-run: an attacker manipulates the pool before the user's add/remove, then reverses after. Without `amountMin` or equivalent checks, users may receive far less than expected.
+AMM (Uniswap, Curve など) において、LP トークンまたは原資産の最低受領額を規定せずに流動性を追加または削除すると、ユーザーはサンドウィッチ攻撃や不利な執行にさらされる可能性があります。スワップスリッページ (SCWE-090) と同様に、LP オペレーションはフロントランとなる可能性があります。攻撃者はユーザーの追加/削除の前にプールを操作して、その後反転します。`amountMin` や同等のチェックなしで、ユーザーは予想よりはるかに少ないものしか受けられない可能性があります。
 
 ## 対策
 - Accept `amountMin` (or `minLPTokens`, `minAmounts`) from users and enforce it when adding/removing liquidity.
