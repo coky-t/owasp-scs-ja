@@ -19,8 +19,8 @@ status: new
 AMM (Uniswap, Curve など) において、LP トークンまたは原資産の最低受領額を規定せずに流動性を追加または削除すると、ユーザーはサンドウィッチ攻撃や不利な執行にさらされる可能性があります。スワップスリッページ (SCWE-090) と同様に、LP オペレーションはフロントランとなる可能性があります。攻撃者はユーザーの追加/削除の前にプールを操作して、その後反転します。`amountMin` や同等のチェックなしで、ユーザーは予想よりはるかに少ないものしか受けられない可能性があります。
 
 ## 対策
-- Accept `amountMin` (or `minLPTokens`, `minAmounts`) from users and enforce it when adding/removing liquidity.
-- Use deadline parameters (SCWE-141) in addition to slippage protection.
+- ユーザーから `amountMin` (または `minLPTokens`, `minAmounts`) を受付、流動性の追加/削除時にそれを適用します。
+- スリッページ保護に加えて、期限パラメータ (SCWE-141) を使用します。
 
 ## 事例
 
