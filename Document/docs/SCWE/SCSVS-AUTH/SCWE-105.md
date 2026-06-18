@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-Improper EIP-2612 permit implementations that omit chain-specific domain separators, do not increment nonces, or ignore expiration allow signatures to be replayed across chains or multiple times. Attackers can repeatedly approve spending or re-use permits on forked networks.
+チェーン固有のドメインセパレータを省略したり、nonce をインクリメントしなかったり、有効期限を無視するなど、不適切な EIP-2612 許可実装は、署名がチェーン間または複数回にわたってリプレイされる可能性があります。攻撃者は、フォークされたネットワーク上で、支払いを繰り返し承認したり、許可を再使用できます。
 
 ## 対策
 - Build EIP-712 domain separators including `name`, `version`, `chainId`, and `verifyingContract`.
