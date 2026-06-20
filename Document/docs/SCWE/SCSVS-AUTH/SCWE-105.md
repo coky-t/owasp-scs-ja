@@ -19,9 +19,9 @@ status: new
 チェーン固有のドメインセパレータを省略したり、nonce をインクリメントしなかったり、有効期限を無視するなど、不適切な EIP-2612 許可実装は、署名がチェーン間または複数回にわたってリプレイされる可能性があります。攻撃者は、フォークされたネットワーク上で、支払いを繰り返し承認したり、許可を再使用できます。
 
 ## 対策
-- Build EIP-712 domain separators including `name`, `version`, `chainId`, and `verifyingContract`.
-- Maintain per-owner nonces and increment on every successful permit.
-- Enforce deadlines and reject expired signatures.
+- `name`, `version`, `chainId`, `verifyingContract` を含む EIP-712 ドメインパラメータを構築します。
+- 所有者ごとの nonce を保持し、許可が成功するごとにインクリメントします。
+- 期限を適用し、期限切れの署名を拒否します。
 
 ## 事例
 
