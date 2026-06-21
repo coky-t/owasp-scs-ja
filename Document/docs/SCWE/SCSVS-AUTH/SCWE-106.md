@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-Meta-transaction forwarders that relay calls without verifying the signer, nonce, chain, or expiry let relayers execute arbitrary actions on behalf of victims. Missing replay protection allows the same signed request to be executed multiple times.
+署名、nonce、チェーン、有効期限を検証せずに呼び出しを中継するメタトランザクションフォワーダーは、リレイヤーが被害者に代わって任意のアクションを実行可能になります。リプレイ保護の欠如は同じ署名付きリクエストが複数回実行されることを可能にします。
 
 ## 対策
 - Verify EIP-712 typed data signatures against the declared signer.
