@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/284.html](https://cwe.mitre.org/data/definitions/284.html)
 
 ## 説明
-Relying on a single externally owned account (EOA) as contract admin creates a single point of failure. Key compromise, loss, or coercion can lead to irreversible upgrades, pauses, or fund drains with no recovery.
+単一の外部所有アカウント (EOA) をコントラクト管理者として依存すると単一障害点を生み出します。鍵の侵害、紛失、強制は、不可逆なアップグレード、一時停止、あるいは回復できない資金の流出につながる可能性があります。
 
 ## 対策
 - Use multisig (>=2-of-3) with hardware keys and timelocks for admin roles.
