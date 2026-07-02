@@ -19,9 +19,9 @@ status: new
 単一の外部所有アカウント (EOA) をコントラクト管理者として依存すると単一障害点を生み出します。鍵の侵害、紛失、強制は、不可逆なアップグレード、一時停止、あるいは回復できない資金の流出につながる可能性があります。
 
 ## 対策
-- Use multisig (>=2-of-3) with hardware keys and timelocks for admin roles.
-- Document and test key rotation and recovery procedures.
-- Limit admin powers by role (upgrade vs. ops) and enforce separation of duties.
+- 管理者ロールにはハードウェアキーとタイムロックを用いたマルチシグ (2-of-3 以上) を使用します。
+- キーローテーションとリカバリの手順を文書化してテストします。
+- ロール (アップグレートと運用) によって管理者権限を制限し、職務の分離を強制します。
 
 ## 事例
 
