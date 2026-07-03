@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/670.html](https://cwe.mitre.org/data/definitions/670.html)
 
 ## 説明
-A single-step `transferOwnership(newOwner)` immediately assigns ownership to the new address. If the wrong address is used (typo, burn address `address(0)`, or a contract that cannot receive ownership), the contract can be permanently locked—no one can perform owner-only actions or correct the mistake. A two-step process (propose → accept) allows the intended recipient to confirm and prevents accidental loss of control.
+`transferOwnership(newOwner)` という単一ステップが所有権を新しいアドレスに即座に割り当てます。誤ったアドレスが使用された場合 (誤記、バーンアドレス `address(0)`、所有権を受け取ることができないコントラクト)、コントラクトは永久にロックされ、所有者のみが可能なアクションを実行したり誤りを正すことはできなくなります。二ステップのプロセス (提案→承認) は、意図した受信者が確認でき、意図しないコントロールの喪失を防ぎます。
 
 ## 対策
 - Implement a two-step ownership transfer: `transferOwnershipPending(newOwner)` sets a pending owner, and `acceptOwnership()` (callable only by the pending owner) completes the transfer.
