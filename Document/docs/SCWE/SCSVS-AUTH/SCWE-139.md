@@ -19,8 +19,8 @@ status: new
 `transferOwnership(newOwner)` という単一ステップが所有権を新しいアドレスに即座に割り当てます。誤ったアドレスが使用された場合 (誤記、バーンアドレス `address(0)`、所有権を受け取ることができないコントラクト)、コントラクトは永久にロックされ、所有者のみが可能なアクションを実行したり誤りを正すことはできなくなります。二ステップのプロセス (提案→承認) は、意図した受信者が確認でき、意図しないコントロールの喪失を防ぎます。
 
 ## 対策
-- Implement a two-step ownership transfer: `transferOwnershipPending(newOwner)` sets a pending owner, and `acceptOwnership()` (callable only by the pending owner) completes the transfer.
-- Validate that `newOwner != address(0)` and consider rejecting contract addresses if the owner must be an EOA for operational reasons.
+- 二ステップの所有権移転を実装します。`transferOwnershipPending(newOwner)` が保留中の所有者を設定し、`acceptOwnership()` (保留中の所有者のみが呼び出し可能) が移転を完了します。
+- `newOwner != address(0)` であることを検証し、運用上の理由から所有者が EOA である必要がある場合にはコントラクトアドレスを拒否することを検討します。
 
 ## 事例
 
