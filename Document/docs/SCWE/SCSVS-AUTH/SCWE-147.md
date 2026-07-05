@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/347.html](https://cwe.mitre.org/data/definitions/347.html)
 
 ## 説明
-Permit (EIP-2612) and meta-transaction signatures that omit a `deadline` or `expiry` parameter can be replayed indefinitely once obtained. An attacker who captures a valid signature (e.g., via phishing or a compromised frontend) can submit it at any future time. SCWE-105 covers domain separator and nonce; this weakness specifically addresses the absence of expiration.
+`deadline` や `expiry` パラメータを省略した Permit (EIP-2612) やメタトランザクションの署名は、一度取得されると無期限にリプレイされる可能性があります。有効な署名を (フィッシングや侵害されたフロントエンドなどを介して) 捕獲した攻撃者は、それを将来の任意の時点で送信できます。SCWE-105 ではドメインセパレータや nonce をカバーしますが、この弱点は特に有効期限の欠如を扱います。
 
 ## 対策
 - Include a `deadline` (or `expiry`) in the signed message and enforce `require(block.timestamp <= deadline, "Expired")` when processing the signature.
