@@ -45,4 +45,4 @@ function execute(address signer, uint256 deadline, bytes32 hash, uint8 v, bytes3
     _execute(signer);
 }
 ```
-**Note:** The `hash` must be computed from EIP-712 structured data that includes the `deadline` field so the signature cannot be replayed after expiry.
+**注:** `hash` は `deadline` フィールドを含む EIP-712 構造化データから算出される必要があるため、署名は期限切れ後にリプレイできません。
