@@ -19,8 +19,8 @@ status: new
 `deadline` や `expiry` パラメータを省略した Permit (EIP-2612) やメタトランザクションの署名は、一度取得されると無期限にリプレイされる可能性があります。有効な署名を (フィッシングや侵害されたフロントエンドなどを介して) 捕獲した攻撃者は、それを将来の任意の時点で送信できます。SCWE-105 ではドメインセパレータや nonce をカバーしますが、この弱点は特に有効期限の欠如を扱います。
 
 ## 対策
-- Include a `deadline` (or `expiry`) in the signed message and enforce `require(block.timestamp <= deadline, "Expired")` when processing the signature.
-- Use EIP-712 structured data with a deadline field.
+- 署名付きメッセージに `deadline` (または `expiry`) を含め、署名を処理する際に `require(block.timestamp <= deadline, "Expired")` を適用します。
+- deadline フィールドを備えた EIP-712 構造化データを使用します；
 
 ## 事例
 
