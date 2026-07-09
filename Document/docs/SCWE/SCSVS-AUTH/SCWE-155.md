@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/284.html](https://cwe.mitre.org/data/definitions/284.html)
 
 ## 説明
-Contracts that rely on a single administrative key (EOA or contract) without multisig, timelock, or key rotation create a single point of failure. Compromise of that key (phishing, malware, physical theft) gives full control; loss of the key (e.g., no backup) can permanently lock critical functions. SCWE-129 covers single EOA admin; this weakness focuses on the *risk* of single-key design and the absence of mitigations.
+マルチシグ、タイムロック、キーローテーションなしで単一の管理鍵 (EOA またはコントラクト) に依存するコントラクトは単一障害点を生み出します。その鍵の侵害 (フィッシング、マルウェア、物理的な窃取) は完全な制御を与えます。鍵の喪失 (バックアップなしなど) は重要な機能を永久にロックできます。SCWE-129 は単一の EOA 管理をカバーしますが、この弱点は単一鍵設計の *リスク* とその緩和策の欠如に焦点を当てています。
 
 ## 対策
 - Use multisig wallets (e.g., Gnosis Safe) for administrative actions.
