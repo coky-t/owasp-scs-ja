@@ -19,9 +19,9 @@ status: new
 マルチシグ、タイムロック、キーローテーションなしで単一の管理鍵 (EOA またはコントラクト) に依存するコントラクトは単一障害点を生み出します。その鍵の侵害 (フィッシング、マルウェア、物理的な窃取) は完全な制御を与えます。鍵の喪失 (バックアップなしなど) は重要な機能を永久にロックできます。SCWE-129 は単一の EOA 管理をカバーしますが、この弱点は単一鍵設計の *リスク* とその緩和策の欠如に焦点を当てています。
 
 ## 対策
-- Use multisig wallets (e.g., Gnosis Safe) for administrative actions.
-- Implement timelocks for sensitive operations (SCWE-020).
-- Plan for key rotation or recovery mechanisms.
+- 管理アクションにはマルチシグウォレット (例: Gnosis Safe) を使用します。
+- 機密性の高い操作にはタイムロックを実装します (SCWE-020)。
+- キーローテーションやリカバリメカニズムを計画します。
 
 ## 事例
 
