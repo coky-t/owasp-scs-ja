@@ -39,7 +39,7 @@ contract Treasury {
     }
 }
 ```
-**Risk:** Single `owner` key; no multisig, no timelock. Compromise or loss permanently affects the treasury.
+**リスク:** 単一の `owner` 鍵であり、マルチシグやタイムロックがありません。侵害や紛失はトレジャリーに永続的な影響を及ぼします。
 
 ### 修正済み
 ```solidity
@@ -65,4 +65,4 @@ contract Treasury {
     }
 }
 ```
-**Fix:** Timelock adds a delay so large withdrawals can be contested. Use a multisig for `owner` in production.
+**修正:** タイムロックは遅延を設けることで、多額の引き落としには意義を申し立てることができます。本番環境では `owner` にマルチシグを使用します。
