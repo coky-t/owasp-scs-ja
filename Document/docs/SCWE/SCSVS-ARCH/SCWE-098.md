@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/284.html](https://cwe.mitre.org/data/definitions/284.html)
 
 ## 説明
-Proxy-based contracts ship without constructors; if the initializer is callable by anyone, an attacker can front-run deployment and seize ownership, set trusted roles, or lock upgrades. This permanently compromises the implementation behind the proxy.
+プロキシベースのコントラクトはコンストラクタなしで出荷します。初期化子が任意のものから呼び出し可能である場合、攻撃者はデプロイメントをフロントランして所有権を奪い、信頼できるロールを設定したり、アップグレードをロックできます。これはプロキシの背後にある実装を恒久的に侵害します。
 
 ## 対策
 - Protect initializer functions with access control and `initializer`/`reinitializer` guards.
@@ -54,4 +54,3 @@ contract UpgradeableVault is Initializable {
 }
 ```
 Deployer (or factory) deploys the proxy and calls `initialize(owner, address(this))` in the same transaction — no window for front-running.
-
