@@ -19,9 +19,9 @@ status: new
 プロキシベースのコントラクトはコンストラクタなしで出荷します。初期化子が任意のものから呼び出し可能である場合、攻撃者はデプロイメントをフロントランして所有権を奪い、信頼できるロールを設定したり、アップグレードをロックできます。これはプロキシの背後にある実装を恒久的に侵害します。
 
 ## 対策
-- Protect initializer functions with access control and `initializer`/`reinitializer` guards.
-- Invoke initialization atomically during deployment or via a deploy-time call data payload.
-- Use `disableInitializers()` on the implementation contract to prevent accidental takeover.
+- アクセス制御と `initializer`/`reinitializer` ガードを用いて、初期化関数を保護します。
+- デプロイメント時、またはデプロイ時のコールデータペイロードを介して、初期化をアトミックに呼び出します。
+- 実装コントラクトで `disableInitializers()` を使用して、意図しない乗っ取りを防ぎます。
 
 ## 事例
 
