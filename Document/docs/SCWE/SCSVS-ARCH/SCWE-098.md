@@ -53,4 +53,4 @@ contract UpgradeableVault is Initializable {
     }
 }
 ```
-Deployer (or factory) deploys the proxy and calls `initialize(owner, address(this))` in the same transaction — no window for front-running.
+デプロイヤ (またはファクトリ) がプロキシをデプロイし、同一トランザクション内で `initialize(owner, address(this))` を呼び出します。フロントランニングのウィンドウはありません。
