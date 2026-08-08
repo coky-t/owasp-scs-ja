@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/664.html](https://cwe.mitre.org/data/definitions/664.html)
 
 ## 説明
-Upgradeable contracts rely on stable storage slots. Reordering, removing, or inserting state variables (or changing inheritance order) between versions causes storage collisions when the proxy reuses the same slots, corrupting balances, roles, or configuration.
+アップグレード可能なコントラクトは安定したストレージスロットに依存しています。バージョン間での状態変数の順序変更、削除、挿入 (あるいは継承順序の変更) は、プロキシが同じスロットを再使用する際にストレージの衝突を生じ、残高、ロール、または設定を破損します。
 
 ## 対策
 - Freeze variable ordering; only append new variables.
@@ -54,4 +54,3 @@ contract V2 is V1 {
     uint256 public treasuryFee; // slot 2 (after gap)
 }
 ```
-
