@@ -19,9 +19,9 @@ status: new
 アップグレード可能なコントラクトは安定したストレージスロットに依存しています。バージョン間での状態変数の順序変更、削除、挿入 (あるいは継承順序の変更) は、プロキシが同じスロットを再使用する際にストレージの衝突を生じ、残高、ロール、または設定を破損します。
 
 ## 対策
-- Freeze variable ordering; only append new variables.
-- Reserve gaps (`uint256[50] private __gap;`) to allow future expansion.
-- Use automated storage layout diffing and follow upgrade-safe patterns (e.g., OZ Upgradeable tooling).
+- 変数の順序を固定し、新しい変数は末尾追加のみとします。
+- 将来的な拡張に備えてギャップ (`uint256[50] private __gap;`) を確保します。
+- 自動化されたストレージレイアウトの差分比較を使用し、アップグレード安全なパターン (OZ Upgradeable ツールなど) に従います。
 
 ## 事例
 
