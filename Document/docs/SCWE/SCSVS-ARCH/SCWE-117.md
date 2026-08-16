@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/284.html](https://cwe.mitre.org/data/definitions/284.html)
 
 ## 説明
-If the proxy’s implementation contract exposes `selfdestruct` (or `SELFDESTRUCT` reachable through a function), an attacker or careless admin can destroy the implementation. The proxy then points to a non-existent code address, bricking upgrades or locking funds.
+プロキシの実装コントラクトが `selfdestruct` (または関数を通じて到達可能な `SELFDESTRUCT`) を公開している場合、攻撃者や不注意な管理者がその実装を破壊できる可能性があります。そのため、プロキシは存在しないコードアドレスを指すことになり、アップグレードをできなくなったり、資金をロックします。
 
 ## 対策
 - Remove or disable `selfdestruct` in implementations; use `disableInitializers()` patterns.
