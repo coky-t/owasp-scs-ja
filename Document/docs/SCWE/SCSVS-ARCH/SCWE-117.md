@@ -19,9 +19,9 @@ status: new
 プロキシの実装コントラクトが `selfdestruct` (または関数を通じて到達可能な `SELFDESTRUCT`) を公開している場合、攻撃者や不注意な管理者がその実装を破壊できる可能性があります。そのため、プロキシは存在しないコードアドレスを指すことになり、アップグレードをできなくなったり、資金をロックします。
 
 ## 対策
-- Remove or disable `selfdestruct` in implementations; use `disableInitializers()` patterns.
-- Gate any destruct-like functionality behind timelock + multisig and migration plans.
-- Monitor implementation addresses and block upgrades that reduce code size to zero.
+- 実装の `selfdestruct` を削除または無効化し、`disableInitializers()` パターンを使用します。
+- デストラクトのような機能にはタイムロック、マルチシグ、移行計画によるゲートを設けます。
+- 実装アドレスを監視し、コードサイズをゼロにするようなアップグレードをブロックします。
 
 ## 事例
 
