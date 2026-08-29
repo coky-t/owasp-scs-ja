@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/306.html](https://cwe.mitre.org/data/definitions/306.html)
 
 ## 説明
-Beacon proxies rely on a beacon address that determines implementation. If the beacon upgrade function lacks proper access control or timelock, an attacker can point all proxies to malicious code, taking over state and funds.
+ビーコンプロキシは実装を決定するビーコンアドレスに依存しています。ビーコンのアップグレード機能に適切なアクセス制御やタイムロックがない場合、攻撃者はすべてのプロキシを悪意のあるコードに向けて、状態と資金を乗っ取ることができます。
 
 ## 対策
 - Restrict beacon upgrades to multisig+timelock and emit events on change.
