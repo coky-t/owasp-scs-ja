@@ -19,9 +19,9 @@ status: new
 ビーコンプロキシは実装を決定するビーコンアドレスに依存しています。ビーコンのアップグレード機能に適切なアクセス制御やタイムロックがない場合、攻撃者はすべてのプロキシを悪意のあるコードに向けて、状態と資金を乗っ取ることができます。
 
 ## 対策
-- Restrict beacon upgrades to multisig+timelock and emit events on change.
-- Validate new implementation bytecode (e.g., initializer disabled, interfaces intact).
-- Monitor beacon address changes on-chain with alerts.
+- ビーコンのアップグレードをマルチシグ＋タイムロックに限定し、変更時にイベントを発行します。
+- 新しい実装のバイトコードを検証します (イニシャライザが無効化されているか、インタフェースが損なわれていないかなど)。
+- オンチェーンでのビーコンアドレス変更を監視して、アラートします。
 
 ## 事例
 
