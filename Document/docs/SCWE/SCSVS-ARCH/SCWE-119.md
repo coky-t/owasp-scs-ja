@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/284.html](https://cwe.mitre.org/data/definitions/284.html)
 
 ## 説明
-Using the same key to control both the proxy admin (upgrade rights) and logic contract owner concentrates power. A single key compromise allows hostile upgrades and privileged function abuse with no separation of duties.
+同一の鍵を使用して、プロキシ管理者 (アップグレード権限) とロジックコントラクト所有者の両方を制御すると、権限が集中します。単一の鍵の侵害は、責務の分離なしでの、敵意のあるアップグレードや特権機能の悪用を可能にします。
 
 ## 対策
 - Separate roles: proxy admin under multisig+timelock; logic owner under different multisig.
