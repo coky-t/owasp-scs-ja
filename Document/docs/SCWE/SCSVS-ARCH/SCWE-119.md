@@ -19,9 +19,9 @@ status: new
 同一の鍵を使用して、プロキシ管理者 (アップグレード権限) とロジックコントラクト所有者の両方を制御すると、権限が集中します。単一の鍵の侵害は、責務の分離なしでの、敵意のあるアップグレードや特権機能の悪用を可能にします。
 
 ## 対策
-- Separate roles: proxy admin under multisig+timelock; logic owner under different multisig.
-- Use role-based access (e.g., OZ AccessControl) and distinct keys for operational vs. upgrade actions.
-- Document and monitor role boundaries; rotate keys periodically.
+- ロールを分離します。マルチシグ＋タイムロックの下にプロキシ管理者、別のマルチシグの下にロジック所有者。
+- ロールベースのアクセス (例: OZ AccessControl) を使用し、運用アクションとアップグレードアクションで異なる鍵を使用します。
+- ロール境界を文書化および監視し、鍵を定期的に入れ替えます。
 
 ## 事例
 
