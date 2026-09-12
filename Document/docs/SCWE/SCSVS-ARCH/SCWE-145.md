@@ -13,10 +13,10 @@ status: new
 
 ## 関連
 - CWE-20: Improper Input Validation  
-  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html)
+  [https://cwe.mitre.org/data/definitions/20.html](https://cwe.mitre.org/data/definitions/20.html) (参考: JVN iPedia [CWE-20 不適切な入力確認](https://jvndb.jvn.jp/ja/cwe/CWE-20.html))
 
 ## 説明
-Constructors that accept critical parameters (owner, oracle, fee recipient, token addresses) without validation can deploy a contract in a broken or insecure state. Zero addresses, invalid values, or inconsistent configuration (e.g., fee > 100%) may be impossible to fix after deployment if there is no setter or upgrade path.
+重要なパラメータ (所有者、オラクル、手数料受取人、トークンアドレス) をバリデーションなしで受け入れるコンストラクタは、不備のある状態や安全でない状態でコントラクトをデプロイする恐れがあります。ゼロアドレス、無効な値、矛盾した設定 (手数料が 100% を超えるなど) は、セッターやアップグレードのパスがなければ、デプロイメント後に修正することが不可能になるかもしれません。
 
 ## 対策
 - Validate all constructor parameters: zero address checks, range checks (e.g., fee <= 100%), and consistency checks.
