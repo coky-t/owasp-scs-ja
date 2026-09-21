@@ -19,8 +19,8 @@ status: new
 重要なパラメータ (所有者、オラクル、手数料受取人、トークンアドレス) をバリデーションなしで受け入れるコンストラクタは、不備のある状態や安全でない状態でコントラクトをデプロイする恐れがあります。ゼロアドレス、無効な値、矛盾した設定 (手数料が 100% を超えるなど) は、セッターやアップグレードのパスがなければ、デプロイメント後に修正することが不可能になるかもしれません。
 
 ## 対策
-- Validate all constructor parameters: zero address checks, range checks (e.g., fee <= 100%), and consistency checks.
-- Use `require` or custom errors to revert deployment with a clear message when validation fails.
+- すべてのコンストラクタパラメータ (ゼロアドレスチェック、範囲チェック (例: 手数料 <= 100%)、整合性チェック) を検証します。
+- バリデーションに失敗した場合、`require` またはカスタムエラーを使用して、明確なメッセージとともにデプロイメントをリバートします。
 
 ## 事例
 
