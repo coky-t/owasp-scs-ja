@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/682.html](https://cwe.mitre.org/data/definitions/682.html)
 
 ## 説明
-When upgrading a proxy's implementation, the new implementation's storage layout must be compatible with the proxy's storage. Appending variables in the implementation without accounting for the proxy's own storage (e.g., admin, implementation address) can cause slot collisions. Similarly, inherited contracts that add state variables can overwrite slots used by the base or proxy. SCWE-099 covers same-contract layout; this addresses cross-contract layout (proxy + implementation, inheritance chain).
+プロキシの実装をアップグレードする際、新しい実装のストレージレイアウトはプロキシのストレージと互換性を有する必要があります。プロキシ自身のストレージ (admin や実装アドレスなど) を考慮せずに実装に変数を追加すると、スロットの衝突を引き起こす恐れがあります。同様に、状態変数を追加する継承コントラクトは、基底やプロキシによって使用されるスロットを上書きする恐れがあります。SCWE-099 は同じコントラクトのレイアウトをカバーしますが、これはコントラクト間 (プロキシ＋実装、継承チェーン) のレイアウトを扱います。
 
 ## 対策
 - Use a single storage contract or follow a consistent storage layout convention (e.g., EIP-1967).
