@@ -19,9 +19,9 @@ status: new
 プロキシの実装をアップグレードする際、新しい実装のストレージレイアウトはプロキシのストレージと互換性を有する必要があります。プロキシ自身のストレージ (admin や実装アドレスなど) を考慮せずに実装に変数を追加すると、スロットの衝突を引き起こす恐れがあります。同様に、状態変数を追加する継承コントラクトは、基底やプロキシによって使用されるスロットを上書きする恐れがあります。SCWE-099 は同じコントラクトのレイアウトをカバーしますが、これはコントラクト間 (プロキシ＋実装、継承チェーン) のレイアウトを扱います。
 
 ## 対策
-- Use a single storage contract or follow a consistent storage layout convention (e.g., EIP-1967).
-- Reserve gaps (`uint256[50] private __gap`) in base contracts for future expansion.
-- Run storage layout diff tools before upgrading.
+- 単一のストレージコントラクトを使用するか、一貫したストレージレイアウトの規約 (例: EIP-1967) に従います。
+- 将来の拡張のためにベースコントラクトにギャップ (`uint256[50] private __gap`) を備えます。
+- アップグレード前にストレージレイアウト差分ツールを実行します。
 
 ## 事例
 
