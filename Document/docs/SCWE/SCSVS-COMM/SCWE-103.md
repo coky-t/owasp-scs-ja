@@ -19,9 +19,9 @@ status: new
 単一の `approve` 呼び出しで ERC20 allowance を値 `X` から `Y` に変更すると、spender はフロントランを行い、変更前に `X` を支払い、それから後に `Y` を支払うことが可能となり、実質的に二重支払いになります。`increaseAllowance`/`decreaseAllowance` を使用しない実装はこれにさらされます。
 
 ## 対策
-- Follow the allowance reset pattern: set allowance to `0`, then set the new value.
-- Prefer `increaseAllowance`/`decreaseAllowance` or EIP-2612 `permit` with nonces.
-- For critical flows, pull tokens via `transferFrom` after verifying allowance updates.
+- allowance リセットパターンに従います。allowance を `0` に設定し、それから新しい値に設定します。
+- `increaseAllowance`/`decreaseAllowance` または nonce を用いる EIP-2612 `permit` を優先します。
+- 重要なフローには、allowance の更新を検証した後に `transferFrom` を介してトークンを引き出します。
 
 ## 事例
 
