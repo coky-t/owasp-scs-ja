@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/841.html](https://cwe.mitre.org/data/definitions/841.html)
 
 ## 説明
-ERC777 tokens trigger `tokensReceived` hooks on recipients. Contracts that accept tokens without reentrancy protection or without blocking ERC777 hooks can be reentered during token transfers, enabling double-withdrawals or bypassing invariants.
+ERC777 トークンは受取人側で `tokensReceived` フックをトリガーします。再入に対する保護や ERC777 ブックのブロックを行わずにトークンを受け入れるコントラクトは、トークンの転送時に再入される可能性があり、二重引き出しを可能にしたり、不変条件をバイパスします。
 
 ## 対策
 - Add `nonReentrant` guards around token transfer handlers and withdrawals.
