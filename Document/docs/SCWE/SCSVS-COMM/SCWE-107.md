@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/345.html](https://cwe.mitre.org/data/definitions/345.html)
 
 ## 説明
-Cross-chain handlers that accept payloads without checking the source `chainId` or endpoint domain allow replay of messages from other networks or forks. Attackers can re-trigger transfers, minting, or governance actions on unintended chains.
+送信元の `chainId` やエンドポイントのドメインをチェックせずにペイロードを受け入れるクロスチェーンハンドラは、他のネットワークやフォークからのメッセージのリプレイを許します。攻撃者は、意図しないチェーン上での、送金、鋳造、ガバナンスアクションを再トリガーできます。
 
 ## 対策
 - Bind every inbound message to an expected source chain/domain and trusted sender.
