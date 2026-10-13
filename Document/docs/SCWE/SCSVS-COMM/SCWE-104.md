@@ -19,9 +19,9 @@ status: new
 ERC777 トークンは受取人側で `tokensReceived` フックをトリガーします。再入に対する保護や ERC777 ブックのブロックを行わずにトークンを受け入れるコントラクトは、トークンの転送時に再入される可能性があり、二重引き出しを可能にしたり、不変条件をバイパスします。
 
 ## 対策
-- Add `nonReentrant` guards around token transfer handlers and withdrawals.
-- Block unexpected token types or disable ERC777 acceptance by rejecting the ERC1820 interface.
-- Use pull-based withdrawals and avoid performing sensitive logic inside token receive hooks.
+- トークン転送ハンドラや引き出しに `nonReentrant` ガードを追加します。
+- 予期しないトークンタイプをブロックするか、ERC1820 インタフェースを拒否することで ERC777 の受け入れを無効化します。
+- プルベースの引き出しを使用し、トークン受信フック内での重要なロジックの実行を避けます。
 
 ## 事例
 
