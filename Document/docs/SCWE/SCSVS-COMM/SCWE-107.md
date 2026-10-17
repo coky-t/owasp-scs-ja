@@ -19,9 +19,9 @@ status: new
 送信元の `chainId` やエンドポイントのドメインをチェックせずにペイロードを受け入れるクロスチェーンハンドラは、他のネットワークやフォークからのメッセージのリプレイを許します。攻撃者は、意図しないチェーン上での、送金、鋳造、ガバナンスアクションを再トリガーできます。
 
 ## 対策
-- Bind every inbound message to an expected source chain/domain and trusted sender.
-- Include `chainId`/domain separators in signed payloads and verify them before execution.
-- Maintain replay protection (nonces) per (sourceChain, sourceSender).
+- すべての受信メッセージを、想定される送信元チェーン/ドメインと信頼できる送信者にバインドします。
+- 署名付きペイロードに `chainId` / ドメインセパレータを含め、実行前にそれらを検証します。
+- (sourceChain, sourceSender) ごとに、リプレイ保護 (nonce) を維持します。
 
 ## 事例
 
