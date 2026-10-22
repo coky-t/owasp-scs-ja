@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/345.html](https://cwe.mitre.org/data/definitions/345.html)
 
 ## 説明
-Relayers may deliver fabricated payloads if the destination contract does not validate Merkle proofs, light-client headers, or signatures that attest to the message on the source chain. Forged messages can mint wrapped assets or execute arbitrary calls.
+送信先コントラクトが、ソースチェーン上のメッセージを証明する Merkle 証明、ライトクライアントヘッダ、シグネチャを検証しない場合、リレイヤーは偽造されたペイロードを届ける可能性があります。偽造されたメッセージはラップされた資産を鋳造したり、任意の呼び出しを実行する可能性があります。
 
 ## 対策
 - Verify message inclusion against a trusted root (Merkle/Patricia proof) or light-client header.
