@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/841.html](https://cwe.mitre.org/data/definitions/841.html)
 
 ## 説明
-Multicall-style aggregators that forward calls without guarding against reentrancy or context changes let attackers reorder actions within one tx (e.g., deposit then withdraw) or impersonate `msg.sender` when inner calls use `tx.origin` or cached sender state.
+リエントランシーやコンテキストの変化に対するガードなしで呼び出しを転送するマルチコール形式のアグリゲーターは、攻撃者に、単一のトランザクション内でアクションを順序入れ替え (例: 預け入れ後の引き落とし) されたり、内部呼び出しが `tx.origin` やキャッシュされた送信者状態を使用する場合に `msg.sender` を偽装します。
 
 ## 対策
 - Apply reentrancy guards around multicall entrypoints.
