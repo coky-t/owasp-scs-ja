@@ -19,9 +19,9 @@ status: new
 リエントランシーやコンテキストの変化に対するガードなしで呼び出しを転送するマルチコール形式のアグリゲーターは、攻撃者に、単一のトランザクション内でアクションを順序入れ替え (例: 預け入れ後の引き落とし) されたり、内部呼び出しが `tx.origin` やキャッシュされた送信者状態を使用する場合に `msg.sender` を偽装します。
 
 ## 対策
-- Apply reentrancy guards around multicall entrypoints.
-- Avoid caching `msg.sender` across calls; pass explicit sender/context to internal functions.
-- Restrict callable selectors/targets or enforce allowlists.
+- マルチコールのエントリポイントにはリエントランシーガードを適用します。
+- 呼び出しをまたいで `msg.sender` をキャッシュすることを避け、送信者やコンテキストを明示的に内部関数へ渡します。
+- 呼び出し可能なセレクタやターゲットを制限するか、許可リストを適用します。
 
 ## 事例
 
