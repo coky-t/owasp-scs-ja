@@ -19,9 +19,9 @@ status: new
 ユーザーが提供するアドレスや動的なアドレスに低レベルの `call`, `staticcall`, `delegatecall` を使用する場合、そのターゲットがコントラクトコードのない EOA (外部所有アカウント) である可能性があります。その場合には、呼び出しは `success = true` を返し、空の戻りデータを返しますが、コードは実行しません。ターゲットがロジック (コールバック、バリデーション、状態変更など) を実行していることを想定しているコントラクトは、誤った過程に基づいて処理される恐れがあり、チェックのバイパス、ロジックの未実行、不正確な会計処理につながります。
 
 ## 対策
-- Verify that the target address contains code using `extcodesize` (or `address.code.length` in Solidity 0.8.12+) before low-level calls.
-- Use allowlists for callable targets instead of accepting arbitrary addresses.
-- Prefer high-level interface calls when the target is known to be a contract.
+- 低レベル呼び出しの前に、`extcodesize` (または Solidity 0.8.12 以降では `address.code.length`) を使用して、ターゲットアドレスがコードを含むことを検証します。
+- 呼び出し可能なターゲットには、任意のアドレスを受け入れるのではなく、許可リストを使用します。
+- ターゲットがコントラクトであることが知られている場合、高レベルインタフェース呼び出しを優先します。
 
 ## 事例
 
