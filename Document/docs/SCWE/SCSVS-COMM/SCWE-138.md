@@ -16,7 +16,7 @@ status: new
   [https://cwe.mitre.org/data/definitions/841.html](https://cwe.mitre.org/data/definitions/841.html)
 
 ## 説明
-ERC721 `safeTransferFrom` and ERC1155 `safeTransferFrom` invoke `onERC721Received` or `onERC1155Received` on the recipient contract. If the recipient is a contract that accepts NFTs and performs sensitive logic (e.g., withdrawals, state updates) inside these callbacks without reentrancy protection, an attacker can reenter the sender contract during the transfer and exploit stale state—similar to ERC777 hooks (SCWE-104) but for NFTs.
+ERC721 `safeTransferFrom` および ERC1155 `safeTransferFrom` は、受信側コントラクトで `onERC721Received` または `onERC1155Received` を呼び出します。受信側が NFT を受け入れるコントラクトであり、これらのコールバック内で重要なロジック (引き落とし、状態更新など) をリエントランシー保護なしに実行している場合、攻撃者は転送時に送信側コントラクトに再入し、古い状態を悪用することが可能です。これは ERC777 フック (SCWE-104) と類似していますが、NFT に対するものです。
 
 ## 対策
 - Add `nonReentrant` guards around functions that perform NFT transfers and any logic that could be reentered via the receiver callback.
