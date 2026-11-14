@@ -19,9 +19,9 @@ status: new
 ERC721 `safeTransferFrom` および ERC1155 `safeTransferFrom` は、受信側コントラクトで `onERC721Received` または `onERC1155Received` を呼び出します。受信側が NFT を受け入れるコントラクトであり、これらのコールバック内で重要なロジック (引き落とし、状態更新など) をリエントランシー保護なしに実行している場合、攻撃者は転送時に送信側コントラクトに再入し、古い状態を悪用することが可能です。これは ERC777 フック (SCWE-104) と類似していますが、NFT に対するものです。
 
 ## 対策
-- Add `nonReentrant` guards around functions that perform NFT transfers and any logic that could be reentered via the receiver callback.
-- Update state (e.g., balances, accounting) before calling `safeTransferFrom`.
-- Consider using `transferFrom` instead of `safeTransferFrom` when the recipient is trusted, to avoid callbacks.
+- NFT 転送を実行する関数や、レシーバコールバックを介して再入される可能性のあるロジックに、`nonReentrant` ガードを追加する。
+- `safeTransferFrom` を呼び出す前に、状態 (残高、会計処理など) を更新します。
+- コールバックを避けるため、受信側が信頼できる場合、`safeTransferFrom` の代わりに `transferFrom` を使用することを検討します。
 
 ## 事例
 
