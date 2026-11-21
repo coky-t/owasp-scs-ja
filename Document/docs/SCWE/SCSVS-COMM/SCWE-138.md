@@ -49,7 +49,7 @@ contract NFTVault {
     }
 }
 ```
-**Why vulnerable:** During `withdraw`, `safeTransferFrom` calls `onERC721Received` on the recipient before the state update. A malicious contract can reenter `withdraw` in that callback, pass the `deposits[msg.sender] > 0` check again, and withdraw a second NFT (double withdrawal).
+**なぜ脆弱なのか:** `withdraw` において、`safeTransferFrom` は状態を更新する前に受け取り側の `onERC721Received` を呼び出します。悪意のあるコントラクトはそのコールバック内で `withdraw` に再入して、`deposits[msg.sender] > 0` チェックを再び通過し、二つ目の NFT を引き落としできます (二重引き落とし)。
 
 ### 修正済み
 ```solidity
@@ -67,4 +67,4 @@ contract NFTVault is ReentrancyGuard {
     }
 }
 ```
-**Fix:** `nonReentrant` blocks reentry through the ERC721 receiver callback.
+**修正:** `nonReentrant` は ERC721 レシーバコールバックを通じた再入をブロックします。
